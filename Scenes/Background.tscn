@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhuinyq5eid5k"]
+
+[ext_resource type="Texture2D" uid="uid://lahj1r1eq8gp" path="res://Assets/GUI Elements/клубок ниток с фоном (3).png" id="1_dltr2"]
+[ext_resource type="Shader" path="res://Scenes/Scroll.gdshader" id="1_ftkcd"]
+[ext_resource type="AudioStream" uid="uid://bdyuuhlmfaxo3" path="res://Assets/Sound/lofi_5.1 (1).mp3" id="2_526ry"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kabu0"]
+shader = ExtResource("1_ftkcd")
+
+[node name="Background" type="Node2D"]
+
+[node name="Pattern" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.239216)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kabu0")
+position = Vector2(599, 936)
+rotation = 1.14129
+scale = Vector2(0.0500402, 0.054698)
+texture = ExtResource("1_dltr2")
+region_enabled = true
+region_rect = Rect2(17615.2, 15518.8, 100000, 100000)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_526ry")
+volume_db = -12.0
+autoplay = true

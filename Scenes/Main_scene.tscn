@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvx78ohf4v5u5"]
+
+[ext_resource type="PackedScene" uid="uid://bhuinyq5eid5k" path="res://Scenes/Background.tscn" id="1_8ptm8"]
+[ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
+[ext_resource type="PackedScene" uid="uid://v4hdyv43fviq" path="res://Scenes/gui.tscn" id="2_ftqaf"]
+[ext_resource type="PackedScene" uid="uid://cehvi3v7rr7og" path="res://Scenes/protolevel.tscn" id="2_s1cab"]
+[ext_resource type="PackedScene" uid="uid://0bqo4ol11gha" path="res://Scenes/Card.tscn" id="3_owala"]
+[ext_resource type="PackedScene" uid="uid://cx7ilkggoq1jf" path="res://Scenes/InteriorElements/shelf.tscn" id="4_p8ebc"]
+[ext_resource type="PackedScene" uid="uid://bs5vd7m5kp0w0" path="res://Scenes/InteriorElements/arm_chair.tscn" id="5_0yovj"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_qcb3b")
+level = 1
+
+[node name="Background" parent="." instance=ExtResource("1_8ptm8")]
+
+[node name="Protolevel" parent="." instance=ExtResource("2_s1cab")]
+position = Vector2(-166, 314)
+scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Protolevel"]
+position = Vector2(706, 766)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Shelf" parent="Protolevel" instance=ExtResource("4_p8ebc")]
+position = Vector2(706, 89)
+
+[node name="ArmChair" parent="Protolevel" instance=ExtResource("5_0yovj")]
+position = Vector2(1074, 350)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("2_ftqaf")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = -181.0
+offset_right = 1846.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="Card" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
+layout_mode = 2
+
+[node name="Card2" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
+layout_mode = 2
+
+[node name="Card3" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
+layout_mode = 2
+
+[node name="Card4" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(729, 669)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://cehvi3v7rr7og"]
+
+[ext_resource type="Script" path="res://Scripts/protolevel.gd" id="1_uomms"]
+[ext_resource type="Texture2D" uid="uid://dnqawjsq1ymx4" path="res://Assets/Interior/IMG_9320.PNG" id="1_yrys4"]
+[ext_resource type="Texture2D" uid="uid://03oi0e56h1wf" path="res://Assets/Interior/IMG_9323.PNG" id="2_bxmkr"]
+[ext_resource type="Texture2D" uid="uid://ffqf5q4c1og2" path="res://Assets/Interior/IMG_9324.PNG" id="3_tc113"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nup1c"]
+texture = ExtResource("2_bxmkr")
+texture_region_size = Vector2i(512, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5y8rm"]
+texture = ExtResource("1_yrys4")
+texture_region_size = Vector2i(512, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rpdi3"]
+texture = ExtResource("3_tc113")
+texture_region_size = Vector2i(512, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uavey"]
+tile_shape = 1
+tile_size = Vector2i(512, 256)
+sources/7 = SubResource("TileSetAtlasSource_nup1c")
+sources/8 = SubResource("TileSetAtlasSource_5y8rm")
+sources/9 = SubResource("TileSetAtlasSource_rpdi3")
+
+[node name="Protolevel" type="Node2D"]
+position = Vector2(-50, 36)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_uomms")
+
+[node name="Floor" type="TileMap" parent="."]
+scale = Vector2(0.7, 0.7)
+tile_set = SubResource("TileSet_uavey")
+format = 2
+layer_0/name = "FloorOak"
+layer_0/tile_data = PackedInt32Array(458752, 7, 0, 393217, 7, 0, 327681, 7, 0, 262146, 7, 0, 327682, 7, 0, 589825, 7, 0, 524289, 7, 0, 458753, 7, 0, 393218, 7, 0, 524290, 7, 0, 458754, 7, 0, 393216, 7, 0, 327680, 7, 0, 262145, 7, 0, 196609, 7, 0, 393219, 7, 0)
+layer_1/name = "FloorBirch"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(196609, 8, 0, 262145, 8, 0, 327680, 8, 0, 393216, 8, 0, 458752, 8, 0, 393217, 8, 0, 458753, 8, 0, 393218, 8, 0, 327682, 8, 0, 262146, 8, 0, 327681, 8, 0, 524289, 8, 0, 589825, 8, 0, 524290, 8, 0, 458754, 8, 0, 393219, 8, 0)
+layer_2/name = "FloorCarpet"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(327681, 9, 0, 196609, 9, 0, 262145, 9, 0, 327680, 9, 0, 393216, 9, 0, 458752, 9, 0, 393217, 9, 0, 262146, 9, 0, 327682, 9, 0, 393218, 9, 0, 458753, 9, 0, 524289, 9, 0, 589825, 9, 0, 524290, 9, 0, 458754, 9, 0, 393219, 9, 0)
+
+[node name="Cell2A" type="Area2D" parent="."]
+position = Vector2(895, 438.75)
+scale = Vector2(1, 1)
+
+[node name="Cell4A" type="Area2D" parent="."]
+position = Vector2(1252.5, 618.75)
+scale = Vector2(1, 1)
+
+[node name="Cell3A" type="Area2D" parent="."]
+position = Vector2(1073.75, 528.75)
+scale = Vector2(1, 1)
+
+[node name="Cell1A" type="Area2D" parent="."]
+position = Vector2(715, 350)
+
+[node name="Cell1B" type="Area2D" parent="."]
+position = Vector2(536.25, 438.75)
+
+[node name="Cell2B" type="Area2D" parent="."]
+position = Vector2(715, 528.75)
+
+[node name="Cell3B" type="Area2D" parent="."]
+position = Vector2(895, 618.75)
+
+[node name="Cell4B" type="Area2D" parent="."]
+position = Vector2(1073.75, 707.5)
+
+[node name="Cell1C" type="Area2D" parent="."]
+position = Vector2(356.25, 528.75)
+
+[node name="Cell2C" type="Area2D" parent="."]
+position = Vector2(536.25, 618.75)
+
+[node name="Cell3C" type="Area2D" parent="."]
+position = Vector2(715, 707.5)
+
+[node name="Cell4C" type="Area2D" parent="."]
+position = Vector2(895, 797.5)
+
+[node name="Cell1D" type="Area2D" parent="."]
+position = Vector2(177.5, 618.75)
+
+[node name="Ceell2D" type="Area2D" parent="."]
+position = Vector2(356.25, 707.5)
+
+[node name="Cell3D" type="Area2D" parent="."]
+position = Vector2(536.25, 797.5)
+
+[node name="Cell4D" type="Area2D" parent="."]
+position = Vector2(715, 887.5)

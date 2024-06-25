@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://v4hdyv43fviq"]
+
+[ext_resource type="Texture2D" uid="uid://b6ktc5ocw7nk0" path="res://Assets/GUI Elements/Component 2.svg" id="1_faiw5"]
+[ext_resource type="Texture2D" uid="uid://bfif7f52awl3n" path="res://Assets/GUI Elements/Component 1.svg" id="2_bhmfr"]
+[ext_resource type="Texture2D" uid="uid://dgd0prllka3ga" path="res://Assets/GUI Elements/TestElements/Галочка (1).svg" id="2_q5r26"]
+[ext_resource type="Texture2D" uid="uid://cjq23ecoo8l6n" path="res://Assets/GUI Elements/Panel.svg" id="3_vba53"]
+[ext_resource type="Texture2D" uid="uid://27o1yuutepdl" path="res://Assets/GUI Elements/IMG_9542.PNG" id="4_poqse"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0il3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqnsd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4vni"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = -8.0
+offset_right = 159.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 2
+offset_left = -126.0
+offset_top = 36.0001
+offset_right = 208.0
+offset_bottom = 360.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x0il3")
+icon = ExtResource("1_faiw5")
+
+[node name="Check" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 1376.0
+offset_right = 2404.0
+offset_bottom = 2456.0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dqnsd")
+icon = ExtResource("2_q5r26")
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 677.0
+offset_top = 45.0
+offset_right = 926.0
+offset_bottom = 293.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v4vni")
+icon = ExtResource("2_bhmfr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 937.0
+offset_top = -71.0
+offset_right = 5090.0
+offset_bottom = 1692.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vba53")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -226.0
+offset_top = 1299.89
+offset_right = 3927.0
+offset_bottom = 3062.89
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vba53")
+
+[node name="Cat_Icon" type="Sprite2D" parent="."]
+position = Vector2(547, 1073.89)
+scale = Vector2(1.37176, 1.37176)
+texture = ExtResource("4_poqse")
