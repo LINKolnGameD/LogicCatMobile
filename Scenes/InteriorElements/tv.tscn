@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn5vvkg0yuqdp"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_fsqrj"]
+[ext_resource type="Texture2D" uid="uid://drl22dh3bb3ml" path="res://Assets/Interior/Цветное/телик.png" id="2_5eiwm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05d00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5eiwm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TV" instance=ExtResource("1_fsqrj")]
+Type = 14
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(2, -284)
+sprite_frames = SubResource("SpriteFrames_05d00")
+
+[node name="FurnitureArea" parent="." index="1"]
+position = Vector2(2, -115)

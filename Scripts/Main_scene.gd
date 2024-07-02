@@ -12,9 +12,11 @@ var blue_background_color = "c9d4e3"
 @onready var LevelInterior = $Protolevel
 @onready var Camera = $Protolevel/Camera2D
 @onready var BackGround = $Background
+@onready var Level = $Protolevel
 
 #flag
-var preferences_set : bool
+var preferences_set : bool = false
+var furniture_set: bool = false
 
 var card_amount : int
 var first_cat_preferences_info : Array
@@ -36,6 +38,7 @@ func _ready():
 	if level == 1:
 		card_amount = 1
 		
+		
 	#card on level control
 	if card_amount == 1:
 		SecondCard.queue_free()
@@ -49,19 +52,27 @@ func _ready():
 
 func _process(delta):
 	
+	#preferences managment
 	if preferences_set == false:
 		if level == 1:
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
 			preferences_set = true
-			
-		#preferences control
+	#preferences control
 	FirstCard.FirstPreference.frame = first_cat_preferences_info[0]
 	FirstCard.SecondPreference.frame = first_cat_preferences_info[1]
 	FirstCard.ThirdPreference.frame = first_cat_preferences_info[2]
 			
-	#print(first_cat_preferences_info)
+	if furniture_set == false:
+		#(0"Sofa", 1"CoffeTable", 2"Box", 3"ArmChair", 4"ChairEars", 5"Bed", 6"BedEars", 7"Puff", 8"PuffEars", 9"Table", 10"Stand", 11"Shelf")
+		#(furniture_name, furniture_position, flip_info)
+		if level == 1:
+			Level.spawn("Stand", "Cell2", false)
+		furniture_set = true
+			
+			
+			
 	if Input.is_action_pressed("click") and not Input.is_action_just_released("click"):
 		Camera.position.x = get_viewport().get_mouse_position().x 
 	
@@ -121,11 +132,6 @@ func _process(delta):
 			ThirdCard.can_be_picked = true
 			FourthCard.can_be_picked = true
 	
-	
-	if level == 0:
-		pass
-		#$Card.FirstPreference.frame = 4
-
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:

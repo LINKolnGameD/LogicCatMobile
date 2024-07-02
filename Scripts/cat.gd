@@ -101,7 +101,6 @@ func _exit_state() -> void:
 func _area_entered(node):
 	if node.name != "FurnitureArea" or current_state != STATE.TAKEN: return
 	target = node
-	print(target)
 
 func _area_exited(node):
 	if target == node:

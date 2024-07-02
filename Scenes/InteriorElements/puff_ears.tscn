@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu82xvgl1l7sr"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_a1bt8"]
+[ext_resource type="Texture2D" uid="uid://gahd06i1dc0v" path="res://Assets/Interior/Цветное/Пуфик с ушкамии.png" id="2_6ksnn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_em60s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ksnn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfwht"]
+radius = 140.228
+
+[node name="PuffEars" instance=ExtResource("1_a1bt8")]
+Type = 8
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(0, -85)
+sprite_frames = SubResource("SpriteFrames_em60s")
+
+[node name="FurnitureArea" parent="." index="1"]
+position = Vector2(21, -125)
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_yfwht")

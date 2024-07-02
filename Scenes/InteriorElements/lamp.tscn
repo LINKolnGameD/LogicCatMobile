@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://yup5tmhp56v"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_smq4w"]
+[ext_resource type="Texture2D" uid="uid://csubdyy7h4tua" path="res://Assets/Interior/Цветное/светильник (тень по грани).png" id="2_icgbq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5x4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_icgbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lamp" instance=ExtResource("1_smq4w")]
+Type = 13
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(0, -222)
+sprite_frames = SubResource("SpriteFrames_g5x4j")

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvx78ohf4v5u5"]
+[gd_scene load_steps=6 format=3 uid="uid://cvx78ohf4v5u5"]
 
 [ext_resource type="PackedScene" uid="uid://bhuinyq5eid5k" path="res://Scenes/Background.tscn" id="1_8ptm8"]
 [ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
 [ext_resource type="PackedScene" uid="uid://v4hdyv43fviq" path="res://Scenes/gui.tscn" id="2_ftqaf"]
 [ext_resource type="PackedScene" uid="uid://cehvi3v7rr7og" path="res://Scenes/protolevel.tscn" id="2_s1cab"]
 [ext_resource type="PackedScene" uid="uid://0bqo4ol11gha" path="res://Scenes/Card.tscn" id="3_owala"]
-[ext_resource type="PackedScene" uid="uid://cx7ilkggoq1jf" path="res://Scenes/InteriorElements/shelf.tscn" id="4_p8ebc"]
-[ext_resource type="PackedScene" uid="uid://bs5vd7m5kp0w0" path="res://Scenes/InteriorElements/arm_chair.tscn" id="5_0yovj"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_qcb3b")
@@ -23,12 +21,6 @@ position = Vector2(706, 766)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
-
-[node name="Shelf" parent="Protolevel" instance=ExtResource("4_p8ebc")]
-position = Vector2(706, 89)
-
-[node name="ArmChair" parent="Protolevel" instance=ExtResource("5_0yovj")]
-position = Vector2(1074, 350)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

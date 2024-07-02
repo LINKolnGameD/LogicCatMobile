@@ -1,5 +1,5 @@
 extends Node2D
-@export_enum("Sofa", "CoffeTable", "Box", "ArmChair", "ChairEars", "Bed", "BedEars", "Puff", "PuffEars", "Table", "Stand", "Shelf") var Type: int
+@export_enum("Sofa", "CoffeTable", "Box", "ArmChair", "ChairEars", "Bed", "BedEars", "Puff", "PuffEars", "Table", "Stand", "Shelf", "Candle", "Lamp", "TV") var Type: int
 
 @onready var collision = $FurnitureArea/CollisionShape2D
 
@@ -10,7 +10,7 @@ var collision_position
 
 func _process(delta):
 	collision_position = collision.position
-
+	print(cat_in)
 
 func _on_area_2d_body_entered(body):
 	if body == CharacterBody2D:
@@ -23,4 +23,9 @@ func furniture_info():
 	else:
 		soft = false
 		EventBus.furniture_info.emit(soft, lonely, collision_position, cat_in)
+
+func _on_furniture_area_body_exited(body):
+	if body == CharacterBody2D:
+		if body.Type == "Cat":
+			cat_in = false
 

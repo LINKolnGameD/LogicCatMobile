@@ -1225,7 +1225,7 @@ animations = [{
 size = Vector2(431.667, 460)
 
 [node name="Cat" type="CharacterBody2D"]
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_h58ub")
 
 [node name="CatAnSprite" type="AnimatedSprite2D" parent="."]
@@ -1243,3 +1243,5 @@ collision_layer = 2
 position = Vector2(14.7336, -49.1121)
 scale = Vector2(0.841921, 0.841921)
 shape = SubResource("RectangleShape2D_jylqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

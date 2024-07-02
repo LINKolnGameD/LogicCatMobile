@@ -30,13 +30,15 @@ animations = [{
 radius = 136.825
 
 [node name="Shelf" instance=ExtResource("1_x31bd")]
+Type = 11
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2(-5.40002, -261.6)
 sprite_frames = SubResource("SpriteFrames_4omor")
 frame_progress = 0.470237
 
 [node name="FurnitureArea" parent="." index="1"]
-position = Vector2(0, -172)
+position = Vector2(-5.40002, -484.6)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
 shape = SubResource("CircleShape2D_u60g6")

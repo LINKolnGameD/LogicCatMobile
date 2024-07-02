@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://0kxyfdrtkop"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_k275p"]
+[ext_resource type="Texture2D" uid="uid://bp4j17786r8kp" path="res://Assets/Interior/Цветное/тумба 3.png" id="2_coa0v"]
+[ext_resource type="Texture2D" uid="uid://cx0xv5tkbrk87" path="res://Assets/Interior/Цветное/тумба 2.png" id="3_3jret"]
+[ext_resource type="Texture2D" uid="uid://brlvkn0qbrmwc" path="res://Assets/Interior/Цветное/тумба 1.png" id="4_4kdwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n45uv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_coa0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3jret")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4kdwi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dvso"]
+radius = 138.8
+
+[node name="Stand" instance=ExtResource("1_k275p")]
+Type = 10
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(-0.800003, -79.8)
+sprite_frames = SubResource("SpriteFrames_n45uv")
+
+[node name="FurnitureArea" parent="." index="1"]
+position = Vector2(-0.800003, -141.8)
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+shape = SubResource("CircleShape2D_2dvso")
