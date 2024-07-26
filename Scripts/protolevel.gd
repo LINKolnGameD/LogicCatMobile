@@ -27,16 +27,16 @@ func _ready():
 func _process(delta):
 	#for every object, if current cells[find(
 	for e in current_cells:
-		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e - 8) == -1 and current_cells.find(e + 8) == -1:
+		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1:
 			current_furniture[current_cells.find(e)].lonely = true
 		else:
-			if  current_cells.find(e - 1) != -1:
-				if len(current_furniture[current_cells.find(e-1)].cat_chidrens_array) >= 1:
+			if current_cells.find(e - 1) != -1:
+				if len(current_furniture[current_cells.find(e-1)].cat_chidrens_array) >= 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
 					current_furniture[current_cells.find(e)].lonely = true
 			elif  current_cells.find(e + 1) != -1:
-				if len(current_furniture[current_cells.find(e+1)].cat_chidrens_array) >= 1:
+				if len(current_furniture[current_cells.find(e+1)].cat_chidrens_array) >= 1 and e != 4 and e != 8 and e != 12:
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
 					current_furniture[current_cells.find(e)].lonely = true
@@ -50,36 +50,22 @@ func _process(delta):
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
 					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e + 8) != -1:
-				if len(current_furniture[current_cells.find(e+8)].cat_chidrens_array) >= 1:
-					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e - 8) != -1:
-				if len(current_furniture[current_cells.find(e-8)].cat_chidrens_array) >= 1:
-					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
 			else:
 				current_furniture[current_cells.find(e)].lonely = true
 				
 	for e in current_cells:
 		if current_furniture[current_cells.find(e)].warmth:
-			if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e - 8) == -1 and current_cells.find(e + 8) == -1:
+			if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1:
 				pass
 			else:
-				if current_cells.find(e - 1) != -1:
+				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e - 1)].post_warmth = true
-				if current_cells.find(e + 1) != -1:
+				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
 					current_furniture[current_cells.find(e + 1)].post_warmth = true
 				if current_cells.find(e - 4) != -1:
 					current_furniture[current_cells.find(e - 4)].post_warmth = true
 				if current_cells.find(e + 4) != -1:
 					current_furniture[current_cells.find(e + 4)].post_warmth = true
-				if current_cells.find(e - 8) != -1:
-					current_furniture[current_cells.find(e - 8)].post_warmth = true
-				if current_cells.find(e + 8) != -1:
-					current_furniture[current_cells.find(e + 8)].post_warmth = true
 					
 	
 	var floor_number = random.randi_range(0,2)

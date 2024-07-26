@@ -120,10 +120,13 @@ func _process(_delta):
 		#(0"Sofa", 1"CoffeTable", 2"Box", 3"ArmChair", 4"ChairEars", 5"Bed", 6"BedEars", 7"Puff", 8"PuffEars", 9"Table", 10"Stand", 11"Shelf")
 		#(furniture_name, furniture_position, flip_info)
 		if level == 1:
-			Level.spawn("Bed", 1, false)
-			Level.spawn("Box", 2, false)
-			Level.spawn("TV", 4, false)
-			Level.spawn("Stand", 8, false)
+			Level.spawn("ArmChair", 2, false)
+		elif level == 2:
+			Level.spawn("Puff", 3, false)
+			Level.spawn("Puff", 9, false)
+		elif level == 3:
+			Level.spawn("ArmChair", 4, false)
+			Level.spawn("ArmChair", 8, false)
 		furniture_set = true
 			
 #

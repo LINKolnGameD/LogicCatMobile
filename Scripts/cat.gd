@@ -51,7 +51,6 @@ func _ready():
 
 
 func _process(delta):
-	print(cat_numeration, ": ", satisfaction)
 	if get_parent().get_parent().name == "HBoxContainer":
 		main_scene_way = card.MainScene
 	elif get_parent().name == "FurnitureArea":
@@ -90,11 +89,16 @@ func _process(delta):
 						satisfaction = 100
 				else:
 					for i in main_scene_way.Level.current_cells:
-						if main_scene_way.Level.current_cells.has(i+1) or main_scene_way.Level.current_cells.has(i-1) or main_scene_way.Level.current_cells.has(i+4) or main_scene_way.Level.current_cells.has(i-4) or main_scene_way.Level.current_cells.has(i+8) or main_scene_way.Level.current_cells.has(i-8):
-							if main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+8)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+8)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+8)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-8)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-8)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i)].soft:
+						if main_scene_way.Level.current_cells.has(i+1) and i != 4 and i != 8 and i != 12 or main_scene_way.Level.current_cells.has(i-1) and i != 5 and i != 9 and i != 13 or main_scene_way.Level.current_cells.has(i+4) or main_scene_way.Level.current_cells.has(i-4):
+							if main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].soft:
 								satisfaction = 100
-								if main_scene_way.Level.current_furniture.filter(any_cells_left):
-									pass
+								if len(main_scene_way.Level.current_furniture.filter(any_cells_left)) > 2:
+									satisfaction = 50
+								else:
+									if main_scene_way.Level.current_furniture.any(no_cat_good_and_comfy):
+										satisfaction = 50
+									else:
+										satisfaction = 100
 							else:
 								satisfaction = 50
 						else:
@@ -147,8 +151,12 @@ func _process(delta):
 		_set_state(STATE.MOVE)
 		
 func any_cells_left(node):
-	if node.cat_chidrens_array:
-		pass
+	if node.soft:
+		if len(node.cat_chidrens_array) > 0:
+			if main_scene_way.Level.current_cells.has(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)]+1) and main_scene_way.Level.current_furniture[4] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 12 or main_scene_way.Level.current_cells.has(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)]-1) and main_scene_way.Level.current_furniture[4] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 3 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] != 13 or main_scene_way.Level.current_cells.has(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)]+4) or main_scene_way.Level.current_cells.has(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)]-4):
+				return node
+		
+		
 func no_cat_good_and_comfy(node):
 	if len(node.cat_chidrens_array) > 0:
 		return false

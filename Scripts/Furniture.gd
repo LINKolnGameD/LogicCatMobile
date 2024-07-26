@@ -18,6 +18,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	print(lonely)
 	if len(cat_chidrens_array) > 0:
 		for i in cat_chidrens_array:
 			cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.clear()
