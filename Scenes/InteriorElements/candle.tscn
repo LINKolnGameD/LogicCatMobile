@@ -24,3 +24,6 @@ sprite_frames = SubResource("SpriteFrames_lr4ae")
 
 [node name="FurnitureArea" parent="." index="1"]
 position = Vector2(0, -195)
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+shape = null

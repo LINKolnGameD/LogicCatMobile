@@ -1,30 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvx78ohf4v5u5"]
+[gd_scene load_steps=10 format=3 uid="uid://cvx78ohf4v5u5"]
 
-[ext_resource type="PackedScene" uid="uid://bhuinyq5eid5k" path="res://Scenes/Background.tscn" id="1_8ptm8"]
+[ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_8ptm8"]
 [ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
 [ext_resource type="PackedScene" uid="uid://v4hdyv43fviq" path="res://Scenes/gui.tscn" id="2_ftqaf"]
 [ext_resource type="PackedScene" uid="uid://cehvi3v7rr7og" path="res://Scenes/protolevel.tscn" id="2_s1cab"]
 [ext_resource type="PackedScene" uid="uid://0bqo4ol11gha" path="res://Scenes/Card.tscn" id="3_owala"]
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="4_iqyns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8nrx"]
+size = Vector2(98, 442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyilt"]
+size = Vector2(86.9992, 449)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wo51o"]
+radius = 205.295
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_qcb3b")
 level = 1
 
-[node name="Background" parent="." instance=ExtResource("1_8ptm8")]
-
-[node name="Protolevel" parent="." instance=ExtResource("2_s1cab")]
-position = Vector2(-166, 314)
-scale = Vector2(1, 1)
-
-[node name="Camera2D" type="Camera2D" parent="Protolevel"]
-position = Vector2(706, 766)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 1080)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
+[node name="Background" parent="." instance=ExtResource("1_8ptm8")]
+
+[node name="Protolevel" parent="." instance=ExtResource("2_s1cab")]
+position = Vector2(-105, 441)
+scale = Vector2(0.9, 0.9)
+
+[node name="Furniture" parent="Protolevel" instance=ExtResource("4_iqyns")]
+position = Vector2(3928, -2234)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("2_ftqaf")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 196.0
+offset_top = 1979.0
+offset_right = 2926.0
+offset_bottom = 1979.0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 500
+
+[node name="Card" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+layout_mode = 2
+map = NodePath("../../..")
+
+[node name="Card2" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+layout_mode = 2
+map = NodePath("../../..")
+
+[node name="Card3" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+layout_mode = 2
+map = NodePath("../../..")
+
+[node name="Card4" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+layout_mode = 2
+map = NodePath("../../..")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 12
@@ -40,26 +77,32 @@ grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 500
+[node name="ArrRightArea2D" type="Area2D" parent="CanvasLayer"]
+position = Vector2(972, 2089)
 
-[node name="Card" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
-layout_mode = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ArrRightArea2D"]
+position = Vector2(57, -148)
+shape = SubResource("RectangleShape2D_r8nrx")
 
-[node name="Card2" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
-layout_mode = 2
+[node name="ArrLeftArea2D" type="Area2D" parent="CanvasLayer"]
+position = Vector2(107, 2090)
+rotation = 3.14159
 
-[node name="Card3" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
-layout_mode = 2
-
-[node name="Card4" parent="CanvasLayer/MarginContainer/HBoxContainer" instance=ExtResource("3_owala")]
-layout_mode = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ArrLeftArea2D"]
+position = Vector2(64.4996, 155.5)
+shape = SubResource("RectangleShape2D_nyilt")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TargetPosition" type="CollisionShape2D" parent="."]
 position = Vector2(729, 669)
+shape = SubResource("CircleShape2D_wo51o")
+debug_color = Color(0.619608, 0.380392, 0.945098, 0.556863)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[connection signal="mouse_entered" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/ArrLeftArea2D" to="CanvasLayer/GUI" method="_on_arr_left_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ArrLeftArea2D" to="CanvasLayer/GUI" method="_on_arr_left_area_2d_mouse_exited"]

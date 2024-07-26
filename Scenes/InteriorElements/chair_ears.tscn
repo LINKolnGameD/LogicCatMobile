@@ -23,7 +23,7 @@ position = Vector2(91, -176)
 sprite_frames = SubResource("SpriteFrames_5hdkn")
 
 [node name="FurnitureArea" parent="." index="1"]
-position = Vector2(4, -10)
+position = Vector2(-51, -134)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 position = Vector2(91, -172)

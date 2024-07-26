@@ -2,29 +2,105 @@ extends Node2D
 
 @onready var floor = $Floor
 #position order follow this logic: the rightmost diagonal line from top to bottom, 4 parts ang go on the same to left direction
-@onready var InteriorPositions = [$Cell1A.position, $Cell2A.position, $Cell3A.position, $Cell4A.position,
-$Cell1B.position, $Cell2B.position, $Cell3B.position, $Cell4B.position,
-$Cell1C.position, $Cell2C.position, $Cell3C.position, $Cell4C.position,
-$Cell1D.position, $Cell2D.position, $Cell3D.position, $Cell4D.position,
+@onready var InteriorPositions = [$Cell1A, $Cell2A, $Cell3A, $Cell4A,
+$Cell1B, $Cell2B, $Cell3B, $Cell4B,
+$Cell1C, $Cell2C, $Cell3C, $Cell4C,
+$Cell1D, $Cell2D, $Cell3D, $Cell4D,
 ]
-var level_manager
-var all_elem_in: bool
+@onready var MainScene = $".."
+
 var target_position
+var level_manager
+var current_furniture = []
+var current_cells = []
+#flags
+var all_elem_in: bool
+var is_floor_set: bool = false
 
 var random = RandomNumberGenerator.new()
 
 func _ready():
 	all_elem_in = false
-	var floor_number = random.randi_range(0,1)
 ##
 #func furniture_info(soft, lonely, collision_position, cat_in):
 #	pass
 func _process(delta):
+	#for every object, if current cells[find(
+	for e in current_cells:
+		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e - 8) == -1 and current_cells.find(e + 8) == -1:
+			current_furniture[current_cells.find(e)].lonely = true
+		else:
+			if  current_cells.find(e - 1) != -1:
+				if len(current_furniture[current_cells.find(e-1)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif  current_cells.find(e + 1) != -1:
+				if len(current_furniture[current_cells.find(e+1)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif  current_cells.find(e - 4) != -1:
+				if len(current_furniture[current_cells.find(e-4)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif  current_cells.find(e + 4) != -1:
+				if len(current_furniture[current_cells.find(e+4)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif  current_cells.find(e + 8) != -1:
+				if len(current_furniture[current_cells.find(e+8)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif  current_cells.find(e - 8) != -1:
+				if len(current_furniture[current_cells.find(e-8)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			else:
+				current_furniture[current_cells.find(e)].lonely = true
+				
+	for e in current_cells:
+		if current_furniture[current_cells.find(e)].warmth:
+			if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e - 8) == -1 and current_cells.find(e + 8) == -1:
+				pass
+			else:
+				if current_cells.find(e - 1) != -1:
+					current_furniture[current_cells.find(e - 1)].post_warmth = true
+				if current_cells.find(e + 1) != -1:
+					current_furniture[current_cells.find(e + 1)].post_warmth = true
+				if current_cells.find(e - 4) != -1:
+					current_furniture[current_cells.find(e - 4)].post_warmth = true
+				if current_cells.find(e + 4) != -1:
+					current_furniture[current_cells.find(e + 4)].post_warmth = true
+				if current_cells.find(e - 8) != -1:
+					current_furniture[current_cells.find(e - 8)].post_warmth = true
+				if current_cells.find(e + 8) != -1:
+					current_furniture[current_cells.find(e + 8)].post_warmth = true
+					
+	
+	var floor_number = random.randi_range(0,2)
+	if is_floor_set == false:
+		if floor_number == 0:
+			floor.clear_layer(1)
+			floor.clear_layer(2)
+		elif floor_number == 1:
+			floor.clear_layer(0)
+			floor.clear_layer(2)
+		elif floor_number == 2:
+			floor.clear_layer(1)
+			floor.clear_layer(0)
+		is_floor_set = true
+	
 	pass
 #	EventBus.furniture_info(level_manager)
 	
 func spawn(furniture_name, furniture_position, flip_info):
 	var furniture_spawn
+	#fix this shit
 	if furniture_name == "ArmChair":
 		furniture_spawn = preload("res://Scenes/InteriorElements/arm_chair.tscn").instantiate()
 	if furniture_name == "Shelf":
@@ -58,43 +134,15 @@ func spawn(furniture_name, furniture_position, flip_info):
 	add_child(furniture_spawn)
 	set_position_furniture(furniture_position)
 	furniture_spawn.position = target_position
+	current_cells.append(furniture_position)
+	current_furniture.append(furniture_spawn)
 	if flip_info == true:
 		furniture_spawn.flip_h = true
 		
 func set_position_furniture(furniture_position):
-	if furniture_position == "Cell1":
-		target_position = InteriorPositions[0]
-	if furniture_position == "Cell2":
-		target_position = InteriorPositions[1]
-	if furniture_position == "Cell3":
-		target_position = InteriorPositions[2]
-	if furniture_position == "Cell4":
-		target_position = InteriorPositions[3]
-	if furniture_position == "Cell5":
-		target_position = InteriorPositions[4]
-	if furniture_position == "Cell6":
-		target_position = InteriorPositions[5]
-	if furniture_position == "Cell7":
-		target_position = InteriorPositions[6]
-	if furniture_position == "Cell8":
-		target_position = InteriorPositions[7]
-	if furniture_position == "Cell9":
-		target_position = InteriorPositions[8]
-	if furniture_position == "Cell10":
-		target_position = InteriorPositions[9]
-	if furniture_position == "Cell11":
-		target_position = InteriorPositions[10]
-	if furniture_position == "Cell12":
-		target_position = InteriorPositions[11]
-	if furniture_position == "Cell13":
-		target_position = InteriorPositions[12]
-	if furniture_position == "Cell14":
-		target_position = InteriorPositions[13]
-	if furniture_position == "Cell15":
-		target_position = InteriorPositions[14]
-	if furniture_position == "Cell16":
-		target_position = InteriorPositions[15]
-		
+	var cell_number: int
+	target_position = InteriorPositions[furniture_position-1].position
 	
-
+	
+#	
 

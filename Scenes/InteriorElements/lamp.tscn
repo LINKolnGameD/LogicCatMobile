@@ -20,3 +20,6 @@ Type = 13
 [node name="Sprite" parent="." index="0"]
 position = Vector2(0, -222)
 sprite_frames = SubResource("SpriteFrames_g5x4j")
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+shape = null

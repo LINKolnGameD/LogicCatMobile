@@ -1,4 +1,4 @@
-extends Control
+class_name Card extends Control
 
 @onready var Cat = $Cat
 #@onready var OurArea = $Cat/CatAnSprite/Area2D
@@ -6,6 +6,13 @@ extends Control
 @onready var FirstPreference = $CatPreference
 @onready var SecondPreference = $CatPreference2
 @onready var ThirdPreference = $CatPreference3
+@onready var MainScene = $"../../.."
+
+
+@export var map: Node2D
+
+#flag
+var prefernces_sended: bool = false
 
 #var mouse_into_us: bool = false
 #var is_dragging: bool = false
@@ -16,9 +23,28 @@ extends Control
 
 func _ready():
 	Cat.card = self
+	Cat.map = map
 
-func _process(delta):
-	pass
+func _process(_delta):
+			
+	if prefernces_sended == false:
+		if $CatPreference.frame == 0 or $CatPreference2.frame == 0 or $CatPreference3.frame == 0:
+			Cat.our_preferences.insert(0, 3)
+		elif  $CatPreference.frame == 1 or  $CatPreference2.frame == 1 or $CatPreference3.frame == 1:
+			Cat.our_preferences.insert(0, 1)
+		else:
+			Cat.our_preferences.insert(0, 2)
+		if $CatPreference.frame == 2 or $CatPreference2.frame == 2 or $CatPreference3.frame == 2:
+			Cat.our_preferences.insert(1, 3)
+		elif  $CatPreference.frame == 3 or  $CatPreference2.frame == 3 or $CatPreference3.frame == 3:
+			Cat.our_preferences.insert(1, 1)
+		else:
+			Cat.our_preferences.insert(1, 2)
+		if $CatPreference.frame == 4 or $CatPreference2.frame == 4 or $CatPreference3.frame == 4:
+			Cat.our_preferences.insert(2, 3)
+		else:
+			Cat.our_preferences.insert(2, 2)
+		prefernces_sended = true
 	
 #	#print(furniture_position)
 #

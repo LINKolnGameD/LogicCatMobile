@@ -23,7 +23,10 @@ position = Vector2(-7, -94)
 sprite_frames = SubResource("SpriteFrames_7npto")
 
 [node name="FurnitureArea" parent="." index="1"]
-position = Vector2(-21, 30)
+position = Vector2(-45, 22)
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+position = Vector2(31, -77)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 position = Vector2(-4, -91)
