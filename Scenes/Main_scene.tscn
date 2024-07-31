@@ -18,7 +18,6 @@ radius = 205.295
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_qcb3b")
-level = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(540, 1080)

@@ -46,7 +46,8 @@ func _process(delta):
 
 
 func _on_next_pressed():
-	print("next")
+	EventBus.global_level_info += 1
+	get_tree().reload_current_scene()
 
 
 func _on_restart_pressed():

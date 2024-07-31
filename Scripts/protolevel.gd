@@ -27,15 +27,15 @@ func _ready():
 func _process(delta):
 	#for every object, if current cells[find(
 	for e in current_cells:
-		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1:
+		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e + 3) == -1 and current_cells.find(e - 3) == -1 and current_cells.find(e + 5) == -1 and current_cells.find(e - 5) == -1:
 			current_furniture[current_cells.find(e)].lonely = true
 		else:
-			if current_cells.find(e - 1) != -1:
+			if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
 				if len(current_furniture[current_cells.find(e-1)].cat_chidrens_array) >= 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
 					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e + 1) != -1:
+			elif  current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
 				if len(current_furniture[current_cells.find(e+1)].cat_chidrens_array) >= 1 and e != 4 and e != 8 and e != 12:
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
@@ -47,6 +47,26 @@ func _process(delta):
 					current_furniture[current_cells.find(e)].lonely = true
 			elif  current_cells.find(e + 4) != -1:
 				if len(current_furniture[current_cells.find(e+4)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif current_cells.find(e - 5) != -1 and e != 9 and e != 13:
+				if len(current_furniture[current_cells.find(e-5)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif current_cells.find(e + 5) != -1 and e != 4 and e != 8:
+				if len(current_furniture[current_cells.find(e+5)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
+				if len(current_furniture[current_cells.find(e-3)].cat_chidrens_array) >= 1:
+					current_furniture[current_cells.find(e)].lonely = false
+				else:
+					current_furniture[current_cells.find(e)].lonely = true
+			elif current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
+				if len(current_furniture[current_cells.find(e+3)].cat_chidrens_array) >= 1:
 					current_furniture[current_cells.find(e)].lonely = false
 				else:
 					current_furniture[current_cells.find(e)].lonely = true
@@ -66,7 +86,15 @@ func _process(delta):
 					current_furniture[current_cells.find(e - 4)].post_warmth = true
 				if current_cells.find(e + 4) != -1:
 					current_furniture[current_cells.find(e + 4)].post_warmth = true
-					
+				if current_cells.find(e - 5) != -1 and e != 9 and e != 13:
+					current_furniture[current_cells.find(e - 5)].post_warmth = true
+				if current_cells.find(e + 5) != -1 and e != 4 and e != 8:
+					current_furniture[current_cells.find(e + 5)].post_warmth = true
+				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
+					current_furniture[current_cells.find(e - 3)].post_warmth = true
+				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
+					current_furniture[current_cells.find(e + 3)].post_warmth = true
+				
 	
 	var floor_number = random.randi_range(0,2)
 	if is_floor_set == false:
@@ -123,7 +151,7 @@ func spawn(furniture_name, furniture_position, flip_info):
 	current_cells.append(furniture_position)
 	current_furniture.append(furniture_spawn)
 	if flip_info == true:
-		furniture_spawn.flip_h = true
+		furniture_spawn.get_child(0).flip_h = true
 		
 func set_position_furniture(furniture_position):
 	var cell_number: int

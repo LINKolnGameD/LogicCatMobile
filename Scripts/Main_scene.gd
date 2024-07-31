@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var level: int
+var level: int
 
 @onready var FirstCard = $CanvasLayer/HBoxContainer/Card
 @onready var SecondCard = $CanvasLayer/HBoxContainer/Card2
@@ -25,16 +25,19 @@ var third_cat_preferences_info : Array
 var fourth_cat_preferences_info : Array
 
 func _ready():
+	level = EventBus.global_level_info
 
 #make intro screen
-#random floor 
-
-
 #so 0 = lonly, 1 = sociable, 2 = hieghtlover, 3 = lowlover, 4 = warmlover, 5 = nothing
 
 	#level card amount managment
 	if level == 1:
-		card_amount = 3
+		card_amount = 1
+	elif level == 2:
+		card_amount = 1
+	elif level == 3:
+		card_amount = 1
+	
 		
 		
 	#card on level control
@@ -60,6 +63,7 @@ func _ready():
 		CardArray.append(FourthCard)
 
 func _process(_delta):
+	print(level)
 	if cat_numeration_set == false:
 		if card_amount == 1:
 			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1
@@ -85,18 +89,19 @@ func _process(_delta):
 	#preferences managment
 	if preferences_set == false:
 		if level == 1:
-			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(4)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(1)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-			fourth_cat_preferences_info.append(1)
-			fourth_cat_preferences_info.append(5)
-			fourth_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 2:
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 3:
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			
+			
 			preferences_set = true
 	#preferences control
 	if card_amount >= 1:
@@ -126,7 +131,8 @@ func _process(_delta):
 			Level.spawn("Puff", 9, false)
 		elif level == 3:
 			Level.spawn("ArmChair", 4, false)
-			Level.spawn("ArmChair", 8, false)
+			Level.spawn("ArmChair", 5, true)
+			Level.spawn("Puff", 15, false)
 		furniture_set = true
 			
 #
@@ -155,7 +161,7 @@ func _process(_delta):
 		else:
 			FirstCard.Cat.can_be_picked = true
 			SecondCard.Cat.can_be_picked = true
-	if card_amount == 3:
+	elif card_amount == 3:
 		if FirstCard.Cat.current_state == 2:
 			SecondCard.Cat.can_be_picked = false
 			ThirdCard.Cat.can_be_picked = false
@@ -169,7 +175,7 @@ func _process(_delta):
 			FirstCard.Cat.can_be_picked = true
 			SecondCard.Cat.can_be_picked = true
 			ThirdCard.Cat.can_be_picked = true
-	if card_amount == 4:
+	elif card_amount == 4:
 		if FirstCard.Cat.current_state == 2:
 			SecondCard.Cat.can_be_picked = false
 			ThirdCard.Cat.can_be_picked = false

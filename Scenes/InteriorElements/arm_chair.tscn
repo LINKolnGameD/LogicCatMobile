@@ -25,7 +25,7 @@ position = Vector2(-6.8, -177.2)
 sprite_frames = SubResource("SpriteFrames_h2xn2")
 
 [node name="FurnitureArea" parent="." index="1"]
-position = Vector2(-6.8, -116.2)
+position = Vector2(-7, -170)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
 shape = SubResource("CircleShape2D_ufb81")
