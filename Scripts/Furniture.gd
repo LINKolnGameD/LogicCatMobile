@@ -18,7 +18,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(lonely)
+	print(lonely, name)
 	if len(cat_chidrens_array) > 0:
 		for i in cat_chidrens_array:
 			cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.clear()
@@ -56,7 +56,7 @@ func _process(delta):
 	else:
 		high = false
 		
-	if Type == 0 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 9 or Type == 14:
+	if Type == 0 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 14:
 		soft = true
 	else:
 		soft = false

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7tn3xdmubooj"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_nyy28"]
+[ext_resource type="Texture2D" uid="uid://d3iwmjdfiv016" path="res://Assets/Interior/Цветное/IMG_9713.PNG" id="2_fmess"]
+
+[node name="Table_LeftPart" instance=ExtResource("1_nyy28")]
+Type = 9
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(98.8, 50)
+
+[node name="Img9713" type="Sprite2D" parent="." index="1"]
+position = Vector2(115, -48)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_fmess")
+
+[node name="FurnitureArea" parent="." index="2"]
+position = Vector2(0, -215)

@@ -121,8 +121,12 @@ func spawn(furniture_name, furniture_position, flip_info):
 		furniture_spawn = preload("res://Scenes/InteriorElements/shelf.tscn").instantiate()
 	if furniture_name == "Sofa":
 		furniture_spawn = preload("res://Scenes/InteriorElements/sofa.tscn").instantiate()
+	if furniture_name == "Sofa2":
+		furniture_spawn = preload("res://Scenes/InteriorElements/sofa_left_side.tscn").instantiate()
 	if furniture_name == "Table":
 		furniture_spawn = preload("res://Scenes/InteriorElements/table.tscn").instantiate()
+	if furniture_name == "Table2":
+		furniture_spawn = preload("res://Scenes/InteriorElements/table_left_part.tscn").instantiate()
 	if furniture_name == "CoffeeTable":
 		furniture_spawn = preload("res://Scenes/InteriorElements/coffee_table.tscn").instantiate()
 	if furniture_name == "Box":

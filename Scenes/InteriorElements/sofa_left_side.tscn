@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqaqqs6a7vqrd"]
+
+[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_k3nfo"]
+[ext_resource type="Texture2D" uid="uid://dxvvr2cpd2r1o" path="res://Assets/Interior/Цветное/IMG_9715.PNG" id="2_eltsb"]
+[ext_resource type="Texture2D" uid="uid://ddsv7155g4vnq" path="res://Assets/Interior/Цветное/IMG_9717.PNG" id="3_7gtmj"]
+
+[node name="Sofa_LeftSide" instance=ExtResource("1_k3nfo")]
+
+[node name="Img9715" type="Sprite2D" parent="." index="1"]
+position = Vector2(99, -31)
+rotation = 0.0174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_eltsb")
+
+[node name="Img9717" type="Sprite2D" parent="." index="2"]
+position = Vector2(100, -31)
+rotation = 0.0174533
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_7gtmj")
+
+[node name="FurnitureArea" parent="." index="3"]
+position = Vector2(0, -135)

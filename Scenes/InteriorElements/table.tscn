@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_uhan1"]
 [ext_resource type="Texture2D" uid="uid://d27om5k0s1lfy" path="res://Assets/Interior/Цветное/стол.png" id="2_ifo86"]
+[ext_resource type="Texture2D" uid="uid://cks41rxycsott" path="res://Assets/Interior/Цветное/IMG_9712.PNG" id="3_ywo84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x4f8e"]
 animations = [{
@@ -15,26 +16,24 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ex73"]
-radius = 99.1262
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ed0r6"]
-radius = 93.0
+radius = 127.252
 
 [node name="Table" instance=ExtResource("1_uhan1")]
 Type = 9
 
 [node name="Sprite" parent="." index="0"]
+visible = false
 position = Vector2(11.8, -99)
 sprite_frames = SubResource("SpriteFrames_x4f8e")
 
-[node name="FurnitureArea" parent="." index="1"]
-position = Vector2(107.8, -99)
+[node name="Img9712" type="Sprite2D" parent="." index="1"]
+position = Vector2(-66, -138)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ywo84")
+
+[node name="FurnitureArea" parent="." index="2"]
+position = Vector2(25, -207)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_3ex73")
-
-[node name="Area2D" type="Area2D" parent="." index="2"]
-position = Vector2(-88.2, -187)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("CircleShape2D_ed0r6")

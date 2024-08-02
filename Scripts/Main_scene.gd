@@ -37,6 +37,24 @@ func _ready():
 		card_amount = 1
 	elif level == 3:
 		card_amount = 1
+	elif level == 4:
+		card_amount = 2
+	elif level == 5:
+		card_amount = 1
+	elif level == 6:
+		card_amount = 1
+	elif level == 7:
+		card_amount = 1
+	elif level == 8:
+		card_amount = 1
+	elif level == 9:
+		card_amount = 2
+	elif level == 10:
+		card_amount = 2
+	elif level == 11:
+		card_amount = 3
+	elif level == 12:
+		card_amount = 2
 	
 		
 		
@@ -100,9 +118,62 @@ func _process(_delta):
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+		if level == 4:
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+		if level == 5:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 6:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 7:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 8:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+		if level == 9:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+		if level == 10:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+		if level == 11:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+		if level == 12:
+			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 			
-			
-			preferences_set = true
+		preferences_set = true
 	#preferences control
 	if card_amount >= 1:
 		FirstCard.FirstPreference.frame = first_cat_preferences_info[0]
@@ -133,6 +204,57 @@ func _process(_delta):
 			Level.spawn("ArmChair", 4, false)
 			Level.spawn("ArmChair", 5, true)
 			Level.spawn("Puff", 15, false)
+		elif level == 4:
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("ArmChair", 5, true)
+			Level.spawn("ArmChair", 9, true)
+			Level.spawn("Puff", 11, false)
+		elif level == 5:
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("ArmChair", 9, false)
+			Level.spawn("Puff", 6, false)
+		elif level == 6:
+			Level.spawn("Puff", 9, false)
+			Level.spawn("Table2", 6, false)
+			Level.spawn("Table", 7, false)
+		elif level == 7:
+			Level.spawn("ArmChair", 2, false)
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("ArmChair", 13, true)
+			Level.spawn("Puff", 6, false)
+		elif level == 7:
+			Level.spawn("ArmChair", 2, false)
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("ArmChair", 13, true)
+			Level.spawn("Puff", 6, false)
+		elif level == 8:
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("Puff", 6, false)
+			Level.spawn("ArmChair", 9, true)
+			Level.spawn("Puff", 8, false)
+			Level.spawn("Puff", 14, false)
+		elif level == 9:
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("Puff", 5, false)
+			Level.spawn("Puff", 8, true)
+			Level.spawn("Puff", 10, false)
+		elif level == 10:
+			Level.spawn("Puff", 4, false)
+			Level.spawn("Sofa2", 6, false)
+			Level.spawn("Sofa", 7, false)
+			Level.spawn("Puff", 13, false)
+		elif level == 11:
+			Level.spawn("Sofa2", 1, false)
+			Level.spawn("Sofa", 2, false)
+			Level.spawn("ArmChair", 3, false)
+			Level.spawn("ArmChair", 9, false)
+		elif level == 12:
+			Level.spawn("ArmChair", 1, false)
+			Level.spawn("Sofa2", 3, false)
+			Level.spawn("Sofa", 4, false)
+			Level.spawn("Puff", 6, false)
+			Level.spawn("ArmChair", 9, false)
+			Level.spawn("ArmChair", 11, false)
 		furniture_set = true
 			
 #
