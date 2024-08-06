@@ -1,13 +1,9 @@
-[gd_scene load_steps=94 format=3 uid="uid://hd38q8ovquda"]
+[gd_scene load_steps=92 format=3 uid="uid://hd38q8ovquda"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_dyynw"]
-[ext_resource type="Shader" path="res://Scenes/main_menu.gdshader" id="1_o35a1"]
 [ext_resource type="Texture2D" uid="uid://cba5ybx1ny2sc" path="res://Assets/Cats/CremeStipped/mhvst3(creme).PNG" id="2_ubmwk"]
-[ext_resource type="Texture2D" uid="uid://bfypb0m7rlojy" path="res://Assets/GUI Elements/1 (8).png" id="3_ehgav"]
+[ext_resource type="Texture2D" uid="uid://c74urgop61pvo" path="res://Assets/GUI Elements/С полоской точно.png" id="3_w8n2q"]
 [ext_resource type="Texture2D" uid="uid://b2wmh10rve2uv" path="res://Assets/GUI Elements/2 (6).png" id="5_vb0jm"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhrdd"]
-shader = ExtResource("1_o35a1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isufq"]
 atlas = ExtResource("2_ubmwk")
@@ -638,10 +634,9 @@ color = Color(0.898039, 0.85098, 0.694118, 1)
 [node name="BackGround" type="Sprite2D" parent="."]
 modulate = Color(0.862745, 0.666667, 1, 1)
 texture_repeat = 2
-material = SubResource("ShaderMaterial_xhrdd")
 position = Vector2(-538, 1084)
 scale = Vector2(1, 0.998)
-texture = ExtResource("3_ehgav")
+texture = ExtResource("3_w8n2q")
 region_enabled = true
 region_rect = Rect2(-2.64874, -1.68167, 3838.15, 2157.18)
 
@@ -692,5 +687,10 @@ offset_right = 702.0
 offset_bottom = 514.0
 theme_override_font_sizes/font_size = 54
 text = "PLAY"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(543, 1075)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_pressed("click") and not Input.is_action_just_released("click"):
+		$BackGround.position.direction_to(get_viewport().get_mouse_position())
 
 
 func _on_play_pressed():

@@ -25,53 +25,39 @@ func _ready():
 #func furniture_info(soft, lonely, collision_position, cat_in):
 #	pass
 func _process(delta):
+	print(current_cells)
+	print(current_furniture)
 	#for every object, if current cells[find(
 	for e in current_cells:
-		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e + 3) == -1 and current_cells.find(e - 3) == -1 and current_cells.find(e + 5) == -1 and current_cells.find(e - 5) == -1:
-			current_furniture[current_cells.find(e)].lonely = true
-		else:
-			if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
+		current_furniture[current_cells.find(e)].lonely = true
+#		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e + 3) == -1 and current_cells.find(e - 3) == -1 and current_cells.find(e + 5) == -1 and current_cells.find(e - 5) == -1:
+#			current_furniture[current_cells.find(e)].lonely = true
+#		else:
+		if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
 				if len(current_furniture[current_cells.find(e-1)].cat_chidrens_array) >= 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
+		if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
 				if len(current_furniture[current_cells.find(e+1)].cat_chidrens_array) >= 1 and e != 4 and e != 8 and e != 12:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e - 4) != -1:
+		if current_cells.find(e - 4) != -1:
 				if len(current_furniture[current_cells.find(e-4)].cat_chidrens_array) >= 1:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif  current_cells.find(e + 4) != -1:
+		if current_cells.find(e + 4) != -1:
 				if len(current_furniture[current_cells.find(e+4)].cat_chidrens_array) >= 1:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif current_cells.find(e - 5) != -1 and e != 9 and e != 13:
-				if len(current_furniture[current_cells.find(e-5)].cat_chidrens_array) >= 1:
+		if current_cells.find(e - 5) != -1 :
+				if len(current_furniture[current_cells.find(e-5)].cat_chidrens_array) >= 1 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif current_cells.find(e + 5) != -1 and e != 4 and e != 8:
-				if len(current_furniture[current_cells.find(e+5)].cat_chidrens_array) >= 1:
+		if current_cells.find(e + 5) != -1 :
+				if len(current_furniture[current_cells.find(e+5)].cat_chidrens_array) >= 1 and e != 4 and e != 8:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
-				if len(current_furniture[current_cells.find(e-3)].cat_chidrens_array) >= 1:
+		if current_cells.find(e - 3) != -1:
+				if len(current_furniture[current_cells.find(e-3)].cat_chidrens_array) >= 1 and e != 4 and e != 8 and e != 12 and e != 16:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			elif current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
-				if len(current_furniture[current_cells.find(e+3)].cat_chidrens_array) >= 1:
+		if current_cells.find(e + 3) != -1:
+				print("there is e+3 cell")
+				if len(current_furniture[current_cells.find(e+3)].cat_chidrens_array) >= 1 and e != 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
-				else:
-					current_furniture[current_cells.find(e)].lonely = true
-			else:
-				current_furniture[current_cells.find(e)].lonely = true
 				
 	for e in current_cells:
 		if current_furniture[current_cells.find(e)].warmth:
@@ -156,6 +142,15 @@ func spawn(furniture_name, furniture_position, flip_info):
 	current_furniture.append(furniture_spawn)
 	if flip_info == true:
 		furniture_spawn.get_child(0).flip_h = true
+		
+func spawn_plug(cell):
+	var cat_spawn 
+	cat_spawn = preload("res://Scenes/plug.tscn").instantiate()
+	add_child(cat_spawn)
+	cat_spawn.global_position = current_furniture[current_cells.find(cell)].area.global_position
+	current_furniture[current_cells.find(cell)].collision.disabled = true
+	current_furniture[current_cells.find(cell)].cat_chidrens_array.append(cat_spawn)
+	
 		
 func set_position_furniture(furniture_position):
 	var cell_number: int

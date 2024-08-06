@@ -211,28 +211,28 @@ func _process(_delta):
 			Level.spawn("Puff", 11, false)
 		elif level == 5:
 			Level.spawn("ArmChair", 3, false)
-			Level.spawn("ArmChair", 9, false)
+			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Puff", 6, false)
+			Level.spawn_plug(9)
 		elif level == 6:
 			Level.spawn("Puff", 9, false)
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Table", 7, false)
+			Level.spawn_plug(9)
 		elif level == 7:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ArmChair", 13, true)
 			Level.spawn("Puff", 6, false)
-		elif level == 7:
-			Level.spawn("ArmChair", 2, false)
-			Level.spawn("ArmChair", 3, false)
-			Level.spawn("ArmChair", 13, true)
-			Level.spawn("Puff", 6, false)
+			Level.spawn_plug(6)
 		elif level == 8:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Puff", 8, false)
 			Level.spawn("Puff", 14, false)
+			Level.spawn_plug(8)
+			Level.spawn_plug(14)
 		elif level == 9:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Puff", 5, false)
@@ -255,6 +255,7 @@ func _process(_delta):
 			Level.spawn("Puff", 6, false)
 			Level.spawn("ArmChair", 9, false)
 			Level.spawn("ArmChair", 11, false)
+			Level.spawn_plug(11)
 		furniture_set = true
 			
 #

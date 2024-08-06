@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvx78ohf4v5u5"]
+[gd_scene load_steps=11 format=3 uid="uid://cvx78ohf4v5u5"]
 
 [ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_8ptm8"]
 [ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cehvi3v7rr7og" path="res://Scenes/protolevel.tscn" id="2_s1cab"]
 [ext_resource type="PackedScene" uid="uid://0bqo4ol11gha" path="res://Scenes/Card.tscn" id="3_owala"]
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="4_iqyns"]
+[ext_resource type="AudioStream" uid="uid://pgjx7gpb2de" path="res://Assets/GUI Elements/lofi_6.6.1.mp3" id="7_8lrvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8nrx"]
 size = Vector2(98, 442)
@@ -100,6 +101,10 @@ debug_color = Color(0.619608, 0.380392, 0.945098, 0.556863)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8lrvu")
+autoplay = true
 
 [connection signal="mouse_entered" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_exited"]

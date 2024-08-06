@@ -3,11 +3,12 @@ class_name Furniture
 @export_enum("Sofa", "CoffeTable", "Box", "ArmChair", "ChairEars", "Bed", "BedEars", "Puff", "PuffEars", "Table", "Stand", "Shelf", "Candle", "Lamp", "TV") var Type: int
 
 @onready var collision = $FurnitureArea/CollisionShape2D
+@onready var area = $FurnitureArea
 
 
 var cat_in : bool = false
 var soft : bool
-var lonely : bool
+var lonely : bool = true
 var high : bool
 var warmth : bool
 var post_warmth: bool
@@ -21,23 +22,24 @@ func _process(delta):
 	print(lonely, name)
 	if len(cat_chidrens_array) > 0:
 		for i in cat_chidrens_array:
-			cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.clear()
-			if lonely:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(0, 3)
-			else:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(0, 1)
-			if high:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(1, 3)
-			else:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(1, 1)
-			if warmth or post_warmth:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(2, 3)
-			else:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(2, 1)
-			if soft:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(3, 3)
-			else:
-				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(3, 1)
+			if i is Cat:
+				cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.clear()
+				if lonely:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(0, 3)
+				else:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(0, 1)
+				if high:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(1, 3)
+				else:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(1, 1)
+				if warmth or post_warmth:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(2, 3)
+				else:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(2, 1)
+				if soft:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(3, 3)
+				else:
+					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(3, 1)
 				
 		
 	if name != "Furniture":
