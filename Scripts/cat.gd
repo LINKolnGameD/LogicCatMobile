@@ -50,6 +50,7 @@ func _ready():
 
 
 func _process(delta):
+	print(cat_numeration)
 	if get_parent().get_parent().name == "HBoxContainer":
 		main_scene_way = card.MainScene
 	elif get_parent().name == "FurnitureArea":
@@ -80,30 +81,49 @@ func _process(delta):
 		else:
 			if parent_preferences[3] == 3:
 				satisfaction = 100
+			elif our_preferences[0] == 2 and our_preferences[1] == 2 and our_preferences[2] == 2 and parent_preferences[3] != 3:
+				if main_scene_way.Level.current_furniture.any(for_blank_cats):
+					satisfaction = 50
+				else:
+					satisfaction = 100
 			else:
 				if our_preferences[0] == 2:
 					if main_scene_way.Level.current_furniture.any(no_cat_good_and_comfy):
 						satisfaction = 50
-					elif main_scene_way.Level.current_furniture.any(free_okay_place):
-						satisfaction = 50
+#					elif main_scene_way.Level.current_furniture.any(free_okay_place):
+#						satisfaction = 50
 					else:
 						satisfaction = 100
 				else:
-					for i in main_scene_way.Level.current_cells:
-						if main_scene_way.Level.current_cells.has(i+1) and i != 4 and i != 8 and i != 12 or main_scene_way.Level.current_cells.has(i-1) and i != 5 and i != 9 and i != 13 or main_scene_way.Level.current_cells.has(i+4) or main_scene_way.Level.current_cells.has(i-4) or main_scene_way.Level.current_cells.has(i-5) and i != 9 and i != 13 or main_scene_way.Level.current_cells.has(i+5) and i != 4 and i != 8 or main_scene_way.Level.current_cells.has(i-3) and i != 4 and i != 8 and i != 12 and i != 16 or main_scene_way.Level.current_cells.has(i+1) and i != 1 and i != 5 and i != 9 and i != 13:
-							if main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].soft:
-								satisfaction = 100
-								if len(main_scene_way.Level.current_furniture.filter(any_cells_left)) > 2:
-									satisfaction = 50
-								else:
-									if main_scene_way.Level.current_furniture.any(no_cat_good_and_comfy):
-										satisfaction = 50
-									else:
-										satisfaction = 100
-							else:
+#					for i in main_scene_way.Level.current_cells:
+#						if main_scene_way.Level.current_cells.has(i+1) and i != 4 and i != 8 and i != 12 or main_scene_way.Level.current_cells.has(i-1) and i != 5 and i != 9 and i != 13 or main_scene_way.Level.current_cells.has(i+4) or main_scene_way.Level.current_cells.has(i-4) or main_scene_way.Level.current_cells.has(i-5) and i != 9 and i != 13 or main_scene_way.Level.current_cells.has(i+5) and i != 4 and i != 8 or main_scene_way.Level.current_cells.has(i-3) and i != 4 and i != 8 and i != 12 and i != 16 or main_scene_way.Level.current_cells.has(i+1) and i != 1 and i != 5 and i != 9 and i != 13:
+#							if main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-1)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-1)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i+4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i+4)].soft or main_scene_way.Level.current_cells[main_scene_way.Level.current_cells.find(i-4)] != -1 and len(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].cat_chidrens_array) != 0 and main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(i-4)].soft:
+#								satisfaction = 100
+#								if len(main_scene_way.Level.current_furniture.filter(any_cells_left)) > 2:
+#									satisfaction = 50
+#								else:
+#									if main_scene_way.Level.current_furniture.any(no_cat_good_and_comfy):
+#										satisfaction = 50
+#									else:
+#										satisfaction = 100
+#							else:
+#								satisfaction = 50
+#						else:
+#							satisfaction = 100
+					if our_preferences[0] == 1:
+						if main_scene_way.Level.current_furniture.any(for_social_cat):
+							satisfaction = 50
+						else:
+							if len(main_scene_way.Level.current_furniture.filter(free_place)) > 2:
 								satisfaction = 50
+							else:
+								satisfaction = 100
+					else:
+						if main_scene_way.Level.current_furniture.any(for_lonely_cat):
+							satisfaction = 50
 						else:
 							satisfaction = 100
+
 	if current_state == 2 or get_parent() is Card:
 		satisfaction = 0
 
@@ -154,6 +174,146 @@ func _process(delta):
 	elif Input.is_action_just_released("click"):
 		_set_state(STATE.MOVE)
 		
+		
+func for_blank_cats(node):
+	if node.soft:
+		if len(node.cat_chidrens_array) > 0:
+			if node.cat_chidrens_array[0].our_preferences[0] == 2 and node.cat_chidrens_array[0].our_preferences[1] == 2 and node.cat_chidrens_array[0].our_preferences[2] == 2:
+				return false
+			else:
+				return true
+		else:
+			return true
+	else:
+		return false
+		
+		
+func free_place(node):
+	if len(node.cat_chidrens_array) == 0:
+		if node.soft:
+			if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+				if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2:
+					if main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 1) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 1).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 1 != 5 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 1 != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 1 == 13 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 1) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 1).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 1 != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 1 != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 1 != 12 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 4) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 4).cat_chidrens_array) == 0 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 4) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 4).cat_chidrens_array) == 0 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 5) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 5).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 5 != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 5 != 13 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 5) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 5).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 5 != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 5 != 8 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3 != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3 != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3 != 12 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] - 3 != 16 or main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3) != -1 and len(main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3).cat_chidrens_array) == 0 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3 != 1 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3 != 5 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3 != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)] + 3 != 13:
+						return true
+					else:
+						return false
+				else:
+					return false
+			else:
+				return false
+		else:
+			return false
+		
+func for_lonely_cat(node):
+	print(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+4)
+	if len(node.cat_chidrens_array) == 0:
+		if node.soft:
+			if node.lonely == false:
+				if node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+1)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 12:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-1)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 3 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 13:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-4)]:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+4)]:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-5)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent())] != 13:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+5)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-3)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 12 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 16:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				elif node == main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+3)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 1 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 5 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 13:
+					if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+						if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+							print(node.lonely)
+							return true
+						else:
+							return false
+					else:
+						return false
+				else:
+					return false
+			else:
+				if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+					if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+						return true
+					else:
+						return false
+				else:
+					return false
+		else:
+			return false
+	else:
+		return false
+		
+func for_social_cat(node):
+	if len(node.cat_chidrens_array) == 0:
+		if node.soft:
+			if node.lonely == false and node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+1)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 12 or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-1)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 3 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 13 or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-4)] or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+4)] or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-5)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent())] != 13 or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+5)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8 or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]-3)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 4 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 8 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 12 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 16 or node != main_scene_way.Level.current_furniture[main_scene_way.Level.current_furniture.find(main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]+3)] and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 1 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 5 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 9 and main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())] != 13:
+				if node.high and our_preferences[1] == 3 or node.high == false and our_preferences[1] == 1 or our_preferences[1] == 2:
+					if node.warmth and our_preferences[2] == 3 or our_preferences[2] == 2 or node.post_warmth and our_preferences[2] == 3:
+						return true
+					else:
+						return false
+				else:
+					return false
+			else:
+				return false
+		else:
+			return false
+	else:
+		return false
+		
 func free_okay_place(node):
 	if node.soft:
 		if len(node.cat_chidrens_array) > 0:
@@ -177,13 +337,16 @@ func any_cells_left(node):
 		
 		
 func no_cat_good_and_comfy(node):
-	if len(node.cat_chidrens_array) > 0:
-		return false
-	else:
-		if our_preferences[1] == 3 and node.high or our_preferences[1] == 1 and node.high == false or our_preferences[2] == 3 and node.warmth or our_preferences[2] == 1 and node.warmth == false:
-			return true
-		else:
+	if node.soft:
+		if len(node.cat_chidrens_array) > 0:
 			return false
+		else:
+			if our_preferences[1] == 3 and node.high or our_preferences[1] == 1 and node.high == false or our_preferences[2] == 3 and node.warmth or our_preferences[2] == 1 and node.warmth == false:
+				return true
+			else:
+				return false
+	else:
+		return false
 	
 
 func _set_state(new_state: STATE) -> void:

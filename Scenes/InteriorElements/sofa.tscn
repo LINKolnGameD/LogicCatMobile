@@ -4,25 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://dj1hxgj8ak48n" path="res://Assets/Interior/Цветное/IMG_9716.PNG" id="2_87ys2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mpdqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_87ys2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_26ikk"]
-radius = 92.2659
+radius = 111.041
 
 [node name="Sofa" instance=ExtResource("1_1oxi0")]
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2(88, -40)
+position = Vector2(-83, -122)
 rotation = 0.0174533
 sprite_frames = SubResource("SpriteFrames_mpdqr")
 
-[node name="Img9716" type="Sprite2D" parent="." index="1"]
-position = Vector2(-83, -122)
-rotation = 0.0174533
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_87ys2")
-
-[node name="FurnitureArea" parent="." index="2"]
+[node name="FurnitureArea" parent="." index="1"]
 position = Vector2(-18, -136)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
 shape = SubResource("CircleShape2D_26ikk")
+debug_color = Color(0.870588, 0.486275, 0.0509804, 0.419608)

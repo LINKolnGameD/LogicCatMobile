@@ -81,3 +81,111 @@ func _on_level_12_pressed():
 	level_number = 12
 	EventBus.what_level.emit(level_number)
 	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_13_pressed():
+	level_number = 13
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_14_pressed():
+	level_number = 14
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_15_pressed():
+	level_number = 14
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_16_pressed():
+	level_number = 16
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_17_pressed():
+	level_number = 17
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_18_pressed():
+	level_number = 18
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_19_pressed():
+	level_number = 19
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_20_pressed():
+	level_number = 20
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_21_pressed():
+	level_number = 21
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_22_pressed():
+	level_number = 22
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_23_pressed():
+	level_number = 23
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_24_pressed():
+	level_number = 24
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_25_pressed():
+	level_number = 25
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_26_pressed():
+	level_number = 26
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_27_pressed():
+	level_number = 27
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_28_pressed():
+	level_number = 28
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_29_pressed():
+	level_number = 29
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+
+
+func _on_level_30_pressed():
+	level_number = 30
+	EventBus.what_level.emit(level_number)
+	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")

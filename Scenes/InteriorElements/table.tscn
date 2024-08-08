@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddrvhb3ro4mjd"]
+[gd_scene load_steps=5 format=3 uid="uid://ddrvhb3ro4mjd"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_uhan1"]
-[ext_resource type="Texture2D" uid="uid://d27om5k0s1lfy" path="res://Assets/Interior/Цветное/стол.png" id="2_ifo86"]
 [ext_resource type="Texture2D" uid="uid://cks41rxycsott" path="res://Assets/Interior/Цветное/IMG_9712.PNG" id="3_ywo84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x4f8e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ifo86")
+"texture": ExtResource("3_ywo84")
 }],
 "loop": true,
 "name": &"default",
@@ -22,16 +21,10 @@ radius = 127.252
 Type = 9
 
 [node name="Sprite" parent="." index="0"]
-visible = false
-position = Vector2(11.8, -99)
+position = Vector2(-66, -138)
 sprite_frames = SubResource("SpriteFrames_x4f8e")
 
-[node name="Img9712" type="Sprite2D" parent="." index="1"]
-position = Vector2(-66, -138)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_ywo84")
-
-[node name="FurnitureArea" parent="." index="2"]
+[node name="FurnitureArea" parent="." index="1"]
 position = Vector2(25, -207)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]

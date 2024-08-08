@@ -29,6 +29,7 @@ func _process(delta):
 	print(current_furniture)
 	#for every object, if current cells[find(
 	for e in current_cells:
+		MainScene.fcat_places.clear()
 		current_furniture[current_cells.find(e)].lonely = true
 #		if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1 and current_cells.find(e + 3) == -1 and current_cells.find(e - 3) == -1 and current_cells.find(e + 5) == -1 and current_cells.find(e - 5) == -1:
 #			current_furniture[current_cells.find(e)].lonely = true
@@ -55,7 +56,6 @@ func _process(delta):
 				if len(current_furniture[current_cells.find(e-3)].cat_chidrens_array) >= 1 and e != 4 and e != 8 and e != 12 and e != 16:
 					current_furniture[current_cells.find(e)].lonely = false
 		if current_cells.find(e + 3) != -1:
-				print("there is e+3 cell")
 				if len(current_furniture[current_cells.find(e+3)].cat_chidrens_array) >= 1 and e != 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
 				
@@ -137,10 +137,22 @@ func spawn(furniture_name, furniture_position, flip_info):
 		furniture_spawn = preload("res://Scenes/InteriorElements/tv.tscn").instantiate()
 	add_child(furniture_spawn)
 	set_position_furniture(furniture_position)
-	furniture_spawn.position = target_position
+	if furniture_name == "Sofa" and flip_info or furniture_name == "Table" and flip_info:
+		furniture_spawn.position = Vector2(target_position.x, target_position.y + 87)
+#		furniture_spawn.get_child(1).position = Vector2(- 150, -150)
+		furniture_spawn.get_child(1).position = Vector2(40, -200)
+	elif furniture_name == "Sofa2" and flip_info:
+		furniture_spawn.position = Vector2(target_position.x - 5, target_position.y - 94)
+#		furniture_spawn.get_child(1).position = Vector2(210, -100)
+		furniture_spawn.get_child(1).position = Vector2(40, -20)
+	elif furniture_name == "Table2" and flip_info:
+		furniture_spawn.position = Vector2(target_position.x - 5, target_position.y - 92)
+		furniture_spawn.get_child(1).position = Vector2(40, -20)
+	else:
+		furniture_spawn.position = target_position
 	current_cells.append(furniture_position)
 	current_furniture.append(furniture_spawn)
-	if flip_info == true:
+	if flip_info:
 		furniture_spawn.get_child(0).flip_h = true
 		
 func spawn_plug(cell):

@@ -1,22 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqaqqs6a7vqrd"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_k3nfo"]
-[ext_resource type="Texture2D" uid="uid://dxvvr2cpd2r1o" path="res://Assets/Interior/Цветное/IMG_9715.PNG" id="2_eltsb"]
 [ext_resource type="Texture2D" uid="uid://ddsv7155g4vnq" path="res://Assets/Interior/Цветное/IMG_9717.PNG" id="3_7gtmj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3yds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7gtmj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Sofa_LeftSide" instance=ExtResource("1_k3nfo")]
 
-[node name="Img9715" type="Sprite2D" parent="." index="1"]
-position = Vector2(99, -31)
+[node name="Sprite" parent="." index="0"]
+position = Vector2(101, -30)
 rotation = 0.0174533
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_eltsb")
+sprite_frames = SubResource("SpriteFrames_r3yds")
 
-[node name="Img9717" type="Sprite2D" parent="." index="2"]
-position = Vector2(100, -31)
-rotation = 0.0174533
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_7gtmj")
-
-[node name="FurnitureArea" parent="." index="3"]
+[node name="FurnitureArea" parent="." index="1"]
 position = Vector2(0, -135)
+
+[node name="CollisionShape2D" parent="FurnitureArea" index="0"]
+z_index = 100

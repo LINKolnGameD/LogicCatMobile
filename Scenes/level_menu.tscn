@@ -118,6 +118,150 @@ offset_bottom = 598.0
 text = "Level 12
 "
 
+[node name="Level_13" type="Button" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 629.0
+offset_right = 283.0
+offset_bottom = 750.0
+text = "Level 13"
+
+[node name="Level_14" type="Button" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 629.0
+offset_right = 447.0
+offset_bottom = 750.0
+text = "Level 14"
+
+[node name="Level_15" type="Button" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 629.0
+offset_right = 605.0
+offset_bottom = 750.0
+text = "Level 15"
+
+[node name="Level_16" type="Button" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 629.0
+offset_right = 776.0
+offset_bottom = 750.0
+text = "Level 16"
+
+[node name="Level_17" type="Button" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 797.0
+offset_right = 269.0
+offset_bottom = 918.0
+text = "Level 17"
+
+[node name="Level_18" type="Button" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 797.0
+offset_right = 444.0
+offset_bottom = 918.0
+text = "Level 19"
+
+[node name="Level_19" type="Button" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 797.0
+offset_right = 602.0
+offset_bottom = 918.0
+text = "Level 19"
+
+[node name="Level_20" type="Button" parent="."]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 797.0
+offset_right = 793.0
+offset_bottom = 918.0
+text = "Level 20"
+
+[node name="Level_21" type="Button" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 951.0
+offset_right = 255.0
+offset_bottom = 1072.0
+text = "Level 21"
+
+[node name="Level_22" type="Button" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 951.0
+offset_right = 434.0
+offset_bottom = 1072.0
+text = "Level 22"
+
+[node name="Level_23" type="Button" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 951.0
+offset_right = 597.0
+offset_bottom = 1072.0
+text = "Level 23"
+
+[node name="Level_24" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 951.0
+offset_right = 787.0
+offset_bottom = 1072.0
+text = "Level 24"
+
+[node name="Level_25" type="Button" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 1123.0
+offset_right = 265.0
+offset_bottom = 1226.0
+text = "Level 25"
+
+[node name="Level_26" type="Button" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 1123.0
+offset_right = 433.0
+offset_bottom = 1244.0
+text = "Level 26"
+
+[node name="Level_27" type="Button" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 1123.0
+offset_right = 615.0
+offset_bottom = 1244.0
+text = "Level 27"
+
+[node name="Level_28" type="Button" parent="."]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 1123.0
+offset_right = 776.0
+offset_bottom = 1244.0
+text = "Level 28"
+
+[node name="Level_29" type="Button" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 1316.0
+offset_right = 298.0
+offset_bottom = 1437.0
+text = "Level 29"
+
+[node name="Level_30" type="Button" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 1316.0
+offset_right = 474.0
+offset_bottom = 1437.0
+text = "Level 30"
+
 [connection signal="pressed" from="Level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level_2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level_3" to="." method="_on_level_3_pressed"]
@@ -130,3 +274,21 @@ text = "Level 12
 [connection signal="pressed" from="Level_10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="Level_11" to="." method="_on_level_11_pressed"]
 [connection signal="pressed" from="Level_12" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="Level_13" to="." method="_on_level_13_pressed"]
+[connection signal="pressed" from="Level_14" to="." method="_on_level_14_pressed"]
+[connection signal="pressed" from="Level_15" to="." method="_on_level_15_pressed"]
+[connection signal="pressed" from="Level_16" to="." method="_on_level_16_pressed"]
+[connection signal="pressed" from="Level_17" to="." method="_on_level_17_pressed"]
+[connection signal="pressed" from="Level_18" to="." method="_on_level_18_pressed"]
+[connection signal="pressed" from="Level_19" to="." method="_on_level_19_pressed"]
+[connection signal="pressed" from="Level_20" to="." method="_on_level_20_pressed"]
+[connection signal="pressed" from="Level_21" to="." method="_on_level_21_pressed"]
+[connection signal="pressed" from="Level_22" to="." method="_on_level_22_pressed"]
+[connection signal="pressed" from="Level_23" to="." method="_on_level_23_pressed"]
+[connection signal="pressed" from="Level_24" to="." method="_on_level_24_pressed"]
+[connection signal="pressed" from="Level_25" to="." method="_on_level_25_pressed"]
+[connection signal="pressed" from="Level_26" to="." method="_on_level_26_pressed"]
+[connection signal="pressed" from="Level_27" to="." method="_on_level_27_pressed"]
+[connection signal="pressed" from="Level_28" to="." method="_on_level_28_pressed"]
+[connection signal="pressed" from="Level_29" to="." method="_on_level_29_pressed"]
+[connection signal="pressed" from="Level_30" to="." method="_on_level_30_pressed"]
