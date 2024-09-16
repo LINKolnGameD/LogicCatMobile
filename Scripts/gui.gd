@@ -81,8 +81,6 @@ func _on_check_pressed():
 			final_satisfaction += e
 		final_satisfaction = final_satisfaction/len(bar_count)
 		final_frame = roundi(final_satisfaction/8.3)
-		print(final_satisfaction)
-		print(final_frame)
 		FinishMenu.show()
 		$Timer.start()
 		
@@ -93,7 +91,6 @@ func content_no_cat(node):
 		return false
 	
 func _on_timer_timeout():
-	print(final_frame)
 	if final_frame != null:
 		$FinishMenu/RelishBar.play("default")
 

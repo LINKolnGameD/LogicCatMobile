@@ -136,10 +136,6 @@ func _ready():
 		CardArray.append(FourthCard)
 
 func _process(_delta):
-	print("first: ", fcat_places)
-	print("second: ", scat_places)
-	print("third: ", tcat_places)
-	print("fought: ", lcat_places)
 	if cat_numeration_set == false:
 		if card_amount == 1:
 			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1

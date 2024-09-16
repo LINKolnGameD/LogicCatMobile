@@ -25,8 +25,6 @@ func _ready():
 #func furniture_info(soft, lonely, collision_position, cat_in):
 #	pass
 func _process(delta):
-	print(current_cells)
-	print(current_furniture)
 	#for every object, if current cells[find(
 	for e in current_cells:
 		MainScene.fcat_places.clear()
@@ -160,6 +158,7 @@ func spawn_plug(cell):
 	cat_spawn = preload("res://Scenes/plug.tscn").instantiate()
 	add_child(cat_spawn)
 	cat_spawn.global_position = current_furniture[current_cells.find(cell)].area.global_position
+	cat_spawn.our_cell = cell
 	current_furniture[current_cells.find(cell)].collision.disabled = true
 	current_furniture[current_cells.find(cell)].cat_chidrens_array.append(cat_spawn)
 	
