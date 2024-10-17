@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_fsqrj"]
 [ext_resource type="Texture2D" uid="uid://drl22dh3bb3ml" path="res://Assets/Interior/Цветное/телик.png" id="2_5eiwm"]
-[ext_resource type="Texture2D" uid="uid://bjnd7ac450ism" path="res://Assets/Interior/InteriorPack/тумба 2.png" id="2_t48c4"]
+[ext_resource type="Texture2D" uid="uid://brlvkn0qbrmwc" path="res://Assets/Interior/Цветное/тумба 1.png" id="2_ktll6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05d00"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5eiwm")
+"texture": ExtResource("2_ktll6")
 }],
 "loop": true,
 "name": &"default",
@@ -18,14 +18,14 @@ animations = [{
 [node name="TV" instance=ExtResource("1_fsqrj")]
 Type = 14
 
-[node name="Тумба2" type="Sprite2D" parent="." index="0"]
-position = Vector2(2.99999, -84)
-scale = Vector2(0.726563, 0.726563)
-texture = ExtResource("2_t48c4")
-
-[node name="Sprite" parent="." index="1"]
-position = Vector2(2, -284)
+[node name="Sprite" parent="." index="0"]
+position = Vector2(2, -83)
 sprite_frames = SubResource("SpriteFrames_05d00")
+
+[node name="Тумба2" type="Sprite2D" parent="." index="1"]
+position = Vector2(0.99999, -285)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_5eiwm")
 
 [node name="FurnitureArea" parent="." index="2"]
 position = Vector2(0, -367)

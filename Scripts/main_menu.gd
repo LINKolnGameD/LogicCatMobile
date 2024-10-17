@@ -1,9 +1,9 @@
 extends Control
 
-
+signal scene_change_requested
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,4 +13,5 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
+	var scene_to_load = "LevelMenu"  # Путь к сцене, которую нужно загрузить
+	emit_signal("scene_change_requested", scene_to_load)  # Испускаем сигнал с параметром

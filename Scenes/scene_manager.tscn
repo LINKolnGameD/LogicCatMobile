@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://degmlksw0sq8j"]
+
+[ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_rmw8r"]
+[ext_resource type="AudioStream" uid="uid://bdyuuhlmfaxo3" path="res://Assets/Sound/lofi_5.1 (1).mp3" id="2_jpws1"]
+
+[node name="SceneManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_rmw8r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jpws1")
+autoplay = true

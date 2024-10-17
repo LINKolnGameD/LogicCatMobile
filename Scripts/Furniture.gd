@@ -11,7 +11,7 @@ var soft : bool
 var lonely : bool = true
 var high : bool
 var warmth : bool
-var post_warmth: bool
+var post_warmth: bool = false
 var current_things
 var cat_chidrens_array = []
 
@@ -19,6 +19,7 @@ func _ready():
 	pass
 
 func _process(delta):
+	print(name, Type, warmth, post_warmth)
 	if len(cat_chidrens_array) > 0:
 		for i in cat_chidrens_array:
 			if i is Cat:
@@ -52,17 +53,17 @@ func _process(delta):
 					i.current_state = 1
 			return
 		
-	if Type == 0 or Type == 1 or Type == 9 or Type == 11 or Type == 14:
+	if Type == 0 or Type == 1 or Type == 3 or Type == 9 or Type == 11 or Type == 14:
 		high = true
 	else:
 		high = false
 		
-	if Type == 0 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 14:
+	if Type == 0 or Type == 2 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 14:
 		soft = true
 	else:
 		soft = false
 		EventBus.furniture_info.emit(cat_in)
-	if Type == 13 or Type == 14 or Type == 15:
+	if Type == 12 or Type == 13 or Type == 14:
 		warmth = true
 	else:
 		warmth = false

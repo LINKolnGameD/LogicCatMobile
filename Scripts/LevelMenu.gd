@@ -1,5 +1,6 @@
 extends Control
 
+signal level_choice
 var level_number: int 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,178 +15,527 @@ func _process(delta):
 
 func _on_level_1_pressed():
 	level_number = 1
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
 
 
 func _on_level_2_pressed():
 	level_number = 2
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_3_pressed():
 	level_number = 3
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_4_pressed():
 	level_number = 4
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_5_pressed():
 	level_number = 5
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_6_pressed():
 	level_number = 6
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 func _on_level_7_pressed():
 	level_number = 7
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_8_pressed():
 	level_number = 8
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_9_pressed():
 	level_number = 9
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_10_pressed():
 	level_number = 10
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_11_pressed():
 	level_number = 11
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_12_pressed():
 	level_number = 12
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_13_pressed():
 	level_number = 13
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_14_pressed():
 	level_number = 14
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_15_pressed():
 	level_number = 14
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_16_pressed():
 	level_number = 16
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_17_pressed():
 	level_number = 17
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_18_pressed():
 	level_number = 18
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_19_pressed():
 	level_number = 19
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_20_pressed():
 	level_number = 20
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_21_pressed():
 	level_number = 21
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_22_pressed():
 	level_number = 22
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_23_pressed():
 	level_number = 23
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_24_pressed():
 	level_number = 24
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_25_pressed():
 	level_number = 25
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_26_pressed():
 	level_number = 26
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_27_pressed():
 	level_number = 27
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_28_pressed():
 	level_number = 28
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_29_pressed():
 	level_number = 29
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
 
 
 func _on_level_30_pressed():
 	level_number = 30
-	EventBus.what_level.emit(level_number)
-	get_tree().change_scene_to_file("res://Scenes/Main_scene.tscn")
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_31_pressed():
+	level_number = 31
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_32_pressed():
+	level_number = 32
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_33_pressed():
+	level_number = 33
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_34_pressed():
+	level_number = 34
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_35_pressed():
+	level_number = 35
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_36_pressed():
+	level_number = 36
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_37_pressed():
+	level_number = 37
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_38_pressed():
+	level_number = 38
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_39_pressed():
+	level_number = 39
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_40_pressed():
+	level_number = 40
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_41_pressed():
+	level_number = 41
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_42_pressed():
+	level_number = 42
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_43_pressed():
+	level_number = 43
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_44_pressed():
+	level_number = 44
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_45_pressed():
+	level_number = 45
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_46_pressed():
+	level_number = 46
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_47_pressed():
+	level_number = 47
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_48_pressed():
+	level_number = 48
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_49_pressed():
+	level_number = 49
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_50_pressed():
+	level_number = 50
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_51_pressed():
+	level_number = 51
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_52_pressed():
+	level_number = 52
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_53_pressed():
+	level_number = 53
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_54_pressed():
+	level_number = 54
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_55_pressed():
+	level_number = 55
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_56_pressed():
+	level_number = 56
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_57_pressed():
+	level_number = 57
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_58_pressed():
+	level_number = 58
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_59_pressed():
+	level_number = 59
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_60_pressed():
+	level_number = 60
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_61_pressed():
+	level_number = 61
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_62_pressed():
+	level_number = 62
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_63_pressed():
+	level_number = 63
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_64_pressed():
+	level_number = 64
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_65_pressed():
+	level_number = 65
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_66_pressed():
+	level_number = 66
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_67_pressed():
+	level_number = 67
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_68_pressed():
+	level_number = 68
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_69_pressed():
+	level_number = 69
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_70_pressed():
+	level_number = 70
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_71_pressed():
+	level_number = 71
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_72_pressed():
+	level_number = 72
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_73_pressed():
+	level_number = 73
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_74_pressed():
+	level_number = 74
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_75_pressed():
+	level_number = 75
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_76_pressed():
+	level_number = 76
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_77_pressed():
+	level_number = 77
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_78_pressed():
+	level_number = 78
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_79_pressed():
+	level_number = 79
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_80_pressed():
+	level_number = 80
+	emit_signal("level_choice", level_number)
+	
+
+
+func _on_level_81_pressed():
+	level_number = 81
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_82_pressed():
+	level_number = 82
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_83_pressed():
+	level_number = 83
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_84_pressed():
+	level_number = 84
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_85_pressed():
+	level_number = 85
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_86_pressed():
+	level_number = 86
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_87_pressed():
+	level_number = 87
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_88_pressed():
+	level_number = 88
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_89_pressed():
+	level_number = 89
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_90_pressed():
+	level_number = 90
+	emit_signal("level_choice", level_number)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4fef47go50o8"
+path="res://.godot/imported/Angry Meow.wav-ae768eb265e02de61fc340a011a7c025.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Angry Meow.wav"
+dest_files=["res://.godot/imported/Angry Meow.wav-ae768eb265e02de61fc340a011a7c025.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

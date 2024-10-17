@@ -22,6 +22,7 @@ rotation = 0.0174533
 sprite_frames = SubResource("SpriteFrames_r3yds")
 
 [node name="FurnitureArea" parent="." index="1"]
+z_index = 20
 position = Vector2(0, -135)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]

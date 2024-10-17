@@ -1,9 +1,15 @@
-[gd_scene load_steps=92 format=3 uid="uid://hd38q8ovquda"]
+[gd_scene load_steps=111 format=3 uid="uid://hd38q8ovquda"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_dyynw"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_h8382"]
 [ext_resource type="Texture2D" uid="uid://cba5ybx1ny2sc" path="res://Assets/Cats/CremeStipped/mhvst3(creme).PNG" id="2_ubmwk"]
+[ext_resource type="Shader" path="res://Scenes/main_menu.gdshader" id="2_xbq0y"]
 [ext_resource type="Texture2D" uid="uid://c74urgop61pvo" path="res://Assets/GUI Elements/С полоской точно.png" id="3_w8n2q"]
 [ext_resource type="Texture2D" uid="uid://b2wmh10rve2uv" path="res://Assets/GUI Elements/2 (6).png" id="5_vb0jm"]
+[ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard font/Revard.otf" id="6_j1bgt"]
+[ext_resource type="Texture2D" uid="uid://bfif7f52awl3n" path="res://Assets/GUI Elements/Component 1.svg" id="7_ftur4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td57l"]
+shader = ExtResource("2_xbq0y")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isufq"]
 atlas = ExtResource("2_ubmwk")
@@ -615,6 +621,36 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwq4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38hut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2pvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qacfh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xghu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jerl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sapn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5d4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tre2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av8nj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttlw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3512"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygrd5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rjd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvnp6"]
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -622,20 +658,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dyynw")
+script = ExtResource("1_h8382")
 
 [node name="TextureRect" type="ColorRect" parent="."]
 modulate = Color(0.803922, 0.701961, 1, 1)
 layout_mode = 0
-offset_right = 1115.0
+offset_left = -294.0
+offset_top = -127.0
+offset_right = 1381.0
 offset_bottom = 2160.0
 color = Color(0.898039, 0.85098, 0.694118, 1)
 
 [node name="BackGround" type="Sprite2D" parent="."]
 modulate = Color(0.862745, 0.666667, 1, 1)
 texture_repeat = 2
-position = Vector2(-538, 1084)
-scale = Vector2(1, 0.998)
+material = SubResource("ShaderMaterial_td57l")
+position = Vector2(-469, 1027.17)
+scale = Vector2(1.03596, 1.05069)
 texture = ExtResource("3_w8n2q")
 region_enabled = true
 region_rect = Rect2(-2.64874, -1.68167, 3838.15, 2157.18)
@@ -653,44 +692,71 @@ texture = ExtResource("5_vb0jm")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 140.0
 offset_top = 125.0
-offset_right = 1252.0
-offset_bottom = 403.0
-theme_override_colors/font_color = Color(0.00390625, 0.0117188, 0.136719, 1)
-theme_override_font_sizes/font_size = 163
-text = "Logiс ˕ сマat"
+offset_right = 1313.0
+offset_bottom = 381.0
+theme_override_colors/font_color = Color(0.945313, 0.878906, 0.765625, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_j1bgt")
+theme_override_font_sizes/font_size = 140
+text = "LOGI C ˕ CマAT"
 
 [node name="About_Us" type="Button" parent="."]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 677.0
-offset_right = 702.0
-offset_bottom = 771.0
-theme_override_font_sizes/font_size = 46
-text = "ABOUT US"
+offset_left = 315.0
+offset_top = 675.0
+offset_right = 749.0
+offset_bottom = 769.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_j1bgt")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uwq4n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38hut")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2pvt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qacfh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xghu")
+text = "О НАС"
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 548.0
-offset_right = 702.0
-offset_bottom = 642.0
-theme_override_font_sizes/font_size = 46
-text = "SETTINGS"
+offset_left = 243.0
+offset_top = 559.0
+offset_right = 847.0
+offset_bottom = 653.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_j1bgt")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jerl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1sapn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d5d4l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tre2y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av8nj")
+text = "НАСТРОЙКИ"
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 420.0
-offset_right = 702.0
-offset_bottom = 514.0
-theme_override_font_sizes/font_size = 54
-text = "PLAY"
+offset_left = 348.0
+offset_top = 444.0
+offset_right = 719.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_j1bgt")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ttlw8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3512")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ygrd5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1rjd2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tvnp6")
+text = "играть"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(543, 1075)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Component1" type="Sprite2D" parent="."]
+position = Vector2(910, 1975)
+texture = ExtResource("7_ftur4")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

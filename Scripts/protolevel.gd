@@ -57,11 +57,10 @@ func _process(delta):
 				if len(current_furniture[current_cells.find(e+3)].cat_chidrens_array) >= 1 and e != 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e)].lonely = false
 				
+	var tested = []
 	for e in current_cells:
-		if current_furniture[current_cells.find(e)].warmth:
-			if current_cells.find(e - 1) == -1 and current_cells.find(e + 1) == -1 and current_cells.find(e - 4) == -1 and current_cells.find(e + 4) == -1:
-				pass
-			else:
+		print("test ", current_furniture[current_cells.find(e)].name)
+		if current_cells.find(e)+1 != len(current_furniture) and current_furniture[current_cells.find(e)+1].warmth and tested.has(e):
 				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e - 1)].post_warmth = true
 				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
@@ -78,7 +77,26 @@ func _process(delta):
 					current_furniture[current_cells.find(e - 3)].post_warmth = true
 				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
 					current_furniture[current_cells.find(e + 3)].post_warmth = true
-				
+		elif  current_furniture[current_cells.find(e)].warmth:
+				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
+					current_furniture[current_cells.find(e - 1)].post_warmth = true
+				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
+					current_furniture[current_cells.find(e + 1)].post_warmth = true
+				if current_cells.find(e - 4) != -1:
+					current_furniture[current_cells.find(e - 4)].post_warmth = true
+				if current_cells.find(e + 4) != -1:
+					current_furniture[current_cells.find(e + 4)].post_warmth = true
+				if current_cells.find(e - 5) != -1 and e != 9 and e != 13:
+					current_furniture[current_cells.find(e - 5)].post_warmth = true
+				if current_cells.find(e + 5) != -1 and e != 4 and e != 8:
+					current_furniture[current_cells.find(e + 5)].post_warmth = true
+				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
+					current_furniture[current_cells.find(e - 3)].post_warmth = true
+				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
+					current_furniture[current_cells.find(e + 3)].post_warmth = true
+		tested.append(e)
+		if len(tested) == len(current_furniture):
+			tested.clear()
 	
 	var floor_number = random.randi_range(0,2)
 	if is_floor_set == false:
@@ -135,17 +153,40 @@ func spawn(furniture_name, furniture_position, flip_info):
 		furniture_spawn = preload("res://Scenes/InteriorElements/tv.tscn").instantiate()
 	add_child(furniture_spawn)
 	set_position_furniture(furniture_position)
-	if furniture_name == "Sofa" and flip_info or furniture_name == "Table" and flip_info:
+	if furniture_name == "Sofa" and flip_info:
 		furniture_spawn.position = Vector2(target_position.x, target_position.y + 87)
 #		furniture_spawn.get_child(1).position = Vector2(- 150, -150)
+#		furniture_spawn.get_child(0).position = Vector2(40, -100)
 		furniture_spawn.get_child(1).position = Vector2(40, -200)
 	elif furniture_name == "Sofa2" and flip_info:
 		furniture_spawn.position = Vector2(target_position.x - 5, target_position.y - 94)
 #		furniture_spawn.get_child(1).position = Vector2(210, -100)
+#		furniture_spawn.get_child(0).position = Vector2(40, -20)
 		furniture_spawn.get_child(1).position = Vector2(40, -20)
 	elif furniture_name == "Table2" and flip_info:
-		furniture_spawn.position = Vector2(target_position.x - 5, target_position.y - 92)
-		furniture_spawn.get_child(1).position = Vector2(40, -20)
+		furniture_spawn.position = Vector2(target_position.x - 5, target_position.y - 90)
+		furniture_spawn.get_child(1).position = Vector2(-10, -100)
+	elif  furniture_name == "Table" and flip_info:
+		furniture_spawn.position = Vector2(target_position.x, target_position.y + 87)
+		furniture_spawn.get_child(1).position = Vector2(50, -300)
+	elif furniture_name == "ChairEars" and flip_info:
+		furniture_spawn.position = Vector2(target_position.x - 180, target_position.y)
+		furniture_spawn.get_child(1).position.x += 210
+		furniture_spawn.get_child(2).flip_h = true
+	elif furniture_name == "Candle":
+		if current_cells.has(furniture_position):
+			furniture_spawn.position = Vector2(target_position.x, target_position.y - 100)
+			current_furniture[current_cells.find(furniture_position)].collision.disabled = true
+		
+	elif furniture_name == "Lamp":
+		if current_cells.has(furniture_position):
+			furniture_spawn.position = Vector2(target_position.x, target_position.y - 100)
+			current_furniture[current_cells.find(furniture_position)].collision.disabled = true
+		else:
+			furniture_spawn.position = Vector2(target_position.x, target_position.y)
+	elif furniture_name == "TV" and flip_info:
+		furniture_spawn.get_child(1).flip_h = true
+		furniture_spawn.position = Vector2(target_position.x, target_position.y)
 	else:
 		furniture_spawn.position = target_position
 	current_cells.append(furniture_position)

@@ -30,3 +30,4 @@ position = Vector2(25, -207)
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
 position = Vector2(0, 33)
 shape = SubResource("CircleShape2D_3ex73")
+debug_color = Color(0.933333, 0.196078, 0.439216, 0.419608)

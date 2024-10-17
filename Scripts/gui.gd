@@ -1,6 +1,7 @@
 extends Control
 
 @onready var FinishMenu = $FinishMenu
+@onready var SettingMenu = $SettingMenu
 @onready var AllCatCards: Array
 var ArrRight_in = false
 var ArrLeft_in = false
@@ -15,6 +16,7 @@ var in_mouse_area: bool
 
 func _ready():
 	FinishMenu.hide()
+	SettingMenu.hide()
 
 func _process(delta):
 	bar_count = $"../..".CatsSatisfaction
@@ -46,15 +48,18 @@ func _process(delta):
 
 
 func _on_next_pressed():
-	EventBus.global_level_info += 1
-	get_tree().reload_current_scene()
+	get_tree().paused = false
+	$"../..".get_parent().global_level_info += 1
+	$"../..".get_parent().change_scene("MainScene")
 
 
 func _on_restart_pressed():
-	get_tree().reload_current_scene()
+	get_tree().paused = false
+	$"../..".get_parent().change_scene("MainScene")
 
 
 func _on_reset_pressed():
+	get_tree().paused = false
 	AllCatCards = $"../HBoxContainer".get_children()
 	for i in AllCatCards:
 		i.Cat.current_state = 1
@@ -83,6 +88,7 @@ func _on_check_pressed():
 		final_frame = roundi(final_satisfaction/8.3)
 		FinishMenu.show()
 		$Timer.start()
+		get_tree().paused = true
 		
 func content_no_cat(node):
 	if node.get_children().find(node.Cat) == -1:
@@ -109,3 +115,15 @@ func _on_arr_right_area_2d_mouse_exited():
 
 func _on_arr_left_area_2d_mouse_exited():
 	ArrLeft_in = false
+
+
+func _on_menu_pressed():
+	SettingMenu.show()
+
+
+func _on_quit_pressed():
+	$"../..".get_parent().change_scene("LevelMenu")
+
+
+func _on_to_game_pressed():
+	SettingMenu.hide()

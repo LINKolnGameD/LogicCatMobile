@@ -3,15 +3,24 @@ class_name Cat extends CharacterBody2D
 @export var speed:int = 300
 
 @onready var collision = $CatAnSprite/AreaCat/CollisionShape2D
+@onready var HappyMeow = $HappyMeow
+@onready var AngryMeow = $AngryMeow
+@onready var in_which_area = []
+@onready var plug_array = []
 
 var card: Control
 var map: Node2D
-@onready var in_which_area = []
+
 var calculate_closest_area = []
 var predictable_target
 var satisfaction
 var main_scene_way
-@onready var plug_array = []
+
+#cat appearence
+var appearence = []
+var base_animation
+var taken_animation
+
 #moving state machine
 const STAND = 1
 const MOVE = 2
@@ -20,9 +29,12 @@ const TAKEN = 3
 enum STATE {STAND, MOVE, TAKEN}
 var current_state : STATE
 
+#arrays common
 var our_preferences = []
 var parent_preferences = []
+var streams_array = []
 
+var cat_can_meow: bool = false
 var can_be_picked: bool = true
 var _mouse_enter: bool = false
 var cat_numeration: int
@@ -30,12 +42,23 @@ var cat_numeration: int
 var target: Node
 
 func _ready():
+#	var random = RandomNumberGenerator.new()
 	var AreaColl = get_node("CatAnSprite/AreaCat")
 	AreaColl.area_entered.connect(_area_entered)
 	AreaColl.area_exited.connect(_area_exited)
 	AreaColl.mouse_entered.connect(_mouse_enterend)
 	AreaColl.mouse_exited.connect(_mouse_exited)
-	
+#
+#	var color = random.randi_range(1,2)
+#	if color == 1:
+#		appearence.append("Red")
+#	if color == 2:
+#		appearence.append("Gray")
+#	appearence.append("Strp")
+#	var tail = random.randi_range(1,3)
+#	appearence.append(tail)
+#	base_animation = str(appearence[0],appearence[1],"Tail",appearence[2])
+#	taken_animation = str(appearence[0],appearence[1],"Taken",appearence[2])
 
 func _process(delta):
 
@@ -82,6 +105,7 @@ func _process(delta):
 				else:
 					satisfaction = 100
 			else:
+				var secondary_pref
 				if our_preferences[0] == 2:
 					if main_scene_way.Level.current_furniture.any(no_cat_good_and_comfy):
 						satisfaction = 50
@@ -105,11 +129,20 @@ func _process(delta):
 	if current_state == 2 or get_parent() is Card:
 		satisfaction = 0
 
+	if cat_can_meow and current_state != 2:
+		if satisfaction == 100:
+			HappyMeow.play()
+		elif satisfaction == 50 and current_state != 2:
+			AngryMeow.play()
+		elif satisfaction == 0 and current_state != 2 and get_parent().name == "FurnitureArea":
+			AngryMeow.play()
+		cat_can_meow = false
+
 	#animation controll
 	if current_state == 2:
-		$CatAnSprite.animation = "RedStrpTaken"
+		$CatAnSprite.animation = "RedStrpTaken1"
 	else:
-		$CatAnSprite.animation = "RedStrpTail"
+		$CatAnSprite.animation = "RedStrpTail1"
 	
 	if len(in_which_area) >= 2:
 		for i in in_which_area:
@@ -142,6 +175,7 @@ func _process(delta):
 			_set_state(STATE.TAKEN)
 	elif Input.is_action_just_released("click"):
 		_set_state(STATE.MOVE)
+		
 
 func for_blank_cats(node):
 	if node.soft:
@@ -172,10 +206,7 @@ func free_place(node):
 			return false
 
 func is_cell_occupied(cell_index: int, neighbors: Array, checking_place: int, node) -> bool:
-	print("node", node, node.lonely)
 	if our_preferences[0] == 3:
-		print(cell_index, node.Type, node.lonely)
-		print(cell_index, ",", neighbors)
 		if node.lonely == false:
 			for plug in plug_array:
 				if plug.neighbors.find(checking_place) != -1 and neighbors.find(checking_place) != -1:
@@ -188,13 +219,25 @@ func is_cell_occupied(cell_index: int, neighbors: Array, checking_place: int, no
 		else:
 			return true
 	else:
-		if node.lonely == false:
-			pass
+		if node.lonely:
+					var node_neig = get_neighbors(checking_place)
+					var soft_places_amount = []
+					for neig in node_neig:
+						if main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(neig)].soft:
+							soft_places_amount.append(main_scene_way.Level.current_furniture[main_scene_way.Level.current_cells.find(neig)])
+					if len(soft_places_amount) <= 1:
+						return true #место не подходит
+					else:
+						if main_scene_way.card_amount > 1:
+							for place in soft_places_amount:
+								if check_preferences(place, our_preferences):
+									return false
+								else:
+									continue
+						else:
+							return true
 		else:
-			for plug in plug_array:
-				if plug.neighbors.find(checking_place) != -1:
-					return true
-	return false
+			return false
 #	if cell_index < 0 or cell_index >= main_scene_way.Level.current_furniture.size():
 #		return false
 	
@@ -257,9 +300,6 @@ func check_neighbors_for_lonely(node, neighbors: Array, cell_index) -> bool:
 
 #	for neighbor in neighbors:
 			
-	print(main_scene_way.Level.get_children())
-	print(main_scene_way.Level.get_children().find(Plug))
-	print(main_scene_way.Level.get_children()[main_scene_way.Level.get_children().find(Plug)].neighbors, "plug neighbors")
 #		if main_scene_way.Level.get_children[main_scene_way.Level.get_children.find(Plug)].neighbors.find(cell_index) != -1:
 	return false
 	
@@ -286,7 +326,7 @@ func check_neighbors_for_social(node, neighbors: Array) -> bool:
 	
 # Функция для проверки соответствия предпочтений котика
 func check_preferences(node, preferences: Array) -> bool:
-	if (node.high and preferences[1] == 3) or (!node.high and preferences[1] == 1) or preferences[1] == 2:
+	if node.high and preferences[1] == 3 or node.high == false and preferences[1] == 1 or preferences[1] == 2:
 		if (node.warmth and preferences[2] == 3) or preferences[2] == 2 or (node.post_warmth and preferences[2] == 3):
 			return true
 	return false
@@ -301,7 +341,6 @@ func for_lonely_cat(node) -> bool:
 	var cell_index = main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(get_parent().get_parent())]
 	var neighbors = get_neighbors(cell_index)
 	var checking_place = main_scene_way.Level.current_cells[main_scene_way.Level.current_furniture.find(node)]
-	print(cell_index, "!", neighbors, node)
 
 	if node.cat_chidrens_array.size() != 0:
 		return false# Место уже занято
@@ -315,7 +354,6 @@ func for_lonely_cat(node) -> bool:
 #	if is_neighbor_cell(cell_index, neighbors):
 #		return true
 #
-	print(node.name)
 	if neighbor_occuped_by_plug(neighbors, cell_index, checking_place, node):
 		return false
 		
@@ -351,17 +389,17 @@ func for_social_cat(node) -> bool:
 		return false
 
 	if is_cell_occupied(cell_index, neighbors, checking_place, node):
-		return false
+		return false #место не подходит
 
 	# Проверка соседей для социального котика
-	if not check_neighbors_for_social(node, neighbors):
-		return false
+#	if not check_neighbors_for_social(node, neighbors):
+#		return false
 
 	# Проверка предпочтений
 	if not check_preferences(node, our_preferences):
 		return false
 
-	return true  # Котик доволен, место выбрано правильно
+	return true  # Котик недоволен, место выбрано правильно
 
 func free_okay_place(node):
 	if node.soft:
@@ -410,6 +448,7 @@ func _enter_state() -> void:
 	match current_state:
 		STATE.STAND: # Enter IDLE state logic
 			reparent(target)
+			cat_can_meow = true
 			
 		STATE.MOVE: # Enter WALK state logic
 			reparent(card)
@@ -460,4 +499,5 @@ func _mouse_exited():
 
 func _mouse_enterend():
 	_mouse_enter = true
+	
 	

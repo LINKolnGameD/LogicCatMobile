@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw25jmj3cbvr4"]
+
+[ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_8c5eq"]
+[ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_s4lxj"]
+
+[node name="LoadingScene" type="Node2D"]
+script = ExtResource("1_8c5eq")
+
+[node name="Background" parent="." instance=ExtResource("1_s4lxj")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 707.0
+offset_top = 1882.0
+offset_right = 1435.0
+offset_bottom = 2567.0
+theme_override_font_sizes/font_size = 200
+text = "0"
