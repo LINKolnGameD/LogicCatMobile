@@ -539,3 +539,103 @@ func _on_level_89_pressed():
 func _on_level_90_pressed():
 	level_number = 90
 	emit_signal("level_choice", level_number)
+
+
+func _on_level_91_pressed():
+	level_number = 91
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_92_pressed():
+	level_number = 92
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_93_pressed():
+	level_number = 93
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_94_pressed():
+	level_number = 94
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_95_pressed():
+	level_number = 95
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_96_pressed():
+	level_number = 96
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_97_pressed():
+	level_number = 97
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_98_pressed():
+	level_number = 98
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_99_pressed():
+	level_number = 99
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_100_pressed():
+	level_number = 100
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_101_pressed():
+	level_number = 101
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_102_pressed():
+	level_number = 102
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_103_pressed():
+	level_number = 103
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_104_pressed():
+	level_number = 104
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_105_pressed():
+	level_number = 105
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_106_pressed():
+	level_number = 106
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_107_pressed():
+	level_number = 107
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_108_pressed():
+	level_number = 108
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_109_pressed():
+	level_number = 109
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_110_pressed():
+	level_number = 110
+	emit_signal("level_choice", level_number)

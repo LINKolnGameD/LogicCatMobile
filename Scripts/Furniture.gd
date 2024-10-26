@@ -63,7 +63,7 @@ func _process(delta):
 	else:
 		soft = false
 		EventBus.furniture_info.emit(cat_in)
-	if Type == 12 or Type == 13 or Type == 14:
+	if Type == 5 or Type == 6 or Type == 12 or Type == 13 or Type == 14:
 		warmth = true
 	else:
 		warmth = false

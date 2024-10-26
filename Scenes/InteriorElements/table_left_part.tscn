@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7tn3xdmubooj"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_nyy28"]
-[ext_resource type="Texture2D" uid="uid://d3iwmjdfiv016" path="res://Assets/Interior/Цветное/IMG_9713.PNG" id="2_fmess"]
+[ext_resource type="Texture2D" uid="uid://pivvdpv5dhvm" path="res://Assets/Interior/IMG_9713.PNG" id="2_04mtj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rn888"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fmess")
+"texture": ExtResource("2_04mtj")
 }],
 "loop": true,
 "name": &"default",

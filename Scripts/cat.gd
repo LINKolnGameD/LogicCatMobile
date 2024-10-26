@@ -7,6 +7,7 @@ class_name Cat extends CharacterBody2D
 @onready var AngryMeow = $AngryMeow
 @onready var in_which_area = []
 @onready var plug_array = []
+@onready var AnimationC = $CatAnSprite
 
 var card: Control
 var map: Node2D
@@ -42,26 +43,38 @@ var cat_numeration: int
 var target: Node
 
 func _ready():
-#	var random = RandomNumberGenerator.new()
+	var animations = []
+	var random = RandomNumberGenerator.new()
 	var AreaColl = get_node("CatAnSprite/AreaCat")
 	AreaColl.area_entered.connect(_area_entered)
 	AreaColl.area_exited.connect(_area_exited)
 	AreaColl.mouse_entered.connect(_mouse_enterend)
 	AreaColl.mouse_exited.connect(_mouse_exited)
-#
-#	var color = random.randi_range(1,2)
-#	if color == 1:
-#		appearence.append("Red")
-#	if color == 2:
-#		appearence.append("Gray")
-#	appearence.append("Strp")
-#	var tail = random.randi_range(1,3)
-#	appearence.append(tail)
-#	base_animation = str(appearence[0],appearence[1],"Tail",appearence[2])
-#	taken_animation = str(appearence[0],appearence[1],"Taken",appearence[2])
+	var color = random.randi_range(1,2)
+	if color == 1:
+		appearence.append("red")
+	if color == 2:
+		appearence.append("gray")
+	appearence.append("strp")
+	var tail = random.randi_range(1,2)
+	appearence.append(tail)
+	if $CatAnSprite.sprite_frames == null:
+		$CatAnSprite.sprite_frames = load(str("res://Scenes/Cats/cat",appearence[0],appearence[1],appearence[2],".tres") )
+		$CatAnSprite.animation = "Tail"
 
 func _process(delta):
+#	print(AnimationC.sprite_frames.get_animation_names(), appearence)
 
+
+#	if $CatAnSprite.sprite_frames == null:
+#		if appearence[0] == "Red":
+#			if appearence[2] == 1:
+#				$CatAnSprite.sprite_frames = load("res://Scenes/Cats/catredstrp1.tres")
+#			elif appearence[2] == 2:
+#				$CatAnSprite.sprite_frames = load("res://Scenes/Cats/catredstrp2.tres")
+#		else:
+#			$CatAnSprite.sprite_frames = load("res://Scenes/Cats/catredstrp2.tres")
+		
 	if get_parent().get_parent().name == "HBoxContainer":
 		main_scene_way = card.MainScene
 	elif get_parent().name == "FurnitureArea":
@@ -138,11 +151,6 @@ func _process(delta):
 			AngryMeow.play()
 		cat_can_meow = false
 
-	#animation controll
-	if current_state == 2:
-		$CatAnSprite.animation = "RedStrpTaken1"
-	else:
-		$CatAnSprite.animation = "RedStrpTail1"
 	
 	if len(in_which_area) >= 2:
 		for i in in_which_area:
@@ -462,12 +470,15 @@ func _update_state(delta: float) -> void:
 	match current_state:
 		STATE.STAND: # Enter IDLE state logic
 			position =  Vector2(0, target.position.y)
+			AnimationC.animation = "Tail"
 			
 		STATE.MOVE: # Enter WALK state logic
 			global_position = target.global_position
+			AnimationC.animation = "Tail"
 			
 		STATE.TAKEN: # Enter JUMP state logic
 			global_position = get_viewport().get_mouse_position()
+			AnimationC.animation = "Taken"
 			
 
 func _exit_state() -> void:

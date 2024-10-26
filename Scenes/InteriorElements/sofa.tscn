@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmkp2vhc21e8g"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_1oxi0"]
-[ext_resource type="Texture2D" uid="uid://dj1hxgj8ak48n" path="res://Assets/Interior/Цветное/IMG_9716.PNG" id="2_87ys2"]
+[ext_resource type="Texture2D" uid="uid://cuiv4fw78jj7w" path="res://Assets/Interior/Цветное/IMG_9716.PNG" id="2_87ys2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mpdqr"]
 animations = [{

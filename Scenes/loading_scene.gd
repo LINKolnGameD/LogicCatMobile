@@ -9,4 +9,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if len(get_parent().progress) != 0:
-		$Label.text = str(floor(get_parent().progress[0]*100)) + "%"
+		$CenterContainer/Label.text = str(floor(get_parent().progress[0]*100)) + "%"
+	pass

@@ -61,38 +61,38 @@ func _process(delta):
 	for e in current_cells:
 		print("test ", current_furniture[current_cells.find(e)].name)
 		if current_cells.find(e)+1 != len(current_furniture) and current_furniture[current_cells.find(e)+1].warmth and tested.has(e):
-				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
+				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 1)].post_warmth = true
-				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
+				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 1)].post_warmth = true
-				if current_cells.find(e - 4) != -1:
+				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 4)].post_warmth = true
-				if current_cells.find(e + 4) != -1:
+				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 4)].post_warmth = true
-				if current_cells.find(e - 5) != -1 and e != 9 and e != 13:
+				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 5)].post_warmth = true
-				if current_cells.find(e + 5) != -1 and e != 4 and e != 8:
+				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 5)].post_warmth = true
-				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
+				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 3)].post_warmth = true
-				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
+				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 3)].post_warmth = true
 		elif  current_furniture[current_cells.find(e)].warmth:
-				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13:
+				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 1)].post_warmth = true
-				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12:
+				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 1)].post_warmth = true
-				if current_cells.find(e - 4) != -1:
+				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 4)].post_warmth = true
-				if current_cells.find(e + 4) != -1:
+				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 4)].post_warmth = true
-				if current_cells.find(e - 5) != -1 and e != 9 and e != 13:
+				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 5)].post_warmth = true
-				if current_cells.find(e + 5) != -1 and e != 4 and e != 8:
+				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 5)].post_warmth = true
-				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16:
+				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e - 3)].post_warmth = true
-				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13:
+				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 or current_furniture[current_cells.find(e - 1)].Type != 6:
 					current_furniture[current_cells.find(e + 3)].post_warmth = true
 		tested.append(e)
 		if len(tested) == len(current_furniture):
@@ -177,7 +177,8 @@ func spawn(furniture_name, furniture_position, flip_info):
 		if current_cells.has(furniture_position):
 			furniture_spawn.position = Vector2(target_position.x, target_position.y - 100)
 			current_furniture[current_cells.find(furniture_position)].collision.disabled = true
-		
+		else:
+			furniture_spawn.position = Vector2(target_position.x, target_position.y)
 	elif furniture_name == "Lamp":
 		if current_cells.has(furniture_position):
 			furniture_spawn.position = Vector2(target_position.x, target_position.y - 100)
@@ -187,6 +188,11 @@ func spawn(furniture_name, furniture_position, flip_info):
 	elif furniture_name == "TV" and flip_info:
 		furniture_spawn.get_child(1).flip_h = true
 		furniture_spawn.position = Vector2(target_position.x, target_position.y)
+	elif furniture_name == "Bed" and flip_info or furniture_name == "BedEars" and flip_info:
+		furniture_spawn.get_child(0).flip_h = true
+		furniture_spawn.get_child(2).flip_h = true
+		furniture_spawn.position = Vector2(target_position.x, target_position.y)
+		furniture_spawn.get_child(1).position.x += 100
 	else:
 		furniture_spawn.position = target_position
 	current_cells.append(furniture_position)

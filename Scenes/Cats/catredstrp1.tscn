@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvsrjs1gaddu3"]
+
+[ext_resource type="PackedScene" uid="uid://b43wcevchmnlo" path="res://Scenes/cat.tscn" id="1_104op"]
+
+[node name="Cat" instance=ExtResource("1_104op")]
+
+[node name="CatAnSprite" parent="." index="0"]
+animation = &""

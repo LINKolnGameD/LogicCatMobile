@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://tly8cn2vp5wp"]
+
+[ext_resource type="PackedScene" uid="uid://b43wcevchmnlo" path="res://Scenes/cat.tscn" id="1_wyui8"]
+[ext_resource type="SpriteFrames" uid="uid://5xeq41vnr1fj" path="res://Scenes/Cats/catredstrp2.tres" id="2_kj3vu"]
+
+[node name="Cat" instance=ExtResource("1_wyui8")]
+
+[node name="CatAnSprite" parent="." index="0"]
+sprite_frames = ExtResource("2_kj3vu")
+animation = &"Tail"

@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://0kxyfdrtkop"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_k275p"]
-[ext_resource type="Texture2D" uid="uid://bp4j17786r8kp" path="res://Assets/Interior/Цветное/тумба 3.png" id="2_coa0v"]
-[ext_resource type="Texture2D" uid="uid://cx0xv5tkbrk87" path="res://Assets/Interior/Цветное/тумба 2.png" id="3_3jret"]
-[ext_resource type="Texture2D" uid="uid://brlvkn0qbrmwc" path="res://Assets/Interior/Цветное/тумба 1.png" id="4_4kdwi"]
+[ext_resource type="Texture2D" uid="uid://bv0k54yfwcxr8" path="res://Assets/Interior/Цветное/тумба 3.png" id="2_coa0v"]
+[ext_resource type="Texture2D" uid="uid://cwnwtecjh6v6j" path="res://Assets/Interior/Цветное/тумба 2.png" id="3_3jret"]
+[ext_resource type="Texture2D" uid="uid://6q1vo2d4v7mc" path="res://Assets/Interior/Цветное/тумба 1.png" id="4_4kdwi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n45uv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_coa0v")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_3jret")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_4kdwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_coa0v")
 }],
 "loop": true,
 "name": &"default",

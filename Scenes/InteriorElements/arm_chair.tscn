@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs5vd7m5kp0w0"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_i8eoo"]
-[ext_resource type="Texture2D" uid="uid://bhl4o3bvgrloi" path="res://Assets/Interior/Цветное/кресло-лапка.png" id="2_1eftd"]
+[ext_resource type="Texture2D" uid="uid://cl4paxo0ndtnv" path="res://Assets/Interior/Цветное/кресло-лапка.png" id="2_1eftd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2xn2"]
 animations = [{

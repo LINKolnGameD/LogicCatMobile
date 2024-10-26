@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnm5pxtw5rwdu"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_t04l5"]
-[ext_resource type="Texture2D" uid="uid://dfnn76e6vqdul" path="res://Assets/Interior/Цветное/Пуфик.png" id="2_4nuqk"]
-[ext_resource type="Texture2D" uid="uid://dnxlkugr7dxe1" path="res://Assets/Interior/Цветное/лежанка круг.png" id="3_lmu0k"]
-[ext_resource type="Texture2D" uid="uid://ckf7vjhcpkrpa" path="res://Assets/Interior/Цветное/лежанка квадрат.png" id="4_f2t8x"]
+[ext_resource type="Texture2D" uid="uid://cneq00xc1nai0" path="res://Assets/Interior/Цветное/Пуфик.png" id="2_4nuqk"]
+[ext_resource type="Texture2D" uid="uid://bcps737o5o711" path="res://Assets/Interior/Цветное/лежанка круг.png" id="3_lmu0k"]
+[ext_resource type="Texture2D" uid="uid://crtapaluvr2en" path="res://Assets/Interior/Цветное/лежанка квадрат.png" id="4_f2t8x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gk5sc"]
 animations = [{
@@ -12,10 +12,10 @@ animations = [{
 "texture": ExtResource("2_4nuqk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_lmu0k")
+"texture": ExtResource("4_f2t8x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_f2t8x")
+"texture": ExtResource("3_lmu0k")
 }],
 "loop": false,
 "name": &"default",

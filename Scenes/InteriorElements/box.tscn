@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://gjc7f4xtdojw"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_y6nfo"]
-[ext_resource type="Texture2D" uid="uid://blxyr0fa7583j" path="res://Assets/Interior/Цветное/Коробка внутри.png" id="2_5uml7"]
-[ext_resource type="Texture2D" uid="uid://b1qo555tghhkv" path="res://Assets/Interior/Цветное/Коробка снаружи.png" id="3_duf0d"]
+[ext_resource type="Texture2D" uid="uid://dsftpqiee3en0" path="res://Assets/Interior/Цветное/Коробка внутри.png" id="2_5uml7"]
+[ext_resource type="Texture2D" uid="uid://dwj1tr2368itd" path="res://Assets/Interior/Цветное/Коробка снаружи.png" id="3_duf0d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5j4xk"]
 animations = [{

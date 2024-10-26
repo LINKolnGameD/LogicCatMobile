@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cx7ilkggoq1jf"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_x31bd"]
-[ext_resource type="Texture2D" uid="uid://cprcpo8ki5ewr" path="res://Assets/Interior/Цветное/шкаф 1.png" id="2_s8cyr"]
-[ext_resource type="Texture2D" uid="uid://dmeii3kg8nolc" path="res://Assets/Interior/Цветное/шкаф 2.png" id="3_kt0hj"]
-[ext_resource type="Texture2D" uid="uid://d3ousj7k0bisg" path="res://Assets/Interior/Цветное/шкаф 3.png" id="4_a65kw"]
-[ext_resource type="Texture2D" uid="uid://bh4ycr7jsnud4" path="res://Assets/Interior/Цветное/шкаф с книгами.png" id="5_58kcx"]
+[ext_resource type="Texture2D" uid="uid://c64o0n3yhwwy0" path="res://Assets/Interior/Цветное/шкаф 1.png" id="2_s8cyr"]
+[ext_resource type="Texture2D" uid="uid://jvoe1wfasfa4" path="res://Assets/Interior/Цветное/шкаф 2.png" id="3_kt0hj"]
+[ext_resource type="Texture2D" uid="uid://ncaedlsp36j0" path="res://Assets/Interior/Цветное/шкаф 3.png" id="4_a65kw"]
+[ext_resource type="Texture2D" uid="uid://dih533dl2o3um" path="res://Assets/Interior/Цветное/шкаф с книгами.png" id="5_58kcx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4omor"]
 animations = [{
