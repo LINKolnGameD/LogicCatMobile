@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0bqo4ol11gha"]
+[gd_scene load_steps=13 format=3 uid="uid://0bqo4ol11gha"]
 
 [ext_resource type="Script" path="res://Scripts/CardExample.gd" id="1_841cm"]
 [ext_resource type="Texture2D" uid="uid://cl8l5ph5us3q6" path="res://Assets/GUI Elements/CardCat.svg" id="1_aeuoj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ba4jxdptdwydq" path="res://Assets/GUI Elements/Component 6.svg" id="5_3swi6"]
 [ext_resource type="Texture2D" uid="uid://brqe3u7j6h3vo" path="res://Assets/GUI Elements/Component 7.svg" id="6_8vv6y"]
 [ext_resource type="Texture2D" uid="uid://d17w813tr07p5" path="res://Assets/GUI Elements/Component 8.svg" id="7_d0mlq"]
+[ext_resource type="Texture2D" uid="uid://d1xd5ujbbs2sx" path="res://Assets/GUI Elements/Component 12.svg" id="9_tg0w5"]
 [ext_resource type="PackedScene" uid="uid://b43wcevchmnlo" path="res://Scenes/cat.tscn" id="10_wahyr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpr0q"]
@@ -34,6 +35,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qpr0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tg0w5")
 }],
 "loop": true,
 "name": &"preferences",

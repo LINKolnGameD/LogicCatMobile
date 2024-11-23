@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b55g4h0sh2ecy"
+path="res://.godot/imported/Ж Мяу.mp3-924caf7094e3b3ecd1f76a74aae03963.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Ж Мяу.mp3"
+dest_files=["res://.godot/imported/Ж Мяу.mp3-924caf7094e3b3ecd1f76a74aae03963.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

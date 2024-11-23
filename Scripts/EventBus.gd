@@ -4,7 +4,7 @@ var global_level_info
 signal furniture_info(info)
 signal what_level(level)
 
-func _process(delta):
+func _ready():
 	what_level.connect(keep_level)
 	
 func keep_level(level_number):

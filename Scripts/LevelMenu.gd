@@ -2,12 +2,14 @@ extends Control
 
 signal level_choice
 var level_number: int 
-
+@onready var ButtonKeeper = $ScrollContainer/GridContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+#	for i in ButtonKeeper.get_children():
+#		if Manager.level_info[ButtonKeeper.get_children().find(i)] == 0:
+#			i.disabled = true
 
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -638,4 +640,43 @@ func _on_level_109_pressed():
 
 func _on_level_110_pressed():
 	level_number = 110
+	emit_signal("level_choice", level_number)
+
+
+func _on_level_111_pressed():
+	level_number = 111
+	emit_signal("level_choice", level_number)
+func _on_level_112_pressed():
+	level_number = 112
+	emit_signal("level_choice", level_number)
+func _on_level_113_pressed():
+	level_number = 113
+	emit_signal("level_choice", level_number)
+
+func _on_level_114_pressed():
+	level_number = 114
+	emit_signal("level_choice", level_number)
+
+func _on_level_115_pressed():
+	level_number = 115
+	emit_signal("level_choice", level_number)
+
+func _on_level_116_pressed():
+	level_number = 116
+	emit_signal("level_choice", level_number)
+
+func _on_level_117_pressed():
+	level_number = 117
+	emit_signal("level_choice", level_number)
+
+func _on_level_118_pressed():
+	level_number = 118
+	emit_signal("level_choice", level_number)
+
+func _on_level_119_pressed():
+	level_number = 119
+	emit_signal("level_choice", level_number)
+
+func _on_level_120_pressed():
+	level_number = 120
 	emit_signal("level_choice", level_number)

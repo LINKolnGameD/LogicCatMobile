@@ -28,19 +28,19 @@ func _ready():
 func _process(_delta):
 			
 	if prefernces_sended == false:
-		if $CatPreference.frame == 0 or $CatPreference2.frame == 0 or $CatPreference3.frame == 0:
+		if $CatPreference.frame == 0 or $CatPreference2.frame == 0 or $CatPreference3.frame == 0 or $CatPreference.frame == 6 or $CatPreference2.frame == 6 or $CatPreference3.frame == 6:
 			Cat.our_preferences.insert(0, 3)
-		elif  $CatPreference.frame == 1 or  $CatPreference2.frame == 1 or $CatPreference3.frame == 1:
+		elif  $CatPreference.frame == 1 or  $CatPreference2.frame == 1 or $CatPreference3.frame == 1 or $CatPreference.frame == 7 or $CatPreference2.frame == 7 or $CatPreference3.frame == 7:
 			Cat.our_preferences.insert(0, 1)
 		else:
 			Cat.our_preferences.insert(0, 2)
-		if $CatPreference.frame == 2 or $CatPreference2.frame == 2 or $CatPreference3.frame == 2:
+		if $CatPreference.frame == 2 or $CatPreference2.frame == 2 or $CatPreference3.frame == 2 or $CatPreference.frame == 8 or $CatPreference2.frame == 8 or $CatPreference3.frame == 8:
 			Cat.our_preferences.insert(1, 3)
-		elif  $CatPreference.frame == 3 or  $CatPreference2.frame == 3 or $CatPreference3.frame == 3:
+		elif  $CatPreference.frame == 3 or  $CatPreference2.frame == 3 or $CatPreference3.frame == 3 or $CatPreference.frame == 9 or $CatPreference2.frame == 9 or $CatPreference3.frame == 9:
 			Cat.our_preferences.insert(1, 1)
 		else:
 			Cat.our_preferences.insert(1, 2)
-		if $CatPreference.frame == 4 or $CatPreference2.frame == 4 or $CatPreference3.frame == 4:
+		if $CatPreference.frame == 4 or $CatPreference2.frame == 4 or $CatPreference3.frame == 4 or $CatPreference.frame == 10 or $CatPreference2.frame == 10 or $CatPreference3.frame == 10:
 			Cat.our_preferences.insert(2, 3)
 		else:
 			Cat.our_preferences.insert(2, 2)

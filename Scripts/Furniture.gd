@@ -19,7 +19,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(name, Type, warmth, post_warmth)
 	if len(cat_chidrens_array) > 0:
 		for i in cat_chidrens_array:
 			if i is Cat:

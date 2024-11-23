@@ -80,3 +80,4 @@ func _open_level(level_number):
 	print("Открытие уровня ", level_number)
 	global_level_info = level_number
 	change_scene("MainScene")
+

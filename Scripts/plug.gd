@@ -20,13 +20,10 @@ func _process(delta):
 	if cell_set == false:
 		if our_cell != null:
 			var cell_index = our_cell
-			print("cell index: ", cell_index)
 			var row_size = 4  # Размер строки в сетке (4 клетки на строку)
-			print("try to go")
 	# Координаты текущей клетки
 			var x = cell_index % row_size
 			var y = cell_index / row_size
-			print(x, y)
 	# Векторы для всех возможных соседей
 			var neighbor_offsets = [
 		Vector2(-1, -1), Vector2(0, -1), Vector2(1, -1),  # Верхний ряд
@@ -36,18 +33,18 @@ func _process(delta):
 			for offset in neighbor_offsets:
 				var neighbor_x = x + offset.x
 				var neighbor_y = y + offset.y
-				print("first n: ", neighbor_x, ",", neighbor_y)
+				
 		# Проверка, что соседняя клетка находится в пределах допустимых значений
 				if neighbor_x >= 0 and neighbor_x < row_size and neighbor_y >= 0 and neighbor_y < row_size:
 					var neighbor_index = neighbor_y * row_size + neighbor_x
 					part_neighbors.append(neighbor_index)
-					print(part_neighbors)
+					
 		cell_set = true
 	else:
 		if neighbours_set == false:
-			print(part_neighbors)
+			
 			for i in part_neighbors:
-				print(i)
+				
 				if current_cells.has(int(i)):
 					neighbors.append(int(i))
 				else:

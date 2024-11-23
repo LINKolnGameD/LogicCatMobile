@@ -8,6 +8,7 @@ class_name Cat extends CharacterBody2D
 @onready var in_which_area = []
 @onready var plug_array = []
 @onready var AnimationC = $CatAnSprite
+@onready var CardSound = $CardSound
 
 var card: Control
 var map: Node2D
@@ -50,21 +51,27 @@ func _ready():
 	AreaColl.area_exited.connect(_area_exited)
 	AreaColl.mouse_entered.connect(_mouse_enterend)
 	AreaColl.mouse_exited.connect(_mouse_exited)
-	var color = random.randi_range(1,2)
+	var color = random.randi_range(1,3)
 	if color == 1:
 		appearence.append("red")
 	if color == 2:
 		appearence.append("gray")
+	if color == 3:
+		appearence.append("creme")
 	appearence.append("strp")
-	var tail = random.randi_range(1,2)
+	var tail = random.randi_range(1,3)
 	appearence.append(tail)
+	var age = random.randi_range(1,2)
+	if age == 1:
+		appearence.append("kitty")
+	elif age == 2:
+		appearence.append("cat")
 	if $CatAnSprite.sprite_frames == null:
-		$CatAnSprite.sprite_frames = load(str("res://Scenes/Cats/cat",appearence[0],appearence[1],appearence[2],".tres") )
-		$CatAnSprite.animation = "Tail"
+		$CatAnSprite.sprite_frames = load(str("res://Scenes/Cats/", appearence[3],appearence[0],appearence[1],appearence[2],".tres") )
+		AnimationC.play("Tail")
 
 func _process(delta):
 #	print(AnimationC.sprite_frames.get_animation_names(), appearence)
-
 
 #	if $CatAnSprite.sprite_frames == null:
 #		if appearence[0] == "Red":
@@ -462,23 +469,27 @@ func _enter_state() -> void:
 			reparent(card)
 			
 		STATE.TAKEN: # Enter JUMP state logic
-			
 			reparent(card)
+			if card.global_position == global_position:
+				CardSound.play()
 
 @warning_ignore("unused_parameter")
 func _update_state(delta: float) -> void:
 	match current_state:
-		STATE.STAND: # Enter IDLE state logic
+		STATE.STAND:
 			position =  Vector2(0, target.position.y)
-			AnimationC.animation = "Tail"
+			if AnimationC.animation != "Tail":
+				AnimationC.play("Tail")
 			
-		STATE.MOVE: # Enter WALK state logic
+		STATE.MOVE: 
 			global_position = target.global_position
-			AnimationC.animation = "Tail"
+#			if AnimationC.animation != "Tail":
+#				AnimationC.play("Tail")
 			
-		STATE.TAKEN: # Enter JUMP state logic
+		STATE.TAKEN: 
 			global_position = get_viewport().get_mouse_position()
-			AnimationC.animation = "Taken"
+			if AnimationC.animation != "Taken":
+				AnimationC.play("Taken")
 			
 
 func _exit_state() -> void:

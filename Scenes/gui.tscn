@@ -1,9 +1,10 @@
-[gd_scene load_steps=47 format=3 uid="uid://v4hdyv43fviq"]
+[gd_scene load_steps=48 format=3 uid="uid://v4hdyv43fviq"]
 
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="1_7lbbs"]
 [ext_resource type="Texture2D" uid="uid://b6ktc5ocw7nk0" path="res://Assets/GUI Elements/Component 2.svg" id="1_faiw5"]
 [ext_resource type="Texture2D" uid="uid://bfif7f52awl3n" path="res://Assets/GUI Elements/Component 1.svg" id="2_bhmfr"]
 [ext_resource type="Texture2D" uid="uid://dgd0prllka3ga" path="res://Assets/GUI Elements/TestElements/Галочка (1).svg" id="2_q5r26"]
+[ext_resource type="AudioStream" uid="uid://b5fu52accny4g" path="res://Assets/Sound/Карточка 1.mp3" id="3_ixtmn"]
 [ext_resource type="Texture2D" uid="uid://cjq23ecoo8l6n" path="res://Assets/GUI Elements/Panel.svg" id="3_vba53"]
 [ext_resource type="Texture2D" uid="uid://27o1yuutepdl" path="res://Assets/GUI Elements/IMG_9542.PNG" id="4_poqse"]
 [ext_resource type="Texture2D" uid="uid://bnm5b76pgwmw4" path="res://Assets/GUI Elements/IMG_9581.png" id="5_b41tg"]
@@ -117,6 +118,7 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oilv1"]
 
 [node name="GUI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -306,6 +308,10 @@ text = "Settings"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "Quit"
+
+[node name="CleanSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ixtmn")
+volume_db = 10.0
 
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
