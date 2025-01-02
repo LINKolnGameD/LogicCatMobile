@@ -2,12 +2,18 @@ extends Control
 
 signal level_choice
 var level_number: int 
+var successful_levels = []
 @onready var ButtonKeeper = $ScrollContainer/GridContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	for i in ButtonKeeper.get_children():
-#		if Manager.level_info[ButtonKeeper.get_children().find(i)] == 0:
-#			i.disabled = true
+	#если эта кнопка есть как успешный уровень, то ок, если нет, то кнопка не работает
+	for i in ButtonKeeper.get_children():
+		if len(successful_levels) == 0:
+			for e in ButtonKeeper.get_children():
+				if e.name != "Level_1":
+					e.disabled = true
+		elif successful_levels[ButtonKeeper.get_children().find(i)] == 0:
+			i.disabled = true
 
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.

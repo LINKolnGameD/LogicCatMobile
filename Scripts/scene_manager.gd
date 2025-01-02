@@ -5,7 +5,10 @@ var LoadScene = "res://Scenes/loading_scene.tscn"
 var MainMenu = "res://Scenes/main_menu.tscn"
 var LevelMenu = "res://Scenes/level_menu.tscn"
 
-var global_level_info
+var save_path = "user://savegame.save"
+
+
+var global_level_info: int
 var loader
 var new_scene
 var current_scene = null
@@ -20,10 +23,12 @@ func _ready():
 	new_scene = loader.instantiate()  # Создаём экземпляр новой сцены
 	add_child(new_scene)  # Добавляем её в дерево
 	new_scene.connect("scene_change_requested", _on_scene_change_requested)
+	EventBus.connect("scene_change_requested", _on_scene_change_requested)
 	current_scene = new_scene
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(get_children())
 	if new_scene_path != null:
 		scene_load_status = ResourceLoader.load_threaded_get_status(new_scene_path, progress)
 		if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
@@ -40,6 +45,7 @@ func _process(delta):
 			# Подключаем сигналы для уровня
 			if current_scene.name == "LevelMenu":
 				new_scene.connect("level_choice", _open_level)
+			
 
 			# Удаляем экран загрузки
 			if object_loading != null:
@@ -80,4 +86,14 @@ func _open_level(level_number):
 	print("Открытие уровня ", level_number)
 	global_level_info = level_number
 	change_scene("MainScene")
+#	new_scene.connect("scene_change_requested", _on_scene_change_requested)
+#
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	if new_scene_path == "LevelMenu":
+		file.store_var(get_child(1).successful_levels)
 
+func load_game():
+	var file = FileAccess.open(save_path, FileAccess.READ)
+	if new_scene_path == "LevelMenu":
+		get_child(1).successful_levels = file.get_var(get_child(1).successful_levels)

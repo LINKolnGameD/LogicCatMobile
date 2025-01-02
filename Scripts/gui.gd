@@ -182,13 +182,14 @@ func _process(delta):
 func _on_next_pressed():
 	get_tree().paused = false
 	$"../..".get_parent().global_level_info += 1
-	$"../..".get_parent().change_scene("MainScene")
-
+	var scene_to_load = "MainScene" 
+	EventBus.scene_change_requested.emit(scene_to_load) # Путь к сцене, которую нужно загрузить
+#	emit_signal("scene_change_requested", scene_to_load)  # Испускаем сигнал с параметром
 
 func _on_restart_pressed():
 	get_tree().paused = false
-	$"../..".get_parent().change_scene("MainScene")
-
+	var scene_to_load = "LevelMenu"  # Путь к сцене, которую нужно загрузить
+	EventBus.scene_change_requested.emit(scene_to_load)  # Испускаем сигнал с параметром
 
 func _on_reset_pressed():
 	get_tree().paused = false
