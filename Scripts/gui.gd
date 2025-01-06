@@ -180,6 +180,7 @@ func _process(delta):
 
 
 func _on_next_pressed():
+	print("on next pressed")
 	get_tree().paused = false
 	$"../..".get_parent().global_level_info += 1
 	var scene_to_load = "MainScene" 

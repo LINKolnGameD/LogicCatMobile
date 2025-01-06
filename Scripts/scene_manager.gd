@@ -22,19 +22,19 @@ func _ready():
 	loader = load(MainMenu)
 	new_scene = loader.instantiate()  # Создаём экземпляр новой сцены
 	add_child(new_scene)  # Добавляем её в дерево
-	new_scene.connect("scene_change_requested", _on_scene_change_requested)
-	EventBus.connect("scene_change_requested", _on_scene_change_requested)
+	EventBus.connect("scene_change_requested",  _on_scene_change_requested1)
 	current_scene = new_scene
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(get_children())
 	if new_scene_path != null:
 		scene_load_status = ResourceLoader.load_threaded_get_status(new_scene_path, progress)
 		if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
 			# Загружаем новую сцену
 			loader = ResourceLoader.load_threaded_get(new_scene_path)
+			print("загружаем")
 			new_scene = loader.instantiate()
+			print("добавили")
 			
 			# Добавляем новую сцену в дерево и удаляем старую
 			add_child(new_scene)
@@ -59,6 +59,7 @@ func _on_scene_change_requested(new_scene_path):
 
 # Функция для смены сцены
 func change_scene(scene_path):
+	print("Сцена сменяется")
 	# Определяем путь к новой сцене
 	if scene_path == "MainMenu":
 		new_scene_path = MainMenu
@@ -97,3 +98,7 @@ func load_game():
 	var file = FileAccess.open(save_path, FileAccess.READ)
 	if new_scene_path == "LevelMenu":
 		get_child(1).successful_levels = file.get_var(get_child(1).successful_levels)
+		
+func  _on_scene_change_requested1(scene):
+	print(scene)
+	print("оп, сигнал")

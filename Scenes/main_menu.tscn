@@ -756,4 +756,5 @@ position = Vector2(543, 1075)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[connection signal="button_down" from="Play" to="." method="_on_play_button_down"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
