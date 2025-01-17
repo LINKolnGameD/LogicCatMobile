@@ -143,14 +143,21 @@ var CatState = 1
 var bar_count
 var final_satisfaction = 0
 var final_frame
+var level
 
 var in_mouse_area: bool
+var get_level = false
 
 func _ready():
 	FinishMenu.hide()
 	SettingMenu.hide()
 
 func _process(delta):
+	
+	if get_level == false:
+		if $"../..".level != null:
+			level = $"../..".level
+			get_level = true
 	bar_count = $"../..".CatsSatisfaction
 	if $FinishMenu/RelishBar.frame == final_frame:
 		$FinishMenu/RelishBar.frame = final_frame
@@ -176,6 +183,10 @@ func _process(delta):
 			if Input.is_action_just_pressed("click"):
 				CatState = 1
 			
+	if final_satisfaction == 0:
+		$FinishMenu/Next.disabled = true
+	else:
+		$FinishMenu/Next.disabled = false
 			
 
 
@@ -189,7 +200,7 @@ func _on_next_pressed():
 
 func _on_restart_pressed():
 	get_tree().paused = false
-	var scene_to_load = "LevelMenu"  # Путь к сцене, которую нужно загрузить
+	var scene_to_load = "MainScene"  # Путь к сцене, которую нужно загрузить
 	EventBus.scene_change_requested.emit(scene_to_load)  # Испускаем сигнал с параметром
 
 func _on_reset_pressed():
@@ -223,6 +234,10 @@ func _on_check_pressed():
 		FinishMenu.show()
 		$Timer.start()
 		get_tree().paused = true
+		if final_satisfaction > 0:
+			EventBus.add_succes.emit(level)
+			if final_satisfaction == 100:
+				EventBus.add_very_succes.emit(level)
 		
 func content_no_cat(node):
 	if node.get_children().find(node.Cat) == -1:
@@ -256,7 +271,8 @@ func _on_menu_pressed():
 
 
 func _on_quit_pressed():
-	$"../..".get_parent().change_scene("LevelMenu")
+	var scene_to_load = "LevelMenu"
+	EventBus.scene_change_requested.emit(scene_to_load)
 
 
 func _on_to_game_pressed():

@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.1", "Mobile")
 [autoload]
 
 EventBus="*res://Scripts/EventBus.gd"
-Manager="*res://Scripts/scene_manager.gd"
 
 [display]
 

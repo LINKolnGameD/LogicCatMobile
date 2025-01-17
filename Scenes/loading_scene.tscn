@@ -5,11 +5,13 @@
 [ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard.otf" id="3_rwmak"]
 
 [node name="LoadingScene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_8c5eq")
 
 [node name="Background" parent="." instance=ExtResource("1_s4lxj")]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+process_mode = 3
 offset_right = 1087.0
 offset_bottom = 2164.0
 

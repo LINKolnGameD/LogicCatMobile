@@ -4,6 +4,9 @@ extends Node
 signal furniture_info(info)
 #signal what_level(level)
 signal scene_change_requested(scene)
+signal add_succes(level)
+signal add_very_succes(level)
+signal level_choice(level)
 
 func _ready():
 #	what_level.connect(keep_level)
