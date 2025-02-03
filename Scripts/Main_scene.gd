@@ -1070,7 +1070,7 @@ func _process(_delta):
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
-			Level.spawn("Stand", 8, false)
+			Level.spawn("Puff", 8, false)
 			Level.spawn_plug(9)
 			Level.spawn("ArmChair", 14, true)
 		elif level == 35:
@@ -1293,7 +1293,8 @@ func _process(_delta):
 			Level.spawn("Stand", 9, true)
 			Level.spawn("Table", 7, true)
 		elif level == 77:
-			Level.spawn("Box", 5, false)
+			Level.spawn("Puff", 1, false)
+			Level.spawn("Stand", 5, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("Shelf", 14, true)
 			Level.spawn("Puff", 11, false)

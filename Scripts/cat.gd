@@ -443,7 +443,7 @@ func no_cat_good_and_comfy(node):
 		if len(node.cat_chidrens_array) > 0:
 			return false
 		else:
-			if our_preferences[1] == 3 and node.high or our_preferences[1] == 1 and node.high == false or our_preferences[2] == 3 and node.warmth or our_preferences[2] == 1 and node.warmth == false:
+			if our_preferences[1] == 3 and node.high or our_preferences[1] == 1 and node.high == false or our_preferences[2] == 3 and node.warmth or our_preferences[2] == 1 and node.warmth == false or our_preferences[2] == 3 and node.post_warmth or our_preferences[2] == 1 and node.post_warmth == false:
 				return true
 			else:
 				return false
@@ -474,12 +474,35 @@ func _enter_state() -> void:
 				CardSound.play()
 
 @warning_ignore("unused_parameter")
+
 func _update_state(delta: float) -> void:
 	match current_state:
 		STATE.STAND:
 			position =  Vector2(0, target.position.y)
-			if AnimationC.animation != "Tail":
-				AnimationC.play("Tail")
+			if AnimationC.animation != "Tail" or AnimationC.animation != "Lying":
+				if get_parent().get_parent().get_children().any(flipped):
+					AnimationC.flip_h = true
+				else:
+					AnimationC.flip_h = false
+				if get_parent().get_parent() is Furniture:
+					if get_parent().get_parent().Type == 5:
+						AnimationC.scale = Vector2(0.8,0.8)
+						AnimationC.position = Vector2(-15,-80)
+						AnimationC.play("Lying")
+					else:
+						if appearence.has("kitty"):
+							AnimationC.scale = Vector2(1.1,1.1)
+						else:
+							AnimationC.scale = Vector2(1.188,1.188)
+						AnimationC.position = Vector2(31.429,-81.429)
+						AnimationC.play("Tail")
+				else:
+					if appearence.has("kitty"):
+							AnimationC.scale = Vector2(1.1,1.1)
+					else:
+							AnimationC.scale = Vector2(1.188,1.188)
+					AnimationC.position = Vector2(31.429,-81.429)
+					AnimationC.play("Tail")
 			
 		STATE.MOVE: 
 			global_position = target.global_position
@@ -492,6 +515,15 @@ func _update_state(delta: float) -> void:
 				AnimationC.play("Taken")
 			
 
+func flipped(object):
+	if object is Sprite2D or object is AnimatedSprite2D:
+		if object.flip_h:
+			return true
+		else:
+			return false
+	else:
+		return false
+		
 func _exit_state() -> void:
 	match current_state:
 		STATE.STAND: # Enter IDLE state logic

@@ -58,44 +58,66 @@ func _process(delta):
 					current_furniture[current_cells.find(e)].lonely = false
 				
 	var tested = []
-	for e in current_cells:
-		if current_cells.find(e)+1 != len(current_furniture) and current_furniture[current_cells.find(e)+1].warmth and tested.has(e):
-				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 1)].post_warmth = true
-				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 1)].post_warmth = true
-				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 4)].post_warmth = true
-				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 4)].post_warmth = true
-				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 5)].post_warmth = true
-				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 5)].post_warmth = true
-				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 3)].post_warmth = true
-				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 3)].post_warmth = true
-		elif  current_furniture[current_cells.find(e)].warmth:
-				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 1)].post_warmth = true
-				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 1)].post_warmth = true
-				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 4)].post_warmth = true
-				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 4)].post_warmth = true
-				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 5)].post_warmth = true
-				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 5)].post_warmth = true
-				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e - 3)].post_warmth = true
-				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
-					current_furniture[current_cells.find(e + 3)].post_warmth = true
-		tested.append(e)
-		if len(tested) == len(current_furniture):
-			tested.clear()
+	for i in range(current_furniture.size()):
+		var item = current_furniture[i]
+		print("Item:", item, "Index:", i)
+		if item.warmth:
+			#если в клетках есть клетка больше/меньше и эта клетка не равняется вот этим, то предмет на этой клетке больше/меньше
+			if current_cells.find(current_cells[i]-1) != -1 and current_cells[i] != 5 and current_cells[i] != 9 and current_cells[i] != 13 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]-1)].post_warmth = true
+			if  current_cells.find(current_cells[i]+1) != -1 and current_cells[i]!= 4 and current_cells[i]!= 8 and current_cells[i]!= 12 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]+1)].post_warmth = true
+			if  current_cells.find(current_cells[i]-4)!= -1 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]-4)].post_warmth = true
+			if  current_cells.find(current_cells[i]+4)!= -1 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]+4)].post_warmth = true
+			if  current_cells.find(current_cells[i]-5)!= -1 and current_cells[i]!= 9 and current_cells[i]!= 13 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]-5)].post_warmth = true
+			if  current_cells.find(current_cells[i]+5)!= -1 and current_cells[i]!= 4 and current_cells[i]!= 8 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]+5)].post_warmth = true
+			if  current_cells.find(current_cells[i]-3)!= -1 and current_cells[i]!= 4 and current_cells[i]!= 8 and current_cells[i]!= 12 and current_cells[i]!= 16 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]-3)].post_warmth = true
+			if current_cells.find(current_cells[i]+3)!= -1 and current_cells[i]!= 1 and current_cells[i]!= 5 and current_cells[i]!= 9 and current_cells[i]!= 13 and item.Type != 5 and item.Type != 6:
+				current_furniture[current_cells.find(current_cells[i]+3)].post_warmth = true
+			
+		
+#		if current_cells.find(e)+1 != len(current_furniture) and current_furniture[current_cells.find(e)+1].warmth:
+#				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 1)].post_warmth = true
+#				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 1)].post_warmth = true
+#				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 4)].post_warmth = true
+#				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 4)].post_warmth = true
+#				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 5)].post_warmth = true
+#				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 5)].post_warmth = true
+#				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 3)].post_warmth = true
+#				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 3)].post_warmth = true
+#		elif  current_furniture[current_cells.find(e)].warmth:
+#				if current_cells.find(e - 1) != -1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 1)].post_warmth = true
+#				if current_cells.find(e + 1) != -1 and e != 4 and e != 8 and e != 12 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 1)].post_warmth = true
+#				if current_cells.find(e - 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 4)].post_warmth = true
+#				if current_cells.find(e + 4) != -1 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 4)].post_warmth = true
+#				if current_cells.find(e - 5) != -1 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 5)].post_warmth = true
+#				if current_cells.find(e + 5) != -1 and e != 4 and e != 8 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 5)].post_warmth = true
+#				if current_cells.find(e - 3) != -1 and e != 4 and e != 8 and e != 12 and e != 16 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e - 3)].post_warmth = true
+#				if current_cells.find(e + 3) != -1 and e != 1 and e != 5 and e != 9 and e != 13 and current_furniture[current_cells.find(e - 1)].Type != 5 and current_furniture[current_cells.find(e - 1)].Type != 6:
+#					current_furniture[current_cells.find(e + 3)].post_warmth = true
+#		tested.append(e)
+#		if len(tested) == len(current_furniture):
+#			tested.clear()
 	
 	var floor_number = random.randi_range(0,2)
 	if is_floor_set == false:
