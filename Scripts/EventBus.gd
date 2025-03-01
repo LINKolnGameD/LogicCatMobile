@@ -7,6 +7,10 @@ signal scene_change_requested(scene)
 signal add_succes(level)
 signal add_very_succes(level)
 signal level_choice(level)
+signal change_sound_first()
+signal change_sound_second()
+signal play_button_sound()
+signal music_change()
 
 func _ready():
 #	what_level.connect(keep_level)

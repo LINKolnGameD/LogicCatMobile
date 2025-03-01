@@ -1,6 +1,6 @@
 extends Node2D 
 class_name Loading
-@onready var Text = $CenterContainer/Label
+@onready var Text = $CanvasLayer/CenterContainer/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

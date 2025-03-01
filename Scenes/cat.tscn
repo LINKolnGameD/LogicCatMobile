@@ -20,6 +20,7 @@ script = ExtResource("1_h58ub")
 [node name="CatAnSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(31.4286, -81.4286)
 scale = Vector2(1.18776, 1.18776)
+animation = &""
 
 [node name="AreaCat" type="Area2D" parent="CatAnSprite"]
 position = Vector2(-25.8189, 68.7569)

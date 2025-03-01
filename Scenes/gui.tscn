@@ -24,6 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://qeii31fahqd5" path="res://Assets/GUI Elements/bar_satisfaction/new bar/IMG_9703.PNG" id="20_u0kxo"]
 [ext_resource type="Texture2D" uid="uid://572eifd4ok5o" path="res://Assets/GUI Elements/bar_satisfaction/new bar/IMG_9707.PNG" id="21_qex3i"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4vni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iivgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qkt0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6rg0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oilv1"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0il3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rll7c"]
@@ -86,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_wk03a")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 20.0
 }]
@@ -107,16 +117,6 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ludc"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4vni"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iivgo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qkt0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6rg0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oilv1"]
-
 [node name="GUI" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -131,13 +131,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7lbbs")
 
-[node name="Reset" type="Button" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_constants/margin_top = 50
+
+[node name="Menu" type="Button" parent="MarginContainer"]
 layout_mode = 2
-offset_left = -126.0
-offset_top = 36.0001
-offset_right = 208.0
-offset_bottom = 360.0
-scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/icon_pressed_color = Color(0.729412, 0.741176, 0.839216, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v4vni")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iivgo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3qkt0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6rg0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oilv1")
+icon = ExtResource("2_bhmfr")
+
+[node name="Reset" type="Button" parent="MarginContainer"]
+layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/icon_pressed_color = Color(0.933333, 0.721569, 0.572549, 1)
@@ -243,23 +262,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_mu5j7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8ludc")
 icon = ExtResource("8_q3f1w")
 
-[node name="Menu" type="Button" parent="."]
-layout_mode = 2
-offset_left = 677.0
-offset_top = 45.0
-offset_right = 926.0
-offset_bottom = 293.0
-scale = Vector2(0.8, 0.8)
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_colors/icon_pressed_color = Color(0.729412, 0.741176, 0.839216, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_v4vni")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_iivgo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3qkt0")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6rg0")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_oilv1")
-icon = ExtResource("2_bhmfr")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.001
 one_shot = true
@@ -270,10 +272,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -157.0
-offset_top = 2.0
-offset_right = -157.0
-offset_bottom = 13.0
+offset_left = -159.0
+offset_top = 9.0
+offset_right = -162.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -313,11 +314,12 @@ text = "Quit"
 stream = ExtResource("3_ixtmn")
 volume_db = 10.0
 
-[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
 [connection signal="pressed" from="FinishMenu/Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="FinishMenu/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="SettingMenu/VBoxContainer/ToGame" to="." method="_on_to_game_pressed"]
+[connection signal="pressed" from="SettingMenu/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="SettingMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

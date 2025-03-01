@@ -8,16 +8,20 @@
 process_mode = 3
 script = ExtResource("1_8c5eq")
 
-[node name="Background" parent="." instance=ExtResource("1_s4lxj")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-process_mode = 3
-offset_right = 1087.0
-offset_bottom = 2164.0
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_rwmak")
 theme_override_font_sizes/font_size = 200
 text = "0"
+
+[node name="Background" parent="." instance=ExtResource("1_s4lxj")]

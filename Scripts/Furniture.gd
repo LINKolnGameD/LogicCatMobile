@@ -7,16 +7,29 @@ class_name Furniture
 
 
 var cat_in : bool = false
-var soft : bool
-var lonely : bool = true
-var high : bool
-var warmth : bool
-var post_warmth: bool = false
-var current_things
+@onready var soft : bool
+@onready var lonely : bool = true
+@onready var high : bool
+@onready var warmth : bool
+@onready var post_warmth: bool = false
+@onready var current_things
 var cat_chidrens_array = []
 
 func _ready():
-	pass
+	if Type == 0 or Type == 1 or Type == 3 or Type == 9 or Type == 11 or Type == 14:
+		high = true
+	else:
+		high = false
+		
+	if Type == 0 or Type == 2 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 14:
+		soft = true
+	else:
+		soft = false
+		EventBus.furniture_info.emit(cat_in)
+	if Type == 5 or Type == 6 or Type == 12 or Type == 13 or Type == 14:
+		warmth = true
+	else:
+		warmth = false
 
 func _process(delta):
 	if len(cat_chidrens_array) > 0:
@@ -41,9 +54,7 @@ func _process(delta):
 					cat_chidrens_array[cat_chidrens_array.find(i)].parent_preferences.insert(3, 1)
 				
 		
-	if name != "Furniture":
-		pass
-	current_things = $FurnitureArea.get_overlapping_bodies() 
+	current_things = area.get_overlapping_bodies() 
 
 	if current_things.size() > 1:
 		if cat_chidrens_array.size() > 1:
@@ -52,24 +63,6 @@ func _process(delta):
 					i.current_state = 1
 			return
 		
-	if Type == 0 or Type == 1 or Type == 3 or Type == 9 or Type == 11 or Type == 14:
-		high = true
-	else:
-		high = false
-		
-	if Type == 0 or Type == 2 or Type == 3 or Type == 4 or Type == 5 or Type == 6 or Type == 7 or Type == 8 or Type == 14:
-		soft = true
-	else:
-		soft = false
-		EventBus.furniture_info.emit(cat_in)
-	if Type == 5 or Type == 6 or Type == 12 or Type == 13 or Type == 14:
-		warmth = true
-	else:
-		warmth = false
-	
-#			$FurnitureArea/CollisionShape2D.disabled = true
-#		else:
-#			$FurnitureArea/CollisionShape2D.disabled = false
 		
 func _on_area_2d_body_entered(body):
 	if body is Cat:

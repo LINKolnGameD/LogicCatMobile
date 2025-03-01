@@ -49,8 +49,9 @@ func _ready():
 	var AreaColl = get_node("CatAnSprite/AreaCat")
 	AreaColl.area_entered.connect(_area_entered)
 	AreaColl.area_exited.connect(_area_exited)
-	AreaColl.mouse_entered.connect(_mouse_enterend)
+	AreaColl.mouse_entered.connect(_mouse_entered)
 	AreaColl.mouse_exited.connect(_mouse_exited)
+	EventBus.change_sound_second.connect(sound_change)
 	var color = random.randi_range(1,3)
 	if color == 1:
 		appearence.append("red")
@@ -66,9 +67,14 @@ func _ready():
 		appearence.append("kitty")
 	elif age == 2:
 		appearence.append("cat")
-	if $CatAnSprite.sprite_frames == null:
-		$CatAnSprite.sprite_frames = load(str("res://Scenes/Cats/", appearence[3],appearence[0],appearence[1],appearence[2],".tres") )
+	if AnimationC.sprite_frames == null:
+		AnimationC.sprite_frames = load(str("res://Scenes/Cats/", appearence[3],appearence[0],appearence[1],appearence[2],".tres") )
 		AnimationC.play("Tail")
+		
+	if get_parent().get_parent().get_parent().get_parent().get_parent().global_sound_mod == false:
+		CardSound.volume_db = -80
+		AngryMeow.volume_db = -80
+		HappyMeow.volume_db = -80
 
 func _process(delta):
 #	print(AnimationC.sprite_frames.get_animation_names(), appearence)
@@ -93,6 +99,7 @@ func _process(delta):
 			if i is Plug:
 				plug_array.append(i)
 		plug_set = true
+		
 	if satisfaction != null:
 
 		if cat_numeration == 1:
@@ -471,7 +478,7 @@ func _enter_state() -> void:
 		STATE.TAKEN: # Enter JUMP state logic
 			reparent(card)
 			if card.global_position == global_position:
-				CardSound.play()
+				CardSound.play(0.2)
 
 @warning_ignore("unused_parameter")
 
@@ -491,14 +498,14 @@ func _update_state(delta: float) -> void:
 						AnimationC.play("Lying")
 					else:
 						if appearence.has("kitty"):
-							AnimationC.scale = Vector2(1.1,1.1)
+							AnimationC.scale = Vector2(1.13,1.13)
 						else:
 							AnimationC.scale = Vector2(1.188,1.188)
 						AnimationC.position = Vector2(31.429,-81.429)
 						AnimationC.play("Tail")
 				else:
 					if appearence.has("kitty"):
-							AnimationC.scale = Vector2(1.1,1.1)
+							AnimationC.scale = Vector2(1.13,1.13)
 					else:
 							AnimationC.scale = Vector2(1.188,1.188)
 					AnimationC.position = Vector2(31.429,-81.429)
@@ -551,7 +558,15 @@ func _area_exited(node):
 func _mouse_exited():
 	_mouse_enter = false
 
-func _mouse_enterend():
+func _mouse_entered():
 	_mouse_enter = true
 	
-	
+func sound_change(mod):
+	if mod:
+		HappyMeow.volume_db = 10
+		AngryMeow.volume_db = 5
+		CardSound.volume_db = 5
+	else:
+		HappyMeow.volume_db = -80
+		AngryMeow.volume_db = -80
+		CardSound.volume_db = -80

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvx78ohf4v5u5"]
+[gd_scene load_steps=9 format=3 uid="uid://cvx78ohf4v5u5"]
 
 [ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_8ptm8"]
 [ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
@@ -12,9 +12,6 @@ size = Vector2(98, 442)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyilt"]
 size = Vector2(86.9992, 449)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wo51o"]
-radius = 205.295
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_qcb3b")
@@ -92,11 +89,6 @@ position = Vector2(64.4996, 155.5)
 shape = SubResource("RectangleShape2D_nyilt")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-
-[node name="TargetPosition" type="CollisionShape2D" parent="."]
-position = Vector2(729, 669)
-shape = SubResource("CircleShape2D_wo51o")
-debug_color = Color(0.619608, 0.380392, 0.945098, 0.556863)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

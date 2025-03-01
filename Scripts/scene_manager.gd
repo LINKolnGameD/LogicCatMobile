@@ -6,8 +6,10 @@ var MainMenu = "res://Scenes/main_menu.tscn"
 var LevelMenu = "res://Scenes/level_menu.tscn"
 
 var save_path = "user://savegame.save"
+@onready var Music = $AudioStreamPlayer
+@onready var ButtonSound = $AudioStreamPlayer/GlobalSoundPlayer
 
-
+var global_sound_mod: bool = true
 var global_level_info: int
 var current_scene = null
 var progress = []
@@ -22,7 +24,30 @@ func _ready():
 	EventBus.connect("add_succes", add_level)
 	EventBus.connect("add_very_succes", complete_level)
 	EventBus.connect("level_choice", _open_level)
+	EventBus.connect("play_button_sound", play_button_sound)
+	EventBus.connect("change_sound_first", change_mod)
+	EventBus.connect("music_change", change_music)
 	load_game()
+	
+	
+func change_music():
+	if Music.volume_db == -80:
+		Music.volume_db = -10
+	elif Music.volume_db == -10:
+		Music.volume_db = -80
+	else:
+		Music.volume_db = -80
+	
+func change_mod():
+	if global_sound_mod:
+		global_sound_mod = false
+	else:
+		global_sound_mod = true
+	EventBus.change_sound_second.emit(global_sound_mod)
+	
+func play_button_sound():
+	if global_sound_mod:
+		ButtonSound.play()
 	
 func add_level(level):
 	print(level)
@@ -39,14 +64,20 @@ func _process(delta):
 	if scene_to_open != null:
 		scene_load_status = ResourceLoader.load_threaded_get_status(scene_to_open, progress)
 		if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
-
+			var Canvas = CanvasLayer.new()
+			if scene_to_open  == MainMenu or scene_to_open == LevelMenu:
+				add_child(Canvas)
 			var loader = ResourceLoader.load_threaded_get(scene_to_open)
 			var new_scene = loader.instantiate()
-			add_child(new_scene)
+			if scene_to_open  == MainMenu or scene_to_open == LevelMenu:
+				Canvas.add_child(new_scene)
+			else:
+				add_child(new_scene)
 			scene_to_open = null
 			for i in get_children():
 				if i is Loading:
 					i.queue_free()
+					
 					
 func _on_scene_change_requested(scene_name):
 	

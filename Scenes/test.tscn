@@ -1,0 +1,144 @@
+[gd_scene load_steps=17 format=3 uid="uid://c242hnxe5uoak"]
+
+[ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard.otf" id="1_8n5p5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vv0f8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5aft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oy8vj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xahb7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtjen"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k36kx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m1g38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hal4g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8bmu5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_undwu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4po1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emndt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hs78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv485"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpcw0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="."]
+modulate = Color(0.803922, 0.701961, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.85098, 0.694118, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "fdgfg"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "ret"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945313, 0.878906, 0.765625, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8n5p5")
+theme_override_font_sizes/font_size = 140
+text = "LOGI C ˕ CマAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Play" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8n5p5")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vv0f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i5aft")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oy8vj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xahb7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtjen")
+text = "ИГРАТЬ"
+
+[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8n5p5")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k36kx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m1g38")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hal4g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8bmu5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_undwu")
+text = "НАСТРОЙКИ"
+
+[node name="About_Us" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8n5p5")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o4po1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_emndt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7hs78")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nv485")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpcw0")
+text = "О НАС"
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 1500)
+layout_mode = 2

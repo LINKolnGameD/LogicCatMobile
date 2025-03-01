@@ -13,25 +13,45 @@ var level: int
 @onready var UI = $CanvasLayer/GUI
 @onready var CardArray = []
 @onready var CatsSatisfaction = []
+@onready var Sound = []
+
+
 #flag
 var preferences_set : bool = false
 var furniture_set: bool = false
 var cat_numeration_set: bool = false
 
 var card_amount : int
-var first_cat_preferences_info : Array
-var second_cat_preferences_info : Array
-var third_cat_preferences_info : Array
-var fourth_cat_preferences_info : Array
+@onready var first_cat_preferences_info : Array
+@onready var second_cat_preferences_info : Array
+@onready var third_cat_preferences_info : Array
+@onready var fourth_cat_preferences_info : Array
 
 var fcat_places = []
 var scat_places = []
 var tcat_places = []
 var lcat_places = []
 
+var simple = [5, 5, 5]
+var up = [2, 5, 5]
+var lonely = [0, 5, 5]
+var social = [1, 5, 5]
+var down = [3, 5, 5]
+var down_lonely = [0, 3, 5]
+var up_lonely = [0, 2, 5]
+var down_social = [1, 3, 5]
+var up_social = [1, 2, 5]
+var warmer = [4, 5, 5]
+var warmer_lon = [0, 4, 5]
+var warmer_soc = [1, 4, 5]
+var warmer_up = [2, 4, 5]
+var warmer_down = [3, 4, 5]
+var hidden_lonely = [6, 4, 5]
+
+
 func _ready():
 	get_tree().paused = false
-	level = $"..".global_level_info
+	level = get_parent().global_level_info
 	print(level)
 
 #make intro screen
@@ -307,48 +327,6 @@ func _ready():
 		CardArray.append(ThirdCard)
 		CardArray.append(FourthCard)
 
-func _process(_delta):
-	if cat_numeration_set == false:
-		if card_amount == 1 and $CanvasLayer/HBoxContainer/Card.Cat != null:
-			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1
-		elif card_amount == 2 and $CanvasLayer/HBoxContainer/Card2.Cat != null:
-			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1
-			$CanvasLayer/HBoxContainer/Card2.Cat.cat_numeration = 2
-		elif card_amount == 3 and $CanvasLayer/HBoxContainer/Card3.Cat != null:
-			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1
-			$CanvasLayer/HBoxContainer/Card2.Cat.cat_numeration = 2
-			$CanvasLayer/HBoxContainer/Card3.Cat.cat_numeration = 3
-		elif card_amount == 4 and $CanvasLayer/HBoxContainer/Card4.Cat != null:
-			$CanvasLayer/HBoxContainer/Card.Cat.cat_numeration = 1
-			$CanvasLayer/HBoxContainer/Card2.Cat.cat_numeration = 2
-			$CanvasLayer/HBoxContainer/Card3.Cat.cat_numeration = 3
-			$CanvasLayer/HBoxContainer/Card4.Cat.cat_numeration = 4
-		cat_numeration_set = true
-	for i in CardArray:
-		pass
-	
-	
-	if $CanvasLayer/HBoxContainer/Card.Cat.target != null:
-		$TargetPosition.global_position = $CanvasLayer/HBoxContainer/Card.Cat.target.global_position
-	#preferences managment
-	
-	#addition: if preferences info [3] != null, then frame == 6
-	# from 6 to 10 frames - hidden pref
-	var simple = [5, 5, 5]
-	var up = [2, 5, 5]
-	var lonely = [0, 5, 5]
-	var social = [1, 5, 5]
-	var down = [3, 5, 5]
-	var down_lonely = [0, 3, 5]
-	var up_lonely = [0, 2, 5]
-	var down_social = [1, 3, 5]
-	var up_social = [1, 2, 5]
-	var warmer = [4, 5, 5]
-	var warmer_lon = [0, 4, 5]
-	var warmer_soc = [1, 4, 5]
-	var warmer_up = [2, 4, 5]
-	var warmer_down = [3, 4, 5]
-	var hidden_lonely = [6, 4, 5]
 	if preferences_set == false:
 		if level == 1:
 			first_cat_preferences_info.append(5)
@@ -857,25 +835,26 @@ func _process(_delta):
 			first_cat_preferences_info.append_array(hidden_lonely)
 			
 			
-			
+		if card_amount >= 1:
+			FirstCard.FirstPreference.frame = first_cat_preferences_info[0]
+			FirstCard.SecondPreference.frame = first_cat_preferences_info[1]
+			FirstCard.ThirdPreference.frame = first_cat_preferences_info[2]
+		if card_amount >= 2:
+			SecondCard.FirstPreference.frame = second_cat_preferences_info[0]
+			SecondCard.SecondPreference.frame = second_cat_preferences_info[1]
+			SecondCard.ThirdPreference.frame = second_cat_preferences_info[2]
+		if card_amount >= 3:
+			ThirdCard.FirstPreference.frame = third_cat_preferences_info[0]
+			ThirdCard.SecondPreference.frame = third_cat_preferences_info[1]
+			ThirdCard.ThirdPreference.frame = third_cat_preferences_info[2]
+		if card_amount == 4:
+			FourthCard.FirstPreference.frame = fourth_cat_preferences_info[0]
+			FourthCard.SecondPreference.frame = fourth_cat_preferences_info[1]
+			FourthCard.ThirdPreference.frame = fourth_cat_preferences_info[2]	
 		preferences_set = true
 	#preferences control
-	if card_amount >= 1:
-		FirstCard.FirstPreference.frame = first_cat_preferences_info[0]
-		FirstCard.SecondPreference.frame = first_cat_preferences_info[1]
-		FirstCard.ThirdPreference.frame = first_cat_preferences_info[2]
-	if card_amount >= 2:
-		SecondCard.FirstPreference.frame = second_cat_preferences_info[0]
-		SecondCard.SecondPreference.frame = second_cat_preferences_info[1]
-		SecondCard.ThirdPreference.frame = second_cat_preferences_info[2]
-	if card_amount >= 3:
-		ThirdCard.FirstPreference.frame = third_cat_preferences_info[0]
-		ThirdCard.SecondPreference.frame = third_cat_preferences_info[1]
-		ThirdCard.ThirdPreference.frame = third_cat_preferences_info[2]
-	if card_amount == 4:
-		FourthCard.FirstPreference.frame = fourth_cat_preferences_info[0]
-		FourthCard.SecondPreference.frame = fourth_cat_preferences_info[1]
-		FourthCard.ThirdPreference.frame = fourth_cat_preferences_info[2]
+	
+
 			
 	if furniture_set == false:
 		#(0"Sofa", 1"CoffeTable", 2"Box", 3"ArmChair", 4"ChairEars", 5"Bed", 6"BedEars", 7"Puff", 8"PuffEars", 9"Table", 10"Stand", 11"Shelf")
@@ -1633,6 +1612,28 @@ func _process(_delta):
 			Level.spawn("Puff", 5, false)
 			Level.spawn("Puff", 8, false)
 			Level.spawn_plug(2)
+func _process(_delta):
+	if cat_numeration_set == false:
+		if card_amount == 1 and FirstCard.Cat != null:
+			FirstCard.Cat.cat_numeration = 1
+		elif card_amount == 2 and SecondCard.Cat != null:
+			FirstCard.Cat.cat_numeration = 1
+			SecondCard.Cat.cat_numeration = 2
+		elif card_amount == 3 and ThirdCard.Cat != null:
+			FirstCard.Cat.cat_numeration = 1
+			SecondCard.Cat.cat_numeration = 2
+			ThirdCard.Cat.cat_numeration = 3
+		elif card_amount == 4 and FourthCard.Cat != null:
+			FirstCard.Cat.cat_numeration = 1
+			SecondCard.Cat.cat_numeration = 2
+			ThirdCard.Cat.cat_numeration = 3
+			FourthCard.Cat.cat_numeration = 4
+		cat_numeration_set = true
+	#preferences managment
+	
+	#addition: if preferences info [3] != null, then frame == 6
+	# from 6 to 10 frames - hidden pref
+	
 			
 
 
@@ -1646,14 +1647,14 @@ func _process(_delta):
 #			Camera.position.x = get_viewport().get_mouse_position().x 
 	
 	#camera limits
-	if Camera.zoom > Vector2(1.3, 1.3):
-		Camera.set_zoom(Vector2(1.3,1.3))
-	if Camera.zoom < Vector2(0.7, 0.7):
-		Camera.set_zoom(Vector2(0.7,0.7))
-	if Camera.position.x < 0:
-		Camera.position.x = 0
-	if Camera.position.x > 1200:
-		Camera.position.x = 1200
+#	if Camera.zoom > Vector2(1.3, 1.3):
+#		Camera.set_zoom(Vector2(1.3,1.3))
+#	if Camera.zoom < Vector2(0.7, 0.7):
+#		Camera.set_zoom(Vector2(0.7,0.7))
+#	if Camera.position.x < 0:
+#		Camera.position.x = 0
+#	if Camera.position.x > 1200:
+#		Camera.position.x = 1200
 	
 #	fix this shit
 	#control that we can take only one card at time

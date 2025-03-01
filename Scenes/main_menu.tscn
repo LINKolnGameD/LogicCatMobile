@@ -622,15 +622,15 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwq4n"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttlw8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38hut"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3512"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2pvt"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygrd5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qacfh"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rjd2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xghu"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvnp6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jerl"]
 
@@ -642,15 +642,15 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av8nj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttlw8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwq4n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3512"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38hut"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ygrd5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2pvt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rjd2"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qacfh"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvnp6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xghu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -661,86 +661,90 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h8382")
 
-[node name="TextureRect" type="ColorRect" parent="."]
-modulate = Color(0.803922, 0.701961, 1, 1)
-layout_mode = 0
-offset_left = -294.0
-offset_top = -127.0
-offset_right = 1381.0
-offset_bottom = 2160.0
-color = Color(0.898039, 0.85098, 0.694118, 1)
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.870588, 0.686275, 0.658824, 1)
 
 [node name="BackGround" type="Sprite2D" parent="."]
 modulate = Color(0.862745, 0.666667, 1, 1)
 texture_repeat = 2
 material = SubResource("ShaderMaterial_td57l")
-position = Vector2(-469, 1027.17)
+position = Vector2(1970, 1030)
 scale = Vector2(1.03596, 1.05069)
 texture = ExtResource("3_w8n2q")
 region_enabled = true
 region_rect = Rect2(-2.64874, -1.68167, 3838.15, 2157.18)
 
-[node name="Cat" type="AnimatedSprite2D" parent="."]
-position = Vector2(600, 1072)
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+
+[node name="Chair" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2347.0
+offset_right = 1227.0
+offset_bottom = 759.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_vb0jm")
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cat" type="AnimatedSprite2D" parent="Control2"]
+position = Vector2(-473, 139)
 scale = Vector2(2.67954, 2.66526)
 sprite_frames = SubResource("SpriteFrames_hnkex")
 autoplay = "default"
+frame = 10
+frame_progress = 0.93673
+centered = false
 
-[node name="Chair" type="Sprite2D" parent="."]
-position = Vector2(-337, 1237)
-scale = Vector2(0.849074, 0.849074)
-texture = ExtResource("5_vb0jm")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 125.0
-offset_right = 1313.0
-offset_bottom = 381.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.945313, 0.878906, 0.765625, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 140
 text = "LOGI C ˕ CマAT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="About_Us" type="Button" parent="."]
-layout_mode = 0
-offset_left = 315.0
-offset_top = 675.0
-offset_right = 749.0
-offset_bottom = 769.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxEmpty_uwq4n")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_38hut")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2pvt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_qacfh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0xghu")
-text = "О НАС"
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
 
-[node name="Settings" type="Button" parent="."]
-layout_mode = 0
-offset_left = 243.0
-offset_top = 559.0
-offset_right = 847.0
-offset_bottom = 653.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jerl")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_1sapn")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_d5d4l")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tre2y")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_av8nj")
-text = "НАСТРОЙКИ"
-
-[node name="Play" type="Button" parent="."]
-layout_mode = 0
-offset_left = 348.0
-offset_top = 444.0
-offset_right = 719.0
-offset_bottom = 538.0
+[node name="Play" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 72
@@ -751,9 +755,29 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_1rjd2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tvnp6")
 text = "ИГРАТЬ"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(543, 1075)
+[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0x7r")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jerl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1sapn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d5d4l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tre2y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av8nj")
+text = "НАСТРОЙКИ"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="About_Us" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c0x7r")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uwq4n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_38hut")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2pvt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qacfh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xghu")
+text = "О НАС"
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
