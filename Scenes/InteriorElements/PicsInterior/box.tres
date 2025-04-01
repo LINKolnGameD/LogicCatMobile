@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://jk0jas2xpexo"]
+
+[ext_resource type="Texture2D" uid="uid://dsftpqiee3en0" path="res://Assets/Interior/Цветное/Коробка внутри.png" id="1_2eqbl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2eqbl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://drhhlwwbhx2ff"]
+
+[ext_resource type="Texture2D" uid="uid://cl4paxo0ndtnv" path="res://Assets/Interior/Цветное/кресло-лапка.png" id="1_btox2"]
+[ext_resource type="Script" path="res://Scripts/Furniture.gd" id="1_hb4i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spikk"]
+radius = 129.449
+
+[node name="ArmChair" type="Node2D"]
+script = ExtResource("1_hb4i8")
+Type = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6.8, -177.2)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_btox2")
+
+[node name="FurnitureArea" type="Area2D" parent="."]
+position = Vector2(-7, -170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FurnitureArea"]
+shape = SubResource("CircleShape2D_spikk")
+
+[connection signal="area_entered" from="FurnitureArea" to="." method="_on_furniture_area_area_entered"]
+[connection signal="body_entered" from="FurnitureArea" to="." method="_on_furniture_area_body_entered"]
+[connection signal="body_exited" from="FurnitureArea" to="." method="_on_furniture_area_body_exited"]
+[connection signal="child_entered_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_entered_tree"]
+[connection signal="child_exiting_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_exiting_tree"]

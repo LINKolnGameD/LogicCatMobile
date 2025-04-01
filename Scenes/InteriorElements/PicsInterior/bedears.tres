@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://b7usa7wenv7im"]
+
+[ext_resource type="Texture2D" uid="uid://dkxsnh16fle41" path="res://Assets/Interior/Цветное/Крытая лежанка внутри.png" id="1_ji656"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ji656")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

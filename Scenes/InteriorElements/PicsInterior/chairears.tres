@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://6s14skwsiiik"]
+
+[ext_resource type="Texture2D" uid="uid://drw8q4glrlviu" path="res://Assets/Interior/Цветное/Кресло с ушками основа.png" id="1_lvm37"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lvm37")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

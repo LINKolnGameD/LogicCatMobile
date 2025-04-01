@@ -1,26 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2garcdjl2sos"]
+[gd_scene load_steps=4 format=3 uid="uid://d2garcdjl2sos"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_yfnlk"]
-[ext_resource type="Texture2D" uid="uid://dkxsnh16fle41" path="res://Assets/Interior/Цветное/Крытая лежанка внутри.png" id="2_jjkmh"]
+[ext_resource type="SpriteFrames" uid="uid://16q4du2rybi0" path="res://Scenes/InteriorElements/PicsInterior/bed.tres" id="2_xkgeh"]
 [ext_resource type="Texture2D" uid="uid://beckb0ncefqwh" path="res://Assets/Interior/Цветное/Крытая лежанка 1 снаружи.png" id="3_cfesf"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7npto"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_jjkmh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Bed" instance=ExtResource("1_yfnlk")]
 Type = 5
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(-7, -94)
-sprite_frames = SubResource("SpriteFrames_7npto")
+sprite_frames = ExtResource("2_xkgeh")
 
 [node name="FurnitureArea" parent="." index="1"]
 position = Vector2(-45, 22)

@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c20gpdunbybvb"]
+
+[ext_resource type="Texture2D" uid="uid://vsfmknjr6uto" path="res://Assets/Cats/Полосатые/Кремовые/Пушистые маленькие к.PNG" id="1_68eq1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xshi3"]
+atlas = ExtResource("1_68eq1")
+region = Rect2(0, 0, 777, 711)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cavcn"]
+atlas = ExtResource("1_68eq1")
+region = Rect2(777, 0, 777, 711)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s11v4"]
+atlas = ExtResource("1_68eq1")
+region = Rect2(2331, 0, 777, 711)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287k7"]
+atlas = ExtResource("1_68eq1")
+region = Rect2(3108, 0, 777, 711)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h68d6"]
+atlas = ExtResource("1_68eq1")
+region = Rect2(0, 711, 777, 711)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 40.0,
+"texture": SubResource("AtlasTexture_xshi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cavcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s11v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h68d6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

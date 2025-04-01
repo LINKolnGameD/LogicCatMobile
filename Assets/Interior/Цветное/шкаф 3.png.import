@@ -15,9 +15,9 @@ dest_files=["res://.godot/imported/шкаф 3.png-8b462a8eaf8f64e99fb640e5da1656
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.3
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

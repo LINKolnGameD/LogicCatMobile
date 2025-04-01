@@ -7,7 +7,6 @@ var level: int
 @onready var ThirdCard = $CanvasLayer/HBoxContainer/Card3
 @onready var FourthCard = $CanvasLayer/HBoxContainer/Card4
 @onready var LevelInterior = $Protolevel
-@onready var Camera = $Camera2D
 @onready var BackGround = $Background
 @onready var Level = $Protolevel
 @onready var UI = $CanvasLayer/GUI
@@ -52,7 +51,7 @@ var hidden_lonely = [6, 4, 5]
 func _ready():
 	get_tree().paused = false
 	level = get_parent().global_level_info
-	print(level)
+
 
 #make intro screen
 #so 0 = lonly, 1 = sociable, 2 = hieghtlover, 3 = lowlover, 4 = warmlover, 5 = nothing
@@ -61,89 +60,89 @@ func _ready():
 	if level == 1:
 		card_amount = 1
 	elif level == 2:
-		card_amount = 1
+		card_amount = 2
 	elif level == 3:
 		card_amount = 1
 	elif level == 4:
-		card_amount = 2
+		card_amount = 1
 	elif level == 5:
 		card_amount = 1
 	elif level == 6:
 		card_amount = 1
 	elif level == 7:
-		card_amount = 1
+		card_amount = 2
 	elif level == 8:
-		card_amount = 1
+		card_amount = 2
 	elif level == 9:
-		card_amount = 2
-	elif level == 10:
-		card_amount = 2
-	elif level == 11:
 		card_amount = 3
+	elif level == 10:
+		card_amount = 1
+	elif level == 11:
+		card_amount = 2
 	elif level == 12:
-		card_amount = 2
+		card_amount = 1
 	elif level == 13:
-		card_amount = 2
+		card_amount = 1
 	elif level == 14:
-		card_amount = 2
+		card_amount = 1
 	elif level == 15:
-		card_amount = 2
+		card_amount = 1
 	elif level == 16:
-		card_amount = 2
+		card_amount = 1
 	elif level == 17:
-		card_amount = 1
-	elif level == 18:
 		card_amount = 2
+	elif level == 18:
+		card_amount = 3
 	elif level == 19:
-		card_amount = 1
+		card_amount = 2
 	elif level == 20:
 		card_amount = 2
 	elif level == 21:
-		card_amount = 1
+		card_amount = 3
 	elif level == 22:
-		card_amount = 1
-	elif level == 23:
-		card_amount = 1
-	elif level == 24:
-		card_amount = 1
-	elif level == 25:
 		card_amount = 2
+	elif level == 23:
+		card_amount = 3
+	elif level == 24:
+		card_amount = 2
+	elif level == 25:
+		card_amount = 3
 	elif level == 26:
 		card_amount = 3
 	elif level == 27:
-		card_amount = 3
+		card_amount = 1
 	elif level == 28:
-		card_amount = 2
+		card_amount = 1
 	elif level == 29:
-		card_amount = 2
+		card_amount = 1
 	elif level == 30:
 		card_amount = 2
 	elif level == 31:
-		card_amount = 3
+		card_amount = 2
 	elif level == 32:
-		card_amount = 3
+		card_amount = 2
 	elif level == 33:
 		card_amount = 2
 	elif level == 34:
 		card_amount = 3
 	elif level == 35:
-		card_amount = 3
+		card_amount = 2
 	elif level == 36:
 		card_amount = 2
 	elif level == 37:
-		card_amount = 3
+		card_amount = 2
 	elif level == 38:
-		card_amount = 3
+		card_amount = 2
 	elif level == 39:
-		card_amount = 3
+		card_amount = 1
 	elif level == 40:
-		card_amount = 3
+		card_amount = 1
 	elif level == 41:
 		card_amount = 1
 	elif level == 42:
-		card_amount = 1
+		card_amount = 2
 	elif level == 43:
-		card_amount = 1
+		card_amount = 2
 	elif level == 44:
 		card_amount = 2
 	elif level == 45:
@@ -151,25 +150,25 @@ func _ready():
 	elif level == 46:
 		card_amount = 2
 	elif level == 47:
-		card_amount = 2
+		card_amount = 3
 	elif level == 48:
-		card_amount = 2
+		card_amount = 3
 	elif level == 49:
-		card_amount = 2
+		card_amount = 4
 	elif level == 50:
-		card_amount = 2
+		card_amount = 3
 	elif level == 51:
 		card_amount = 3
 	elif level == 52:
-		card_amount = 2
+		card_amount = 3
 	elif level == 53:
-		card_amount = 2
+		card_amount = 3
 	elif level == 54:
-		card_amount = 2
+		card_amount = 3
 	elif level == 55:
-		card_amount = 2
+		card_amount = 4
 	elif level == 56:
-		card_amount = 2
+		card_amount = 4
 	elif level == 57:
 		card_amount = 1
 	elif level == 58:
@@ -177,7 +176,7 @@ func _ready():
 	elif level == 59:
 		card_amount = 1
 	elif level == 60:
-		card_amount = 2
+		card_amount = 3
 	elif level == 61:
 		card_amount = 2
 	elif level == 62:
@@ -191,116 +190,61 @@ func _ready():
 	elif level == 66:
 		card_amount = 2
 	elif level == 67:
-		card_amount = 2
+		card_amount = 3
 	elif level == 68:
 		card_amount = 3
 	elif level == 69:
-		card_amount = 2
+		card_amount = 3
 	elif level == 70:
-		card_amount = 3
+		card_amount = 2
 	elif level == 71:
-		card_amount = 3
+		card_amount = 2
 	elif level == 72:
-		card_amount = 4
-	elif level == 73:
 		card_amount = 3
+	elif level == 73:
+		card_amount = 2
 	elif level == 74:
 		card_amount = 3
 	elif level == 75:
 		card_amount = 3
 	elif level == 76:
-		card_amount = 3
+		card_amount = 2
 	elif level == 77:
 		card_amount = 3
 	elif level == 78:
 		card_amount = 3
 	elif level == 79:
-		card_amount = 4
+		card_amount = 3
 	elif level == 80:
 		card_amount = 4
 	elif level == 81:
-		card_amount = 1
+		card_amount = 2
 	elif level == 82:
-		card_amount = 1
+		card_amount = 3
 	elif level == 83:
-		card_amount = 1
+		card_amount = 2
 	elif level == 84:
 		card_amount = 3
 	elif level == 85:
-		card_amount = 2
+		card_amount = 3
 	elif level == 86:
-		card_amount = 2
+		card_amount = 3
 	elif level == 87:
-		card_amount = 2
+		card_amount = 4
 	elif level == 88:
-		card_amount = 2
+		card_amount = 4
 	elif level == 89:
 		card_amount = 2
 	elif level == 90:
-		card_amount = 2
+		card_amount = 4
 	elif level == 91:
-		card_amount = 2
+		card_amount = 4
 	elif level == 92:
-		card_amount = 2
+		card_amount = 4
 	elif level == 93:
-		card_amount = 3
-	elif level == 94:
-		card_amount = 3
-	elif level == 95:
-		card_amount = 3
-	elif level == 96:
-		card_amount = 3
-	elif level == 97:
-		card_amount = 2
-	elif level == 98:
-		card_amount = 2
-	elif level == 99:
-		card_amount = 3
-	elif level == 100:
-		card_amount = 3
-	elif level == 101:
-		card_amount = 2
-	elif level == 102:
-		card_amount = 3
-	elif level == 103:
-		card_amount = 3
-	elif level == 104:
-		card_amount = 2
-	elif level == 105:
-		card_amount = 3
-	elif level == 106:
-		card_amount = 3
-	elif level == 107:
-		card_amount = 3
-	elif level == 108:
-		card_amount = 4
-	elif level == 109:
-		card_amount = 2
-	elif level == 110:
-		card_amount = 3
-	elif level == 111:
-		card_amount = 2
-	elif level == 112:
-		card_amount = 3
-	elif level == 113:
-		card_amount = 3
-	elif level == 114:
-		card_amount = 3
-	elif level == 115:
-		card_amount = 4
-	elif level == 116:
-		card_amount = 4
-	elif level == 117:
-		card_amount = 2
-	elif level == 118:
-		card_amount = 4
-	elif level == 119:
-		card_amount = 4
-	elif level == 120:
-		card_amount = 4
-	elif level == 121:
 		card_amount = 1
 	
+	EventBus.if_need_education.emit(level)
 	
 	
 		
@@ -336,17 +280,17 @@ func _ready():
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 		elif level == 3:
-			first_cat_preferences_info.append(5)
+			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
 		elif level == 4:
+			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 5:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
@@ -359,10 +303,16 @@ func _ready():
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 		elif level == 8:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 		elif level == 9:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
@@ -370,468 +320,331 @@ func _ready():
 			second_cat_preferences_info.append(5)
 			second_cat_preferences_info.append(5)
 			second_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
 		elif level == 10:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 11:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(0)
 			second_cat_preferences_info.append(5)
 			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
 		elif level == 12:
 			first_cat_preferences_info.append(0)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 13:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 14:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 15:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 16:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
 		elif level == 17:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(1)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 		elif level == 18:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
+			second_cat_preferences_info.append(1)
 			second_cat_preferences_info.append(5)
 			second_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(1)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
 		elif level == 19:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(1)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
 		elif level == 20:
-			first_cat_preferences_info.append(0)
+			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(0)
 			second_cat_preferences_info.append(5)
 			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			# вот тут я остановился
 		elif level == 21:
 			first_cat_preferences_info.append(1)
 			first_cat_preferences_info.append(5)
 			first_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(1)
+			second_cat_preferences_info.append(5)
+			second_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
+			third_cat_preferences_info.append(5)
 		elif level == 22:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-		elif level == 23:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-		elif level == 24:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-		elif level == 25:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(1)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-		elif level == 26:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(1)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(1)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-		elif level == 27:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(1)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(1)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-		elif level == 28:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(1)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-		elif level == 29:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-		elif level == 30:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-		elif level == 31:
-			first_cat_preferences_info.append(1)
-			first_cat_preferences_info.append(5)
-			first_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(1)
-			second_cat_preferences_info.append(5)
-			second_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-			third_cat_preferences_info.append(5)
-		elif level == 32:
-			first_cat_preferences_info.append_array(social)
-			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(simple)
-		elif level == 33:
 			first_cat_preferences_info.append_array(lonely)
 			second_cat_preferences_info.append_array(social)
-		elif level == 34:
+		elif level == 23:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(lonely)
+			third_cat_preferences_info.append_array(lonely)
+		elif level == 24:
+			first_cat_preferences_info.append_array(social)
+			second_cat_preferences_info.append_array(lonely)
+		elif level == 25:
+			first_cat_preferences_info.append_array(lonely)
+			second_cat_preferences_info.append_array(social)
+			third_cat_preferences_info.append_array(simple)
+		elif level == 26:
+			first_cat_preferences_info.append_array(lonely)
+			second_cat_preferences_info.append_array(social)
+			third_cat_preferences_info.append_array(simple)
+		elif level == 27:
+			first_cat_preferences_info.append_array(up)
+		elif level == 28:
+			first_cat_preferences_info.append_array(up)
+		elif level == 29:
+			first_cat_preferences_info.append_array(up)
+		elif level == 30:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(up)
+		elif level == 31:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(simple)
+		elif level == 32:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(simple)
+		elif level == 33:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(lonely)
+		elif level == 34:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(up)
 			third_cat_preferences_info.append_array(lonely)
 		elif level == 35:
-			first_cat_preferences_info.append_array(social)
-			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(lonely)
-		elif level == 36:
-			first_cat_preferences_info.append_array(social)
+			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(lonely)
+		elif level == 36:
+			first_cat_preferences_info.append_array(up)
+			second_cat_preferences_info.append_array(social)
 		elif level == 37:
-			first_cat_preferences_info.append_array(lonely)
+			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(simple)
 		elif level == 38:
-			first_cat_preferences_info.append_array(lonely)
+			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(simple)
 		elif level == 39:
-			first_cat_preferences_info.append_array(lonely)
-			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(simple)
+			first_cat_preferences_info.append_array(down)
 		elif level == 40:
-			first_cat_preferences_info.append_array(lonely)
-			second_cat_preferences_info.append_array(social)
-			third_cat_preferences_info.append_array(simple)
+			first_cat_preferences_info.append_array(down)
+			#вот тут я остановился
 		elif level == 41:
-			first_cat_preferences_info.append_array(up)
+			first_cat_preferences_info.append_array(down)
 		elif level == 42:
-			first_cat_preferences_info.append_array(up)
+			first_cat_preferences_info.append_array(down)
+			second_cat_preferences_info.append_array(down)
 		elif level == 43:
-			first_cat_preferences_info.append_array(up)
+			first_cat_preferences_info.append_array(down)
+			second_cat_preferences_info.append_array(lonely)
 		elif level == 44:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(up)
+			first_cat_preferences_info.append_array(down)
+			second_cat_preferences_info.append_array(lonely)
 		elif level == 45:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(simple)
+			first_cat_preferences_info.append_array(down)
+			second_cat_preferences_info.append_array(social)
 		elif level == 46:
 			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(simple)
+			second_cat_preferences_info.append_array(down)
 		elif level == 47:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(simple)
-		elif level == 48:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(simple)
-		elif level == 49:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 50:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 51:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(up)
-			third_cat_preferences_info.append_array(lonely)
-		elif level == 52:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 53:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(social)
-		elif level == 54:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(social)
-		elif level == 55:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(social)
-		elif level == 56:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(social)
-		elif level == 57:
-			first_cat_preferences_info.append_array(down)
-		elif level == 58:
-			first_cat_preferences_info.append_array(down)
-		elif level == 59:
-			first_cat_preferences_info.append_array(down)
-		elif level == 60:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(down)
-		elif level == 61:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 62:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 63:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 64:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(lonely)
-		elif level == 65:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(social)
-		elif level == 66:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(social)
-		elif level == 67:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(social)
-		elif level == 68:
-			first_cat_preferences_info.append_array(down)
-			second_cat_preferences_info.append_array(down)
-			third_cat_preferences_info.append_array(social)
-		elif level == 69:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(down)
-		elif level == 70:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(up)
 			third_cat_preferences_info.append_array(down)
-		elif level == 71:
+		elif level == 48:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(down)
 			third_cat_preferences_info.append_array(up)
-		elif level == 72:
+		elif level == 49:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(down)
 			third_cat_preferences_info.append_array(up)
 			fourth_cat_preferences_info.append_array(up)
-		elif level == 73:
+		elif level == 50:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(up)
 			third_cat_preferences_info.append_array(down_lonely)
-		elif level == 74:
+		elif level == 51:
 			first_cat_preferences_info.append_array(down_lonely)
 			second_cat_preferences_info.append_array(up_lonely)
 			third_cat_preferences_info.append_array(up_lonely)
-		elif level == 75:
+		elif level == 52:
 			first_cat_preferences_info.append_array(down_social)
 			second_cat_preferences_info.append_array(up_social)
 			third_cat_preferences_info.append_array(up_social)
-		elif level == 76:
+		elif level == 53:
 			first_cat_preferences_info.append_array(down_lonely)
 			second_cat_preferences_info.append_array(up_lonely)
 			third_cat_preferences_info.append_array(up_lonely)
-		elif level == 77:
-			first_cat_preferences_info.append_array(down_social)
-			second_cat_preferences_info.append_array(up_lonely)
-			third_cat_preferences_info.append_array(down_social)
-		elif level == 78:
+		elif level == 54:
 			first_cat_preferences_info.append_array(up_lonely)
 			second_cat_preferences_info.append_array(down_lonely)
 			third_cat_preferences_info.append_array(down_social)
-		elif level == 79:
+		elif level == 55:
 			first_cat_preferences_info.append_array(up_lonely)
 			second_cat_preferences_info.append_array(down_lonely)
 			third_cat_preferences_info.append_array(down_social)
 			fourth_cat_preferences_info.append_array(simple)
-		elif level == 80:
+		elif level == 56:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(down_social)
 			third_cat_preferences_info.append_array(down_lonely)
 			fourth_cat_preferences_info.append_array(lonely)
-		elif level == 81:
+		elif level == 57:
 			first_cat_preferences_info.append_array(warmer)
-		elif level == 82:
+		elif level == 58:
 			first_cat_preferences_info.append_array(warmer)
-		elif level == 83:
+		elif level == 59:
 			first_cat_preferences_info.append_array(warmer)
-		elif level == 84:
+		elif level == 60:
 			first_cat_preferences_info.append_array(warmer)
 			second_cat_preferences_info.append_array(warmer)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 85:
+		elif level == 61:
 			first_cat_preferences_info.append_array(lonely)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 86:
+		elif level == 62:
 			first_cat_preferences_info.append_array(lonely)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 87:
+		elif level == 63:
 			first_cat_preferences_info.append_array(lonely)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 88:
-			first_cat_preferences_info.append_array(lonely)
-			second_cat_preferences_info.append_array(warmer)
-		elif level == 89:
+		elif level == 64:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 90:
+		elif level == 65:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 91:
+		elif level == 66:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 92:
-			first_cat_preferences_info.append_array(social)
-			second_cat_preferences_info.append_array(warmer)
-		elif level == 93:
+		elif level == 67:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
 			third_cat_preferences_info.append_array(lonely)
-		elif level == 94:
+		elif level == 68:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
 			third_cat_preferences_info.append_array(lonely)
-		elif level == 95:
+		elif level == 69:
 			first_cat_preferences_info.append_array(social)
 			second_cat_preferences_info.append_array(warmer)
 			third_cat_preferences_info.append_array(lonely)
-		elif level == 96:
-			first_cat_preferences_info.append_array(social)
-			second_cat_preferences_info.append_array(warmer)
-			third_cat_preferences_info.append_array(lonely)
-		elif level == 97:
+		elif level == 70:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 98:
+		elif level == 71:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 99:
+		elif level == 72:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(up)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 100:
-			first_cat_preferences_info.append_array(up)
-			second_cat_preferences_info.append_array(up)
-			third_cat_preferences_info.append_array(warmer)
-		elif level == 101:
+		elif level == 73:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 102:
+		elif level == 74:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(down)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 103:
+		elif level == 75:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(down)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 104:
+		elif level == 76:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(warmer)
-		elif level == 105:
+		elif level == 77:
 			first_cat_preferences_info.append_array(down)
 			second_cat_preferences_info.append_array(lonely)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 106:
+		elif level == 78:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(social)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 107:
+		elif level == 79:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(lonely)
 			third_cat_preferences_info.append_array(warmer)
-		elif level == 108:
+		elif level == 80:
 			first_cat_preferences_info.append_array(up)
 			second_cat_preferences_info.append_array(lonely)
 			third_cat_preferences_info.append_array(warmer)
 			fourth_cat_preferences_info.append_array(warmer)
-		elif level == 109:
+		elif level == 81:
 			first_cat_preferences_info.append_array(warmer_lon)
 			second_cat_preferences_info.append_array(simple)
-		elif level == 110:
+		elif level == 82:
 			first_cat_preferences_info.append_array(warmer_lon)
 			second_cat_preferences_info.append_array(warmer_soc)
 			third_cat_preferences_info.append_array(simple)
-		elif level == 110:
-			first_cat_preferences_info.append_array(warmer_soc)
-			second_cat_preferences_info.append_array(warmer_lon)
-			third_cat_preferences_info.append_array(simple)
-		elif level == 111:
+		elif level == 83:
 			first_cat_preferences_info.append_array(warmer_lon)
 			second_cat_preferences_info.append_array(simple)
-		elif level == 112:
+		elif level == 84:
 			first_cat_preferences_info.append_array(warmer_lon)
 			second_cat_preferences_info.append_array(warmer_lon)
 			third_cat_preferences_info.append_array(simple)
-		elif level == 113:
+		elif level == 85:
 			first_cat_preferences_info.append_array(warmer_up)
 			second_cat_preferences_info.append_array(warmer_up)
 			third_cat_preferences_info.append_array(social)
-		elif level == 114:
+		elif level == 86:
 			first_cat_preferences_info.append_array(warmer_lon)
 			second_cat_preferences_info.append_array(warmer_down)
 			third_cat_preferences_info.append_array(down_lonely)
-		elif level == 115:
+		elif level == 87:
 			first_cat_preferences_info.append_array(warmer_down)
 			second_cat_preferences_info.append_array(up_lonely)
 			third_cat_preferences_info.append_array(social)
 			fourth_cat_preferences_info.append_array(simple)
-		elif level == 116:
+		elif level == 88:
 			first_cat_preferences_info.append_array(warmer_down)
 			second_cat_preferences_info.append_array(warmer_up)
 			third_cat_preferences_info.append_array(warmer_lon)
 			fourth_cat_preferences_info.append_array(lonely)
-		elif level == 117:
+		elif level == 89:
 			first_cat_preferences_info.append_array([1,3,4])
 			second_cat_preferences_info.append_array(simple)
-		elif level == 118:
+		elif level == 90:
 			first_cat_preferences_info.append_array([0, 2, 4])
 			second_cat_preferences_info.append_array([0, 2, 4])
 			third_cat_preferences_info.append_array(warmer)
 			fourth_cat_preferences_info.append_array(simple)
-		elif level == 119:
+		elif level == 91:
 			first_cat_preferences_info.append_array([0, 2, 4])
 			second_cat_preferences_info.append_array([0,2,4])
 			third_cat_preferences_info.append_array([0,3,4])
 			fourth_cat_preferences_info.append_array(simple)
-		elif level == 120:
+		elif level == 92:
 			first_cat_preferences_info.append_array([0, 2, 4])
 			second_cat_preferences_info.append_array([0, 3, 4])
 			third_cat_preferences_info.append_array([1, 2, 4])
 			fourth_cat_preferences_info.append_array([1, 3, 4])
-		elif level == 121:
+		elif level == 93:
 			first_cat_preferences_info.append_array(hidden_lonely)
 			
 			
@@ -862,34 +675,27 @@ func _ready():
 		if level == 1:
 			Level.spawn("ArmChair", 2, false)
 		elif level == 2:
-			Level.spawn("Puff", 3, false)
-			Level.spawn("Puff", 9, false)
-		elif level == 3:
-			Level.spawn("ArmChair", 4, false)
-			Level.spawn("ArmChair", 5, true)
-			Level.spawn("Puff", 15, false)
-		elif level == 4:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ArmChair", 5, true)
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Puff", 11, false)
-		elif level == 5:
+		elif level == 3:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Puff", 6, false)
 			Level.spawn_plug(9)
-		elif level == 6:
+		elif level == 4:
 			Level.spawn("Puff", 9, false)
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Table", 7, false)
 			Level.spawn_plug(9)
-		elif level == 7:
+		elif level == 5:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ArmChair", 13, true)
 			Level.spawn("Puff", 6, false)
 			Level.spawn_plug(6)
-		elif level == 8:
+		elif level == 6:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("ArmChair", 9, true)
@@ -897,100 +703,68 @@ func _ready():
 			Level.spawn("Puff", 14, false)
 			Level.spawn_plug(8)
 			Level.spawn_plug(14)
-		elif level == 9:
+		elif level == 7:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Puff", 5, false)
 			Level.spawn("Puff", 8, true)
 			Level.spawn("Puff", 10, false)
-		elif level == 10:
+		elif level == 8:
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Sofa2", 6, false)
 			Level.spawn("Sofa", 7, false)
 			Level.spawn("Puff", 13, false)
-		elif level == 11:
+		elif level == 9:
 			Level.spawn("Sofa2", 1, false)
 			Level.spawn("Sofa", 2, false)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ArmChair", 9, true)
-		elif level == 12:
-			Level.spawn("ArmChair", 1, false)
-			Level.spawn("Sofa2", 3, false)
-			Level.spawn("Sofa", 4, false)
-			Level.spawn("Puff", 6, false)
-			Level.spawn("ArmChair", 9, false)
-			Level.spawn("ArmChair", 11, false)
-			Level.spawn_plug(11)
-		elif level == 13:
-			Level.spawn("ArmChair", 3, false)
-			Level.spawn("ArmChair", 9, true)
-			Level.spawn("Puff", 11, false)
-		elif level == 14:
-			Level.spawn("Sofa2", 2, false)
-			Level.spawn("Sofa", 3, false)
-			Level.spawn("ArmChair", 5, true)
-		elif level == 15:
-			Level.spawn("ArmChair", 2, false)
-			Level.spawn("ArmChair", 9, true)
-			Level.spawn("Puff", 6, false)
-			Level.spawn("Puff", 11, false)
-		elif level == 16:
-			Level.spawn("Puff", 1, false)
-			Level.spawn("Sofa2", 9, false)
-			Level.spawn("Sofa", 10, false)
-			Level.spawn("Puff", 7, false)
-		elif level == 17:
+		elif level == 10:
 			Level.spawn("Stand", 2, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("Puff", 16, false)
 			Level.spawn_plug(16)
-		elif level == 18:
+		elif level == 11:
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Puff", 5, false)
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Table", 7, false)
-		elif level == 19:
+		elif level == 12:
 			Level.spawn("Stand", 2, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Puff", 14, true)
 			Level.spawn_plug(9)
-		elif level == 20:
-			Level.spawn("Sofa2", 2, false)
-			Level.spawn("Sofa2", 9, true)
-			Level.spawn("Sofa", 3, false)
-			Level.spawn("Sofa", 5, true)
-			Level.spawn("Stand", 13, true)
-		elif level == 21:
+		elif level == 13:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn_plug(3)
-		elif level == 22:
+		elif level == 14:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn_plug(6)
-		elif level == 23:
+		elif level == 15:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Table2", 9, true)
 			Level.spawn("Table", 5, true)
 			Level.spawn("Puff", 6, false)
 			Level.spawn_plug(6)
 			Level.spawn_plug(9)
-		elif level == 24:
+		elif level == 16:
 			Level.spawn("Sofa2", 3, false)
 			Level.spawn("Sofa", 4, false)
 			Level.spawn("Table", 6, true)
 			Level.spawn("Table2", 10, true)
 			Level.spawn_plug(6)
-		elif level == 25:
+		elif level == 17:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 8, false)
 			Level.spawn_plug(3)
-		elif level == 26:
+		elif level == 18:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Stand", 3, false)
 			Level.spawn("Puff", 4, false)
@@ -999,14 +773,7 @@ func _ready():
 			Level.spawn("Stand", 12, false)
 			Level.spawn("ArmChair", 13, true)
 			Level.spawn("Puff", 15, false)
-		elif level == 27:
-			Level.spawn("Puff", 2, false)
-			Level.spawn("Stand", 5, true)
-			Level.spawn("Stand", 9, true)
-			Level.spawn("Sofa2", 11, false)
-			Level.spawn("Sofa", 12, false)
-			Level.spawn("Puff", 14, false)
-		elif level == 28:
+		elif level == 19:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 8, false)
@@ -1017,34 +784,21 @@ func _ready():
 			Level.spawn_plug(2)
 			Level.spawn_plug(12)
 			Level.spawn_plug(13)
-		elif level == 29:
+		elif level == 20:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Stand", 6, false)
 			Level.spawn("Puff", 12, false)
-		elif level == 30:
-			Level.spawn("Stand", 5, false)
-			Level.spawn("Puff", 7, false)
-			Level.spawn("Puff", 9, false)
-			Level.spawn("Table2", 10, false)
-			Level.spawn("Table", 11, false)
-			Level.spawn("Puff", 14, false)
-		elif level == 31:
+		elif level == 21:
 			Level.spawn("Stand", 1, false)
 			Level.spawn("Stand", 2, false)
 			Level.spawn("Puff", 7, false)
-		elif level == 32:
-			Level.spawn("Puff", 2, false)
-			Level.spawn("Stand", 4, false)
-			Level.spawn("ArmChair", 5, true)
-			Level.spawn("Puff", 7, false)
-			Level.spawn("Puff", 15, false)
-		elif level == 33:
+		elif level == 22:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Puff", 14, false)
 			Level.spawn_plug(5)
-		elif level == 34:
+		elif level == 23:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Sofa2", 9, true)
@@ -1052,184 +806,120 @@ func _ready():
 			Level.spawn("Puff", 8, false)
 			Level.spawn_plug(9)
 			Level.spawn("ArmChair", 14, true)
-		elif level == 35:
-			Level.spawn("ArmChair", 1, false)
-			Level.spawn("Sofa2", 3, false)
-			Level.spawn("Sofa", 4, false)
-			Level.spawn("Puff", 6, false)
-			Level.spawn("Puff", 11, false)
-		elif level == 36:
+		elif level == 24:
 			Level.spawn("Stand", 4, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("Sofa2", 13, true)
 			Level.spawn("Sofa", 9, true)
 			Level.spawn("Puff", 11, false)
 			Level.spawn_plug(6)
-		elif level == 37:
-			Level.spawn("Sofa2", 3, false)
-			Level.spawn("Sofa", 2, false)
-			Level.spawn("Stand", 5, false)
-			Level.spawn("Stand", 12, false)
-			Level.spawn("Puff", 13, false)
-		elif level == 38:
+		elif level == 25:
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Table2", 11, true)
 			Level.spawn("Table", 7, true)
-		elif level == 39:
+		elif level == 26:
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Stand", 7, true)
 			Level.spawn("Puff", 10, false)
 			Level.spawn("Stand", 13, true)
-		elif level == 40:
-			Level.spawn("Puff", 2, false)
-			Level.spawn("Puff", 3, false)
-			Level.spawn("Puff", 5, false)
-			Level.spawn("Puff", 9, false)
-		elif level == 41:
+		elif level == 27:
 			Level.spawn("Shelf", 2, false)
 			Level.spawn("Puff", 10, false)
-		elif level == 42:
+		elif level == 28:
 			Level.spawn("ChairEars", 3, false)
 			Level.spawn("ArmChair", 5, true)
-		elif level == 43:
+		elif level == 29:
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Table", 7, false)
 			Level.spawn("Stand", 9, false)
-		elif level == 44:
+		elif level == 30:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Puff", 11, false)
-		elif level == 45:
-			Level.spawn("Table2", 2, false)
-			Level.spawn("Table", 3, false)
-			Level.spawn("Sofa2", 9, true)
-			Level.spawn("Sofa", 5, true)
-		elif level == 46:
+		elif level == 31:
 			Level.spawn("Shelf", 2, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
-		elif level == 47:
-			Level.spawn("Puff", 3, false)
-			Level.spawn("Sofa2", 9, true)
-			Level.spawn("Sofa", 5, true)
-			Level.spawn("Shelf", 13, true)
-		elif level == 48:
+		elif level == 32:
 			Level.spawn("ChairEars", 3, false)
 			Level.spawn("CoffeeTable", 7, false)
 			Level.spawn("ChairEars", 10, true)
-		elif level == 49:
+		elif level == 33:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 5, false)
-		elif level == 50:
-			Level.spawn("ChairEars", 3, false)
-			Level.spawn("Puff", 8, false)
-			Level.spawn("Table2", 10, false)
-			Level.spawn("Table", 11, false)
-			Level.spawn("ChairEars", 13, true)
-			Level.spawn_plug(8)
-		elif level == 51:
+		elif level == 34:
 			Level.spawn("Sofa2", 1, false)
 			Level.spawn("Sofa", 2, false)
 			Level.spawn("CoffeeTable", 7, false)
 			Level.spawn("ArmChair", 10, true)
 			Level.spawn("Stand", 12, false)
-		elif level == 52:
+		elif level == 35:
 			Level.spawn("ArmChair", 4, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("CoffeeTable", 7, false)
 			Level.spawn_plug(7)
-		elif level == 53:
+		elif level == 36:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Stand", 5, true)
 			Level.spawn("Puff", 7, false)
 			Level.spawn("Shelf", 9, true)
-		elif level == 54:
+		elif level == 37:
 			Level.spawn("CoffeeTable", 1, false)
 			Level.spawn("Shelf", 2, false)
 			Level.spawn("Stand", 3, false)
 			Level.spawn("Puff", 5, false)
-		elif level == 55:
+		elif level == 38:
 			Level.spawn("Stand", 1, true)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn_plug(9)
-		elif level == 56:
-			Level.spawn("ArmChair", 1, true)
-			Level.spawn("Shelf", 5, true)
-			Level.spawn("Puff", 6, false)
-			Level.spawn("Stand", 8, false)
-			Level.spawn("ArmChair", 11, false)
-		elif level == 57:
+		elif level == 39:
 			Level.spawn("Puff", 2, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
-		elif level == 58:
+		elif level == 40:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("ChairEars", 9, true)
-		elif level == 59:
+		elif level == 41:
 			Level.spawn("Stand", 3, false)
 			Level.spawn("Shelf", 9, true)
-		elif level == 60:
+		elif level == 42:
 			Level.spawn("ChairEars", 3, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("CoffeeTable", 11, false)
 			Level.spawn("Stand", 13, true)
-		elif level == 61:
+		elif level == 43:
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Stand", 14, true)
-		elif level == 62:
-			Level.spawn("ArmChair", 2, false)
-			Level.spawn("Puff", 7, false)
-			Level.spawn("Box", 10, true)
-		elif level == 63:
+		elif level == 44:
 			Level.spawn("ChairEars", 3, false)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("ChairEars", 9, true)
 			Level.spawn("Stand", 13, true)
-		elif level == 64:
-			Level.spawn("ChairEars", 2, false)
-			Level.spawn("Puff", 5, false)
-			Level.spawn("ArmChair", 10, false)
-		elif level == 65:
+		elif level == 45:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Stand", 4, false)
 			Level.spawn("Puff", 5, false)
-		elif level == 66:
-			Level.spawn("ArmChair", 2, false)
-			Level.spawn("Stand", 7, false)
-			Level.spawn("ArmChair", 9, true)
-		elif level == 67:
-			Level.spawn("Shelf", 2, false)
-			Level.spawn("Puff", 4, false)
-			Level.spawn("Table2", 6, false)
-			Level.spawn("Table", 7, false)
-			Level.spawn("ArmChair", 9, true)
-		elif level == 68:
-			Level.spawn("Stand", 1, true)
-			Level.spawn("ArmChair", 5, true)
-			Level.spawn("ChairEars", 7, false)
-			Level.spawn("Box", 10, false)
-			Level.spawn("Puff", 13, false)
-		elif level == 69:
+		elif level == 46:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 5, false)
-		elif level == 70:
+		elif level == 47:
 			Level.spawn("ChairEars", 1, false)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Table2", 11, true)
 			Level.spawn("Table", 7, true)
 			Level.spawn("Stand", 9, true)
 			Level.spawn("Puff", 16, false)
-		elif level == 71:
+		elif level == 48:
 			Level.spawn("ChairEars", 2, false)
 			Level.spawn("Shelf", 3, false)
 			Level.spawn("Sofa2", 9, true)
@@ -1237,47 +927,41 @@ func _ready():
 			Level.spawn("CoffeeTable", 11, false)
 			Level.spawn("Stand", 13, true)
 			Level.spawn("Puff", 15, false)
-		elif level == 72:
+		elif level == 49:
 			Level.spawn("ArmChair", 3, true)
 			Level.spawn("Puff", 4, false)
 			Level.spawn("ChairEars", 5, false)
 			Level.spawn("CoffeeTable", 11, false)
 			Level.spawn("Shelf", 13, false)
 			Level.spawn("Stand", 16, false)
-		elif level == 73:
+		elif level == 50:
 			Level.spawn("Box", 1, true)
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Shelf", 9, true)
 			Level.spawn("Puff", 12, false)
 			Level.spawn("ArmChair", 15, true)
-		elif level == 74:
+		elif level == 51:
 			Level.spawn("ArmChair", 2, true)
 			Level.spawn("ArmChair", 4, true)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Puff", 7, false)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Puff", 14, false)
-		elif level == 75:
+		elif level == 52:
 			Level.spawn("Stand", 2, false)
 			Level.spawn("ArmChair", 3, true)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Puff", 11, false)
 			Level.spawn_plug(9)
-		elif level == 76:
+		elif level == 53:
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Shelf", 5, true)
 			Level.spawn("Table2", 11, true)
 			Level.spawn("Stand", 9, true)
 			Level.spawn("Table", 7, true)
-		elif level == 77:
-			Level.spawn("Puff", 1, false)
-			Level.spawn("Stand", 5, false)
-			Level.spawn("Puff", 6, false)
-			Level.spawn("Shelf", 14, true)
-			Level.spawn("Puff", 11, false)
-		elif level == 78:
+		elif level == 54:
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("Shelf", 5, true)
 			Level.spawn("Puff", 6, false)
@@ -1286,7 +970,7 @@ func _ready():
 			Level.spawn("Puff", 14, false)
 			Level.spawn("Stand", 16, false)
 			Level.spawn_plug(9)
-		elif level == 79:
+		elif level == 55:
 			Level.spawn("ChairEars", 2, false)
 			Level.spawn("Puff", 3, false)
 			Level.spawn("ChairEars", 5, true)
@@ -1294,39 +978,39 @@ func _ready():
 			Level.spawn("Puff", 9, false)
 			Level.spawn("ChairEars", 10, true)
 			Level.spawn("ArmChair", 11, false)
-		elif level == 80:
+		elif level == 56:
 			Level.spawn("Stand", 3, false)
 			Level.spawn("Shelf", 5, true)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("Stand", 10, true)
 			Level.spawn("Stand", 13, true)
 			Level.spawn("ChairEars", 15, false)
-		elif level == 81:
+		elif level == 57:
 			Level.spawn("CoffeeTable", 7, false)
 			Level.spawn("Candle", 7, false)
 			Level.spawn("Puff", 8, false)
 			Level.spawn("Puff", 15, false)
-		elif level == 82:
+		elif level == 58:
 			Level.spawn("Sofa2", 6, false)
 			Level.spawn("Sofa", 7, false)
 			Level.spawn("TV", 9, true)
-		elif level == 83:
+		elif level == 59:
 			Level.spawn("Puff", 2, false)
 			Level.spawn("Stand", 3, false)
 			Level.spawn("Lamp", 3, false)
 			Level.spawn("Sofa2", 10, false)
 			Level.spawn("Sofa", 11, false)
-		elif level == 84:
+		elif level == 60:
 			Level.spawn("Puff", 3, false)
 			Level.spawn("TV", 5, true)
 			Level.spawn("Lamp", 8, false)
 			Level.spawn("Bed", 11, false)
 			Level.spawn("Puff", 14, false)
-		elif level == 85:
+		elif level == 61:
 			Level.spawn("TV", 1, false)
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
-		elif level == 86:
+		elif level == 62:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Sofa2", 9, true)
@@ -1334,56 +1018,44 @@ func _ready():
 			Level.spawn("Stand", 14, false)
 			Level.spawn("Candle", 14, false)
 			Level.spawn_plug(5)
-		elif level == 87:
-			Level.spawn("Stand", 1, true)
-			Level.spawn("Sofa", 6, true)
-			Level.spawn("Sofa2", 10, true)
-			Level.spawn("Table", 7, true)
-			Level.spawn("Table2", 11, true)
-			Level.spawn("Candle", 7, false)
-		elif level == 88:
+		elif level == 63:
 			Level.spawn("Sofa2", 3, false)
 			Level.spawn("Sofa", 4, false)
 			Level.spawn("Stand", 6, false)
 			Level.spawn("Stand", 8, false)
 			Level.spawn("Candle", 11, false)
-		elif level == 89:
+		elif level == 64:
 			Level.spawn("Stand", 4, false)
 			Level.spawn("Candle", 4, false)
 			Level.spawn("ArmChair", 7, false)
 			Level.spawn("Sofa2", 14, true)
 			Level.spawn("Sofa", 10, true)
-		elif level == 90:
-			Level.spawn("ArmChair", 1, false)
-			Level.spawn("Puff", 2, false)
-			Level.spawn("Stand", 7, true)
-			Level.spawn("Bed", 10, true)
-		elif level == 91:
+		elif level == 65:
 			Level.spawn("Puff", 4, false)
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Candle", 6, false)
 			Level.spawn("Table", 7, false)
 			Level.spawn("Stand", 9, true)
 			Level.spawn("Puff", 11, false)
-		elif level == 92:
+		elif level == 66:
 			Level.spawn("ChairEars", 2, false)
 			Level.spawn("Table2", 6, false)
 			Level.spawn("Candle", 6, false)
 			Level.spawn("Table", 7, false)
 			Level.spawn("Puff", 9, false)
 			Level.spawn("Stand", 13, true)
-		elif level == 93:
+		elif level == 67:
 			Level.spawn("Shelf", 1, false)
 			Level.spawn("ChairEars", 2, false)
 			Level.spawn("Candle", 7, false)
 			Level.spawn("Puff", 11, false)
 			Level.spawn("Puff", 14, false)
-		elif level == 94:
+		elif level == 68:
 			Level.spawn("TV", 2, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
 			Level.spawn("Puff", 13, false)
-		elif level == 95:
+		elif level == 69:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Stand", 5, true)
@@ -1391,15 +1063,7 @@ func _ready():
 			Level.spawn("Puff", 8, false)
 			Level.spawn("Puff", 9, false)
 			Level.spawn("Stand", 15, true)
-		elif level == 96:
-			Level.spawn("ChairEars", 2, false)
-			Level.spawn("Puff", 7, false)
-			Level.spawn("Stand", 9, false)
-			Level.spawn("Table2", 10, false)
-			Level.spawn("Candle", 10, false)
-			Level.spawn("Table", 11, false)
-			Level.spawn("Puff", 14, false)
-		elif level == 97:
+		elif level == 70:
 			Level.spawn("ArmChair", 4, false)
 			Level.spawn("Table2", 10, true)
 			Level.spawn("Table", 6, true)
@@ -1408,7 +1072,7 @@ func _ready():
 			Level.spawn("Lamp", 11, false)
 			Level.spawn("ChairEars", 13, true)
 			Level.spawn("Puff", 15, false)
-		elif level == 98:
+		elif level == 71:
 			Level.spawn("Stand", 1, false)
 			Level.spawn("Lamp", 1, false)
 			Level.spawn("Sofa2", 2, false)
@@ -1417,7 +1081,7 @@ func _ready():
 			Level.spawn("TV", 14, true)
 			Level.spawn("Puff", 16, false)
 			Level.spawn_plug(3)
-		elif level == 99:
+		elif level == 72:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Shelf", 4, false)
 			Level.spawn("Sofa2", 9, true)
@@ -1427,33 +1091,26 @@ func _ready():
 			Level.spawn("CoffeeTable", 10, false)
 			Level.spawn("Candle", 10, false)
 			Level.spawn("Puff", 14, false)
-		elif level == 100:
-			Level.spawn("Shelf", 1, false)
-			Level.spawn("ArmChair", 4, false)
-			Level.spawn("TV", 9, true)
-			Level.spawn("Table", 7, true)
-			Level.spawn("Table2", 11, true)
-			Level.spawn("Puff", 14, false)
-		elif level == 101:
+		elif level == 73:
 			Level.spawn("ArmChair", 9, true)
 			Level.spawn("Table2", 10, true)
 			Level.spawn("Table", 6, true)
 			Level.spawn("Candle", 6, false)
 			Level.spawn("Puff", 7, false)
-		elif level == 102:
+		elif level == 74:
 			Level.spawn("Stand", 2, false)
 			Level.spawn("Lamp", 2, false)
 			Level.spawn("ArmChair", 3, false)
 			Level.spawn("ChairEars", 5, true)
 			Level.spawn("Bed", 10, true)
-		elif level == 103:
+		elif level == 75:
 			Level.spawn("Stand", 1, false)
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 9, false)
 			Level.spawn("Puff", 11, false)
 			Level.spawn("TV", 13, true)
-		elif level == 104:
+		elif level == 76:
 			Level.spawn("Puff", 1, false)
 			Level.spawn("Sofa2", 3, false)
 			Level.spawn("Sofa", 4, false)
@@ -1461,7 +1118,7 @@ func _ready():
 			Level.spawn("Table", 5, true)
 			Level.spawn("Lamp", 5, false)
 			Level.spawn("ChairEars", 15, true)
-		elif level == 105:
+		elif level == 77:
 			Level.spawn("Shelf", 2, false)
 			Level.spawn("TV", 3, false)
 			Level.spawn("Sofa2", 9, true)
@@ -1469,7 +1126,7 @@ func _ready():
 			Level.spawn("CoffeeTable", 6, false)
 			Level.spawn("Puff", 8, false)
 			Level.spawn("Puff", 10, false)
-		elif level == 106:
+		elif level == 78:
 			Level.spawn("Shelf", 1, true)
 			Level.spawn("Stand", 2, false)
 			Level.spawn("Lamp", 2, false)
@@ -1477,14 +1134,14 @@ func _ready():
 			Level.spawn("Stand", 5, true)
 			Level.spawn("Puff", 8, false)
 			Level.spawn("Bed", 10, true)
-		elif level == 107:
+		elif level == 79:
 			Level.spawn("Stand", 1, false)
 			Level.spawn("Sofa2", 3, false)
 			Level.spawn("Sofa", 4, false)
 			Level.spawn("CoffeeTable", 7, false)
 			Level.spawn("Puff", 12, false)
 			Level.spawn("TV", 15, true)
-		elif level == 108:
+		elif level == 80:
 			Level.spawn("ArmChair", 2, false)
 			Level.spawn("Sofa2", 9, true)
 			Level.spawn("Sofa", 5, true)
@@ -1495,12 +1152,12 @@ func _ready():
 			Level.spawn("Stand", 13, true)
 			Level.spawn("Lamp", 13, false)
 			Level.spawn("Puff", 15, false)
-		elif level == 109:
+		elif level == 81:
 			Level.spawn("Puff", 2, false)
 			Level.spawn("TV", 5, true)
 			Level.spawn("Puff", 6, false)
 			Level.spawn("Puff", 9, false)
-		elif level == 110:
+		elif level == 82:
 			Level.spawn("Puff", 1, false)
 			Level.spawn("Stand", 2, true)
 			Level.spawn("Candle", 2, false)
@@ -1511,7 +1168,7 @@ func _ready():
 			Level.spawn("Puff", 13, false)
 			Level.spawn("Puff", 16, false)
 			Level.spawn_plug(9)
-		elif level == 111:
+		elif level == 83:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn_plug(2)
@@ -1520,7 +1177,7 @@ func _ready():
 			Level.spawn("Table2", 11, true)
 			Level.spawn("Table", 7, true)
 			Level.spawn("Lamp", 7, false)
-		elif level == 112:
+		elif level == 84:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Sofa2", 9, true)
@@ -1532,13 +1189,13 @@ func _ready():
 			Level.spawn("Puff", 11, false)
 			Level.spawn("TV", 12, false)
 			Level.spawn_plug(5)
-		elif level == 113:
+		elif level == 85:
 			Level.spawn("ArmChair", 1, true)
 			Level.spawn("Puff", 2, false)
 			Level.spawn("TV", 5, true)
 			Level.spawn("Bed", 10, true)
 			Level.spawn("ArmChair", 8, false)
-		elif level == 114:
+		elif level == 86:
 			Level.spawn("Puff", 1, false)
 			Level.spawn("Shelf", 2, false)
 			Level.spawn("Puff", 3, false)
@@ -1547,7 +1204,7 @@ func _ready():
 			Level.spawn("Candle", 6, false)
 			Level.spawn("Puff", 10, false)
 			Level.spawn("Puff", 15, false)
-		elif level == 115:
+		elif level == 87:
 			Level.spawn("CoffeeTable", 1, false)
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
@@ -1558,7 +1215,7 @@ func _ready():
 			Level.spawn("Puff", 10, false)
 			Level.spawn("CoffeeTable", 16, false)
 			Level.spawn("Candle", 16, false)
-		elif level == 116:
+		elif level == 88:
 			Level.spawn("Sofa2", 5, true)
 			Level.spawn("Sofa", 1, true)
 			Level.spawn("Bed", 3, true)
@@ -1568,14 +1225,14 @@ func _ready():
 			Level.spawn("Lamp", 14, false)
 			Level.spawn("Bed", 10, true)
 			Level.spawn("Puff", 15, false)
-		elif level == 117:
+		elif level == 89:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("CoffeeTable", 5, false)
 			Level.spawn("Candle", 5, false)
 			Level.spawn("Puff", 7, false)
 			Level.spawn("Puff", 10, false)
-		elif level == 118:
+		elif level == 90:
 			Level.spawn("Puff", 1, false)
 			Level.spawn("Shelf", 3, false)
 			Level.spawn("Stand", 4, false)
@@ -1586,7 +1243,7 @@ func _ready():
 			Level.spawn("Bed", 13, true)
 			Level.spawn("CoffeeTable", 14, false)
 			Level.spawn("Candle", 14, false)
-		elif level == 119:
+		elif level == 91:
 			Level.spawn("Sofa2", 5, true)
 			Level.spawn("Sofa", 1, true)
 			Level.spawn("TV", 3, false)
@@ -1595,7 +1252,7 @@ func _ready():
 			Level.spawn("Stand", 10, false)
 			Level.spawn("Candle", 10, false)
 			Level.spawn("Puff", 8, false)
-		elif level == 120:
+		elif level == 92:
 			Level.spawn("TV", 2, true)
 			Level.spawn_plug(2)
 			Level.spawn("Shelf", 6, false)
@@ -1606,7 +1263,7 @@ func _ready():
 			Level.spawn("Stand", 11, true)
 			Level.spawn("Candle", 12, false)
 			Level.spawn("Puff", 16, false)
-		elif level == 121:
+		elif level == 93:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("Puff", 5, false)

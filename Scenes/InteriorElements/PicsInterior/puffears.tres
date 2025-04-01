@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bsrtexng2cbog"]
+
+[ext_resource type="Texture2D" uid="uid://crnmnrubmif3f" path="res://Assets/Interior/Цветное/Пуфик с ушкамии.png" id="1_6up42"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6up42")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

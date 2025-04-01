@@ -60,7 +60,7 @@ func _process(delta):
 	var tested = []
 	for i in range(current_furniture.size()):
 		var item = current_furniture[i]
-		print("Item:", item, "Index:", i)
+
 		if item.warmth:
 			#если в клетках есть клетка больше/меньше и эта клетка не равняется вот этим, то предмет на этой клетке больше/меньше
 			if current_cells.find(current_cells[i]-1) != -1 and current_cells[i] != 5 and current_cells[i] != 9 and current_cells[i] != 13 and item.Type != 5 and item.Type != 6:
@@ -139,39 +139,39 @@ func spawn(furniture_name, furniture_position, flip_info):
 	var furniture_spawn
 	#fix this shit
 	if furniture_name == "ArmChair":
-		furniture_spawn = preload("res://Scenes/InteriorElements/arm_chair.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/arm_chair.tscn").instantiate()
 	if furniture_name == "Shelf":
-		furniture_spawn = preload("res://Scenes/InteriorElements/shelf.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/shelf.tscn").instantiate()
 	if furniture_name == "Sofa":
-		furniture_spawn = preload("res://Scenes/InteriorElements/sofa.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/sofa.tscn").instantiate()
 	if furniture_name == "Sofa2":
-		furniture_spawn = preload("res://Scenes/InteriorElements/sofa_left_side.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/sofa_left_side.tscn").instantiate()
 	if furniture_name == "Table":
-		furniture_spawn = preload("res://Scenes/InteriorElements/table.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/table.tscn").instantiate()
 	if furniture_name == "Table2":
-		furniture_spawn = preload("res://Scenes/InteriorElements/table_left_part.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/table_left_side.tscn").instantiate()
 	if furniture_name == "CoffeeTable":
-		furniture_spawn = preload("res://Scenes/InteriorElements/coffee_table.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/coffee_table.tscn").instantiate()
 	if furniture_name == "Box":
-		furniture_spawn = preload("res://Scenes/InteriorElements/box.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/box.tscn").instantiate()
 	if furniture_name == "ChairEars":
-		furniture_spawn = preload("res://Scenes/InteriorElements/chair_ears.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/chair_ears.tscn").instantiate()
 	if furniture_name == "Bed":
-		furniture_spawn = preload("res://Scenes/InteriorElements/bed.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/bed.tscn").instantiate() 
 	if furniture_name == "BedEars":
-		furniture_spawn = preload("res://Scenes/InteriorElements/bed_ears.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/bed_ears.tscn").instantiate()
 	if furniture_name == "Puff":
-		furniture_spawn = preload("res://Scenes/InteriorElements/puff.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/puff.tscn").instantiate()
 	if furniture_name == "PuffEars":
-		furniture_spawn = preload("res://Scenes/InteriorElements/puff_ears.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/puff_ears.tscn").instantiate()
 	if furniture_name == "Stand":
-		furniture_spawn = preload("res://Scenes/InteriorElements/stand.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/stand.tscn").instantiate()
 	if furniture_name == "Lamp":
-		furniture_spawn = preload("res://Scenes/InteriorElements/lamp.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/lamp.tscn").instantiate()
 	if furniture_name == "Candle":
-		furniture_spawn = preload("res://Scenes/InteriorElements/candle.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/candle.tscn").instantiate()
 	if furniture_name == "TV":
-		furniture_spawn = preload("res://Scenes/InteriorElements/tv.tscn").instantiate()
+		furniture_spawn = preload("res://Scenes/InteriorElements/NewSceneInt/tv.tscn").instantiate()
 	add_child(furniture_spawn)
 	set_position_furniture(furniture_position)
 	if furniture_name == "Sofa" and flip_info:

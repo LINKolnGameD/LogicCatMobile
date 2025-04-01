@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdhq6jn1ttbm8"]
+
+[ext_resource type="Script" path="res://Scripts/Furniture.gd" id="1_fjqxr"]
+[ext_resource type="SpriteFrames" uid="uid://l8g4espgjthm" path="res://Scenes/InteriorElements/PicsInterior/puff.tres" id="2_24wkt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sc3mg"]
+radius = 162.824
+
+[node name="Puff" type="Node2D"]
+script = ExtResource("1_fjqxr")
+Type = 7
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.8, -83.8)
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_24wkt")
+
+[node name="FurnitureArea" type="Area2D" parent="."]
+process_mode = 3
+position = Vector2(-2.8, -109.8)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FurnitureArea"]
+process_mode = 3
+shape = SubResource("CircleShape2D_sc3mg")
+
+[connection signal="area_entered" from="FurnitureArea" to="." method="_on_furniture_area_area_entered"]
+[connection signal="body_entered" from="FurnitureArea" to="." method="_on_furniture_area_body_entered"]
+[connection signal="body_exited" from="FurnitureArea" to="." method="_on_furniture_area_body_exited"]
+[connection signal="child_entered_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_entered_tree"]
+[connection signal="child_exiting_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_exiting_tree"]

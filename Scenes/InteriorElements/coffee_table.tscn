@@ -1,18 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2p1mjsthtimq"]
+[gd_scene load_steps=4 format=3 uid="uid://c2p1mjsthtimq"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_eh8og"]
-[ext_resource type="Texture2D" uid="uid://cl5bc62gv4mbm" path="res://Assets/Interior/Цветное/журнальный столик.png" id="2_j7uw7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_oan7x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_j7uw7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://bupg5hwm6j3ut" path="res://Scenes/InteriorElements/PicsInterior/coffeetable.tres" id="2_y24rw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tlylb"]
 radius = 134.629
@@ -22,7 +11,7 @@ Type = 1
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(0, -92)
-sprite_frames = SubResource("SpriteFrames_oan7x")
+sprite_frames = ExtResource("2_y24rw")
 
 [node name="FurnitureArea" parent="." index="1"]
 position = Vector2(0, -179)

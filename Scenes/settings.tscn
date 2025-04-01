@@ -1,12 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://hyoci7g4y30p"]
+[gd_scene load_steps=21 format=3 uid="uid://hyoci7g4y30p"]
 
-[ext_resource type="Script" path="res://Scenes/settings.gd" id="1_aq3c2"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_aq3c2"]
+[ext_resource type="Texture2D" uid="uid://bwjsiutc8b0ss" path="res://Assets/GUI Elements/Group 29.png" id="2_f6fu5"]
+[ext_resource type="Texture2D" uid="uid://brisqeogqsjqx" path="res://Assets/GUI Elements/Group 18.png" id="3_g5kal"]
+[ext_resource type="Texture2D" uid="uid://be0ys2jlybksh" path="res://Assets/GUI Elements/Group 23.png" id="4_p7nui"]
+[ext_resource type="Texture2D" uid="uid://d0ajjua5qf0nb" path="res://Assets/GUI Elements/Group 7.png" id="5_hyqgj"]
 
-[sub_resource type="Gradient" id="Gradient_46srp"]
-colors = PackedColorArray(0.564697, 0.366525, 0.243486, 1, 0.756067, 0.455125, 0.355472, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgfmf"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wa33b"]
-gradient = SubResource("Gradient_46srp")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qquq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eeeti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1blx1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnq5i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq6hl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_788sf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8irv"]
+modulate_color = Color(0.988235, 0.505882, 0.6, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xd1oh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2fqw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8evr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frhex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1kvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jve0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuupq"]
 
 [node name="Settings" type="Control"]
 custom_minimum_size = Vector2(1000, 1000)
@@ -29,89 +58,77 @@ grow_vertical = 2
 [node name="Control" type="Control" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control"]
-custom_minimum_size = Vector2(500, 500)
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -276.0
-offset_top = -271.0
-offset_right = 276.0
-offset_bottom = 271.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_wa33b")
-
-[node name="Music" type="Label" parent="CenterContainer/Control"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -166.0
-offset_top = -172.0
-offset_right = 48.0
-offset_bottom = -64.0
+offset_left = -491.0
+offset_top = -545.0
+offset_right = 492.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 76
-text = "Music"
 
-[node name="MusicButton" type="Button" parent="CenterContainer/Control/Music"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control/CenterContainer"]
+custom_minimum_size = Vector2(620, 620)
+layout_mode = 2
+texture = ExtResource("2_f6fu5")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Control/CenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 190
+theme_override_constants/margin_top = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Control/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="SoundButton" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(266, 144)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.596078, 0.537255, 0.866667, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xgfmf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qquq8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eeeti")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1blx1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnq5i")
+icon = ExtResource("3_g5kal")
+expand_icon = true
+
+[node name="MusicButton" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(266, 144)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.231373, 0.658824, 0.647059, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yq6hl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_788sf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8irv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xd1oh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s2fqw")
+icon = ExtResource("4_p7nui")
+expand_icon = true
+
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 285.0
-offset_top = 17.0
-offset_right = 364.0
-offset_bottom = 96.0
-action_mode = 0
+offset_left = 434.0
+offset_top = 346.0
+offset_right = 670.0
+offset_bottom = 530.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q8evr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_frhex")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g1kvy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jve0x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wuupq")
+icon = ExtResource("5_hyqgj")
+expand_icon = true
 
-[node name="Sounds" type="Label" parent="CenterContainer/Control"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -180.0
-offset_top = -44.0
-offset_right = 88.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 76
-text = "Sounds"
-
-[node name="SoundButton" type="Button" parent="CenterContainer/Control/Sounds"]
-layout_mode = 0
-offset_left = 299.0
-offset_top = 17.0
-offset_right = 378.0
-offset_bottom = 96.0
-action_mode = 0
-
-[node name="Language" type="Label" parent="CenterContainer/Control"]
-layout_mode = 0
-offset_left = -162.0
-offset_top = 69.0
-offset_right = 191.0
-offset_bottom = 177.0
-theme_override_font_sizes/font_size = 76
-text = "Language"
-
-[node name="MenuBar" type="MenuBar" parent="CenterContainer/Control/Language"]
-layout_mode = 0
-offset_right = 353.0
-offset_bottom = 252.0
-
-[node name="Close_Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 731.0
-offset_top = 831.0
-offset_right = 798.0
-offset_bottom = 908.0
-
-[connection signal="pressed" from="CenterContainer/Control/Music/MusicButton" to="." method="_on_music_button_pressed"]
-[connection signal="pressed" from="CenterContainer/Control/Sounds/SoundButton" to="." method="_on_sound_button_pressed"]
-[connection signal="pressed" from="Close_Button" to="." method="_on_close_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer" to="." method="_on_center_container_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Control/CenterContainer" to="." method="_on_center_container_mouse_exited"]
+[connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_mouse_exited"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_mouse_exited"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

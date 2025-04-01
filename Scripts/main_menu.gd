@@ -15,11 +15,11 @@ func _process(delta):
 #	if Input.is_action_pressed("click") and not Input.is_action_just_released("click"):
 #		$BackGround.position.direction_to(get_viewport().get_mouse_position())
 	CatT.position.x = ControlT.size.x/2 - 1050
+	CatT.global_position.y = $Chair.global_position.y - 1420
 	pass
 func _on_play_pressed():
 	EventBus.play_button_sound.emit()
 	var scene_to_load = "LevelMenu"  # Путь к сцене, которую нужно загрузить
-	print("pressed")
 	EventBus.scene_change_requested.emit(scene_to_load) # Испускаем сигнал с параметром
 
 
@@ -28,3 +28,5 @@ func _on_settings_pressed():
 	var New_Menu = load("res://Scenes/settings.tscn")
 	var instance = New_Menu.instantiate()
 	add_child(instance)
+
+

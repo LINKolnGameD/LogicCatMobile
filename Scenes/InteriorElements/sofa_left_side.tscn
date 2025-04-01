@@ -9,9 +9,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_7gtmj")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [node name="Sofa_LeftSide" instance=ExtResource("1_k3nfo")]
@@ -20,6 +20,7 @@ animations = [{
 position = Vector2(101, -30)
 rotation = 0.0174533
 sprite_frames = SubResource("SpriteFrames_r3yds")
+frame_progress = 0.136056
 
 [node name="FurnitureArea" parent="." index="1"]
 z_index = 20

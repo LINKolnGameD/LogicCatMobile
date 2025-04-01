@@ -13,7 +13,7 @@ var current_cells
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_cells = main_scene_way.Level.current_cells
-	print(current_cells)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

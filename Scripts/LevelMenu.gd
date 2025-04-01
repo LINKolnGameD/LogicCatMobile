@@ -14,8 +14,7 @@ func _ready():
 	
 	for i in get_parent().get_parent().level_progress:
 		successful_levels.append(str(i))
-	print(get_parent().get_parent().level_progress)
-	print(successful_levels)
+
 	#если эта кнопка есть как успешный уровень, то ок, если нет, то кнопка не работает
 	for i in ButtonKeeper.get_children():
 		if successful_levels.has(i.name):
@@ -23,17 +22,22 @@ func _ready():
 		else:
 			i.disabled = true
 			if len(successful_levels) == 0:
-				$ScrollContainer/GridContainer/Level_1.disabled = false
+				$MarginContainer2/ScrollContainer/CenterContainer/GridContainer/Level_1.disabled = false
 			elif ButtonKeeper.get_children()[ButtonKeeper.get_children().find(i) - 1].disabled == false and successful_levels.has(ButtonKeeper.get_children()[ButtonKeeper.get_children().find(i) - 1].name):
 				i.disabled = false
 	vary_successful_levels = get_parent().get_parent().completed_levels
 	for i in ButtonKeeper.get_children():
 		if vary_successful_levels.has(i.name):
 			i.modulate = Color(0.6,0.4,0.1)
+	if Margin and Margin.size.x > 0 and Margin.size.y > 0:
+		ButtonKeeper.add_theme_constant_override("h_separation", Margin.size.x / 8)
+		ButtonKeeper.add_theme_constant_override("v_separation", Margin.size.y / 8)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	ButtonKeeper.global_position.x = Margin.size.x/4
-
+	if Margin and Margin.size.x > 0 and Margin.size.y > 0:
+		ButtonKeeper.add_theme_constant_override("h_separation", Margin.size.x / 8)
+		ButtonKeeper.add_theme_constant_override("v_separation", Margin.size.y / 8)
+		
 func _on_level_1_pressed():
 	level_number = 1
 	EventBus.level_choice.emit(level_number)

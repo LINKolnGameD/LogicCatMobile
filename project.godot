@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="DemoLogicCat"
+config/name="LogicCat"
 run/main_scene="res://Scenes/scene_manager.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+config/icon="res://Assets/GUI Elements/CATICON.png"
 
 [autoload]
 
@@ -27,6 +28,7 @@ window/size/window_width_override=540
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [editor]
 
@@ -47,4 +49,6 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+textures/webp_compression/compression_method=3
 environment/defaults/default_clear_color=Color(0.788235, 0.831373, 0.890196, 1)

@@ -50,7 +50,7 @@ func play_button_sound():
 		ButtonSound.play()
 	
 func add_level(level):
-	print(level)
+
 	if "Level_" + str(level) not in level_progress:
 		level_progress.append("Level_" + str(level))
 	save_game()
@@ -71,12 +71,17 @@ func _process(delta):
 			var new_scene = loader.instantiate()
 			if scene_to_open  == MainMenu or scene_to_open == LevelMenu:
 				Canvas.add_child(new_scene)
+				print("Loading done!")
 			else:
 				add_child(new_scene)
 			scene_to_open = null
 			for i in get_children():
 				if i is Loading:
 					i.queue_free()
+				else:
+					for e in i.get_children():
+						if e is Loading:
+							e.queue_free()
 					
 					
 func _on_scene_change_requested(scene_name):

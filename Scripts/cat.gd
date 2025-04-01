@@ -39,6 +39,7 @@ var streams_array = []
 var cat_can_meow: bool = false
 var can_be_picked: bool = true
 var _mouse_enter: bool = false
+var plug_set = false
 var cat_numeration: int
 
 var target: Node
@@ -68,7 +69,8 @@ func _ready():
 	elif age == 2:
 		appearence.append("cat")
 	if AnimationC.sprite_frames == null:
-		AnimationC.sprite_frames = load(str("res://Scenes/Cats/", appearence[3],appearence[0],appearence[1],appearence[2],".tres") )
+		var needed_string = str("res://Scenes/Cats/", appearence[3],appearence[0],appearence[1],appearence[2],".tres")
+		AnimationC.sprite_frames = load(needed_string)
 		AnimationC.play("Tail")
 		
 	if get_parent().get_parent().get_parent().get_parent().get_parent().global_sound_mod == false:
@@ -93,11 +95,13 @@ func _process(delta):
 	elif get_parent().name == "FurnitureArea":
 		main_scene_way = get_parent().get_parent().get_parent().MainScene
 		
-	var plug_set = false
 	if plug_set == false:
 		for i in main_scene_way.Level.get_children():
 			if i is Plug:
 				plug_array.append(i)
+#	for i in main_scene_way.LevelInterior.current_furniture:
+#		if i.Type == 5 or i.Type == 6:
+#			AnimationC.sprite_frames.clear("Lying")
 		plug_set = true
 		
 	if satisfaction != null:
@@ -495,21 +499,24 @@ func _update_state(delta: float) -> void:
 					if get_parent().get_parent().Type == 5:
 						AnimationC.scale = Vector2(0.8,0.8)
 						AnimationC.position = Vector2(-15,-80)
-						AnimationC.play("Lying")
+						if AnimationC.animation != "Lying":
+							AnimationC.play("Lying")
 					else:
 						if appearence.has("kitty"):
 							AnimationC.scale = Vector2(1.13,1.13)
 						else:
 							AnimationC.scale = Vector2(1.188,1.188)
 						AnimationC.position = Vector2(31.429,-81.429)
-						AnimationC.play("Tail")
+						if AnimationC.animation != "Tail":
+							AnimationC.play("Tail")
 				else:
 					if appearence.has("kitty"):
 							AnimationC.scale = Vector2(1.13,1.13)
 					else:
 							AnimationC.scale = Vector2(1.188,1.188)
 					AnimationC.position = Vector2(31.429,-81.429)
-					AnimationC.play("Tail")
+					if AnimationC.animation != "Tail":
+						AnimationC.play("Tail")
 			
 		STATE.MOVE: 
 			global_position = target.global_position

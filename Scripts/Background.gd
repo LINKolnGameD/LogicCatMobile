@@ -10,7 +10,8 @@ func _ready():
 	var pattern_number = random.randi_range(1,4)
 	if pattern_number == 1:
 		Pattern.texture = load("res://Assets/GUI Elements/клубок ниток с фоном (3).png")
-		RenderingServer.set_default_clear_color(Color(blue_background_color))
+		if get_parent().name != "Education":
+			RenderingServer.set_default_clear_color(Color(blue_background_color))
 		Pattern.scale = Vector2(0.06, 0.06)
 		Pattern.modulate = Color(1,1,1,0.2)
 	elif pattern_number == 2:
@@ -21,10 +22,12 @@ func _ready():
 		Pattern.texture = load("res://Assets/GUI Elements/1 (6).png")
 		Pattern.scale = Vector2(0.5, 0.5)
 		Pattern.modulate = Color(1,1,1,0.3)
-		RenderingServer.set_default_clear_color(Color(orange_background_color))
+		if get_parent().name != "Education":
+			RenderingServer.set_default_clear_color(Color(orange_background_color))
 	elif pattern_number == 4:
 		Pattern.texture = load("res://Assets/GUI Elements/1 (7).png")
-		RenderingServer.set_default_clear_color(Color(violet_background_color))
+		if get_parent().name != "Education":
+			RenderingServer.set_default_clear_color(Color(violet_background_color))
 		Pattern.scale = Vector2(0.5, 0.5)
 		Pattern.modulate = Color(1,1,1,0.8)
 

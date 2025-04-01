@@ -8,6 +8,9 @@ extends Control
 @onready var MainScene = $"../.."
 @onready var Next = $FinishMenu/Next
 @onready var Reset = $MarginContainer/Reset
+@onready var ArrowRight = $"../ArrRight"
+@onready var ArrowLeft = $"../ArrLeft"
+@onready var CatCont = $"../HBoxContainer"
 var ArrRight_in = false
 var ArrLeft_in = false
 var CatState = 1
@@ -17,16 +20,42 @@ var final_satisfaction = 0
 var final_frame
 var level
 
+var arrows_set: bool = false
 var in_mouse_area: bool
 var get_level = false
+var play_education 
+
+var mouse_in:bool = false
+var mouse_in2:bool = false
+var mouse_in3:bool = false
+var mouse_in4:bool = false
 
 func _ready():
 	FinishMenu.hide()
 	SettingMenu.hide()
 	EventBus.change_sound_second.connect(sound_change)
-	if  get_parent().get_parent().get_parent().global_sound_mod == false:
+	if get_parent().get_parent().get_parent().global_sound_mod == false:
 		CleanSound.volume_db = -80
+		
+		
 func _process(delta):
+	print(mouse_in, mouse_in2, mouse_in3, mouse_in4)
+#
+	if MainScene.card_amount == 4:
+		if CatState == 1:
+			CatCont.position.x = 169
+			ArrowLeft.hide()
+			ArrowRight.show()
+		elif CatState == 2:
+			CatCont.position.x = -838
+			ArrowLeft.show()
+			ArrowRight.hide()
+	else:
+		if arrows_set == false:
+			ArrowLeft.queue_free()
+			ArrowRight.queue_free()
+			arrows_set = true
+	print(final_satisfaction)
 	Reset.scale = Vector2(0.9, 0.9)
 	
 	if get_level == false:
@@ -35,26 +64,7 @@ func _process(delta):
 			get_level = true
 	bar_count = MainScene.CatsSatisfaction
 	
-	if MainScene.card_amount == 4:
-		if CatState == 1:
-			$"../HBoxContainer".position.x = 169
-			$"../ArrLeftArea2D".hide()
-			$"../ArrRightArea2D".show()
-		elif CatState == 2:
-			$"../HBoxContainer".position.x = -838
-			$"../ArrLeftArea2D".show()
-			$"../ArrRightArea2D".hide()
-		
 	
-	
-	if ArrRight_in:
-		if CatState == 1:
-			if Input.is_action_just_pressed("click"):
-				CatState = 2
-	if ArrLeft_in:
-		if CatState == 2:
-			if Input.is_action_just_pressed("click"):
-				CatState = 1
 			
 	if final_satisfaction == 0:
 		Next.disabled = true
@@ -109,13 +119,15 @@ func _on_check_pressed():
 		final_satisfaction = final_satisfaction/len(bar_count)
 		final_frame = roundi(final_satisfaction/8.3)
 		FinishMenu.show()
-		$Timer.start()
 		get_tree().paused = true
 		if final_satisfaction > 0:
 			EventBus.add_succes.emit(level)
 			if final_satisfaction == 100:
 				EventBus.add_very_succes.emit(level)
-		
+			RelishBar.play("default")
+			$CPUParticles2D.emitting = true
+			$CPUParticles2D2.emitting = true
+			$CPUParticles2D3.emitting = true
 func content_no_cat(node):
 	if node.get_children().find(node.Cat) == -1:
 		return true
@@ -167,9 +179,27 @@ func _on_settings_pressed():
 	var New_Menu = load("res://Scenes/settings.tscn")
 	var instance = New_Menu.instantiate()
 	add_child(instance)
+	instance.global_position = Vector2(0,0)
+	SettingMenu.hide()
 	
 func sound_change(mod):
 	if mod:
 		CleanSound.volume_db = 10
 	else:
 		CleanSound.volume_db = -80
+
+
+func _on_relish_bar_frame_changed():
+	if RelishBar.frame == final_frame:
+		RelishBar.pause()
+
+
+
+func _on_arr_right_pressed():
+	if CatState == 1:
+		CatState = 2
+
+func _on_arr_right_2_pressed():
+	if CatState == 2:
+		CatState = 1
+

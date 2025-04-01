@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx21gr7ovboey"]
+
+[ext_resource type="Script" path="res://Scripts/Furniture.gd" id="1_4u85j"]
+[ext_resource type="SpriteFrames" uid="uid://1asqu6l7sibd" path="res://Scenes/InteriorElements/PicsInterior/table2.tres" id="2_3dutl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t56le"]
+radius = 112.285
+
+[node name="Table_LeftSide" type="Node2D"]
+script = ExtResource("1_4u85j")
+Type = 9
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(115, -48)
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_3dutl")
+
+[node name="FurnitureArea" type="Area2D" parent="."]
+process_mode = 3
+z_index = 20
+z_as_relative = false
+position = Vector2(0, -215)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FurnitureArea"]
+process_mode = 3
+shape = SubResource("CircleShape2D_t56le")
+
+[connection signal="area_entered" from="FurnitureArea" to="." method="_on_furniture_area_area_entered"]
+[connection signal="body_entered" from="FurnitureArea" to="." method="_on_furniture_area_body_entered"]
+[connection signal="body_exited" from="FurnitureArea" to="." method="_on_furniture_area_body_exited"]
+[connection signal="child_entered_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_entered_tree"]
+[connection signal="child_exiting_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_exiting_tree"]

@@ -1,35 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvx78ohf4v5u5"]
+[gd_scene load_steps=19 format=3 uid="uid://cvx78ohf4v5u5"]
 
 [ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_8ptm8"]
 [ext_resource type="Script" path="res://Scripts/Main_scene.gd" id="1_qcb3b"]
 [ext_resource type="PackedScene" uid="uid://v4hdyv43fviq" path="res://Scenes/gui.tscn" id="2_ftqaf"]
 [ext_resource type="PackedScene" uid="uid://cehvi3v7rr7og" path="res://Scenes/protolevel.tscn" id="2_s1cab"]
 [ext_resource type="PackedScene" uid="uid://0bqo4ol11gha" path="res://Scenes/Card.tscn" id="3_owala"]
-[ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="4_iqyns"]
+[ext_resource type="Texture2D" uid="uid://cpfso7mn1k61c" path="res://Assets/GUI Elements/Subtract (4).png" id="7_5dprm"]
+[ext_resource type="Texture2D" uid="uid://bcbsme1fwvuca" path="res://Assets/GUI Elements/Subtract (6).png" id="8_33yan"]
+[ext_resource type="PackedScene" uid="uid://dg68b37hnk67m" path="res://Scenes/education.tscn" id="9_67snq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8nrx"]
-size = Vector2(98, 442)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mj1d0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyilt"]
-size = Vector2(86.9992, 449)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h642k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vlec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36762"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qdq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ojr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rb7mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7gww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8utyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6w2s"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_qcb3b")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(540, 1080)
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
 
 [node name="Background" parent="." instance=ExtResource("1_8ptm8")]
 
 [node name="Protolevel" parent="." instance=ExtResource("2_s1cab")]
 position = Vector2(-105, 441)
 scale = Vector2(0.9, 0.9)
-
-[node name="Furniture" parent="Protolevel" instance=ExtResource("4_iqyns")]
-position = Vector2(3928, -2234)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -43,21 +50,17 @@ offset_bottom = 1979.0
 scale = Vector2(0.7, 0.7)
 theme_override_constants/separation = 500
 
-[node name="Card" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+[node name="Card" parent="CanvasLayer/HBoxContainer" instance=ExtResource("3_owala")]
 layout_mode = 2
-map = NodePath("../../..")
 
-[node name="Card2" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+[node name="Card2" parent="CanvasLayer/HBoxContainer" instance=ExtResource("3_owala")]
 layout_mode = 2
-map = NodePath("../../..")
 
-[node name="Card3" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+[node name="Card3" parent="CanvasLayer/HBoxContainer" instance=ExtResource("3_owala")]
 layout_mode = 2
-map = NodePath("../../..")
 
-[node name="Card4" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("map") instance=ExtResource("3_owala")]
+[node name="Card4" parent="CanvasLayer/HBoxContainer" instance=ExtResource("3_owala")]
 layout_mode = 2
-map = NodePath("../../..")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 12
@@ -73,27 +76,43 @@ grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 size_flags_vertical = 8
 
-[node name="ArrRightArea2D" type="Area2D" parent="CanvasLayer"]
-position = Vector2(972, 2089)
+[node name="ArrRight" type="Button" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = 859.0
+offset_right = -27.0
+offset_bottom = 953.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_colors/icon_pressed_color = Color(0.886275, 0.843137, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mj1d0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h642k")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4vlec")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_36762")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3qdq4")
+icon = ExtResource("7_5dprm")
+expand_icon = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ArrRightArea2D"]
-position = Vector2(57, -148)
-shape = SubResource("RectangleShape2D_r8nrx")
+[node name="ArrLeft" type="Button" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 1939.0
+offset_right = 203.0
+offset_bottom = 2033.0
+theme_override_colors/icon_pressed_color = Color(0.886275, 0.843137, 0.980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2ojr4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rb7mj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i7gww")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8utyf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p6w2s")
+icon = ExtResource("8_33yan")
+expand_icon = true
 
-[node name="ArrLeftArea2D" type="Area2D" parent="CanvasLayer"]
-position = Vector2(107, 2090)
-rotation = 3.14159
+[node name="Education" parent="CanvasLayer" instance=ExtResource("9_67snq")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ArrLeftArea2D"]
-position = Vector2(64.4996, 155.5)
-shape = SubResource("RectangleShape2D_nyilt")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-
-[connection signal="mouse_entered" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/ArrRightArea2D" to="CanvasLayer/GUI" method="_on_arr_right_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="CanvasLayer/ArrLeftArea2D" to="CanvasLayer/GUI" method="_on_arr_left_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/ArrLeftArea2D" to="CanvasLayer/GUI" method="_on_arr_left_area_2d_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/ArrRight" to="CanvasLayer/GUI" method="_on_arr_right_pressed"]
+[connection signal="pressed" from="CanvasLayer/ArrLeft" to="CanvasLayer/GUI" method="_on_arr_right_2_pressed"]

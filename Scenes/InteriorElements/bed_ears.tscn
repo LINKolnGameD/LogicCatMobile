@@ -1,26 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqkkfq3b524h4"]
+[gd_scene load_steps=4 format=3 uid="uid://bqkkfq3b524h4"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_wx55f"]
-[ext_resource type="Texture2D" uid="uid://dkxsnh16fle41" path="res://Assets/Interior/Цветное/Крытая лежанка внутри.png" id="2_0e788"]
+[ext_resource type="SpriteFrames" uid="uid://b7usa7wenv7im" path="res://Scenes/InteriorElements/PicsInterior/bedears.tres" id="2_eefv3"]
 [ext_resource type="Texture2D" uid="uid://bqxp6q6pxddqu" path="res://Assets/Interior/Цветное/Крытая лежанка 2 снаружи.png" id="3_ot2v6"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nm4dc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_0e788")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="BedEars" instance=ExtResource("1_wx55f")]
 Type = 6
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(0, -51)
-sprite_frames = SubResource("SpriteFrames_nm4dc")
+sprite_frames = ExtResource("2_eefv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 position = Vector2(0, -52)

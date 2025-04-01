@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://kehd7plsjyn3"]
+
+[ext_resource type="Texture2D" uid="uid://cuiv4fw78jj7w" path="res://Assets/Interior/Цветное/IMG_9716.PNG" id="1_1co57"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1co57")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]

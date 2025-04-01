@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bmitv6ur6p"]
+
+[ext_resource type="Texture2D" uid="uid://c64o0n3yhwwy0" path="res://Assets/Interior/Цветное/шкаф 1.png" id="1_dx7cg"]
+[ext_resource type="Texture2D" uid="uid://jvoe1wfasfa4" path="res://Assets/Interior/Цветное/шкаф 2.png" id="2_ojxjj"]
+[ext_resource type="Texture2D" uid="uid://ncaedlsp36j0" path="res://Assets/Interior/Цветное/шкаф 3.png" id="3_hc5a0"]
+[ext_resource type="Texture2D" uid="uid://dih533dl2o3um" path="res://Assets/Interior/Цветное/шкаф с книгами.png" id="4_ab0gj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dx7cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ojxjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hc5a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ab0gj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]

@@ -96,6 +96,3 @@ frame = 4
 frame_progress = 0.00153144
 
 [node name="Cat" parent="." instance=ExtResource("10_wahyr")]
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

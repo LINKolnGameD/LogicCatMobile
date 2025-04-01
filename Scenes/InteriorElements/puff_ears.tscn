@@ -1,18 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu82xvgl1l7sr"]
+[gd_scene load_steps=4 format=3 uid="uid://bu82xvgl1l7sr"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_a1bt8"]
-[ext_resource type="Texture2D" uid="uid://crnmnrubmif3f" path="res://Assets/Interior/Цветное/Пуфик с ушкамии.png" id="2_6ksnn"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_em60s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6ksnn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://bsrtexng2cbog" path="res://Scenes/InteriorElements/PicsInterior/puffears.tres" id="2_tebgl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfwht"]
 radius = 140.228
@@ -22,7 +11,7 @@ Type = 8
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(0, -85)
-sprite_frames = SubResource("SpriteFrames_em60s")
+sprite_frames = ExtResource("2_tebgl")
 
 [node name="FurnitureArea" parent="." index="1"]
 position = Vector2(21, -125)

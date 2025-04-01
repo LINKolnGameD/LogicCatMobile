@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8o0ylpdfqp7h"]
+
+[ext_resource type="Script" path="res://Scripts/Furniture.gd" id="1_eiooj"]
+[ext_resource type="SpriteFrames" uid="uid://bxl3oyscj6xf7" path="res://Scenes/InteriorElements/PicsInterior/lamp.tres" id="2_vnsii"]
+
+[node name="Lamp" type="Node2D"]
+script = ExtResource("1_eiooj")
+Type = 13
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -222)
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_vnsii")
+
+[node name="FurnitureArea" type="Area2D" parent="."]
+process_mode = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FurnitureArea"]
+process_mode = 3
+
+[connection signal="area_entered" from="FurnitureArea" to="." method="_on_furniture_area_area_entered"]
+[connection signal="body_entered" from="FurnitureArea" to="." method="_on_furniture_area_body_entered"]
+[connection signal="body_exited" from="FurnitureArea" to="." method="_on_furniture_area_body_exited"]
+[connection signal="child_entered_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_entered_tree"]
+[connection signal="child_exiting_tree" from="FurnitureArea" to="." method="_on_furniture_area_child_exiting_tree"]
