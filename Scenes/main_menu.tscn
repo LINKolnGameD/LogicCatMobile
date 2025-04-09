@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.870588, 0.686275, 0.658824, 1)
+color = Color(0.760784, 0.576471, 0.647059, 1)
 
 [node name="BackGround" type="Sprite2D" parent="."]
 modulate = Color(0.862745, 0.666667, 1, 1)
@@ -120,8 +120,9 @@ layout_mode = 2
 theme_override_constants/separation = 90
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+self_modulate = Color(2, 2, 2, 1)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.945313, 0.878906, 0.765625, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 140

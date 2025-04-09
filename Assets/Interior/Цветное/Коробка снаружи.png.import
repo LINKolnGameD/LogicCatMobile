@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwj1tr2368itd"
-path="res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.ctex"
+path.s3tc="res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.s3tc.ctex"
+path.etc2="res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Interior/Цветное/Коробка снаружи.png"
-dest_files=["res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.ctex"]
+dest_files=["res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.s3tc.ctex", "res://.godot/imported/Коробка снаружи.png-fa883f83837f21231632001287940551.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.3
 compress/hdr_compression=1

@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cipph8j2iu08o"
-path="res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.ctex"
+path.s3tc="res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.s3tc.ctex"
+path.etc2="res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Cats/Полосатые-20250324T085601Z-001/Полосатые/Рыжие/Пушистые р.PNG"
-dest_files=["res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.ctex"]
+dest_files=["res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.s3tc.ctex", "res://.godot/imported/Пушистые р.PNG-acb019b0782e49846df88da5a76ff2ae.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.3
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

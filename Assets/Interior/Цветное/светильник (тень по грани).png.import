@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvqtwax5n5h8j"
-path="res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.ctex"
+path.s3tc="res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.s3tc.ctex"
+path.etc2="res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Interior/Цветное/светильник (тень по грани).png"
-dest_files=["res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.ctex"]
+dest_files=["res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.s3tc.ctex", "res://.godot/imported/светильник (тень по грани).png-1cc9faad8d12ef50b75e32bf715912f3.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.3
 compress/hdr_compression=1

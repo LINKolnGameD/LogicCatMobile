@@ -7,10 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://b5fu52accny4g" path="res://Assets/Sound/Карточка 1.mp3" id="3_ixtmn"]
 [ext_resource type="Texture2D" uid="uid://cjq23ecoo8l6n" path="res://Assets/GUI Elements/Panel.svg" id="3_vba53"]
 [ext_resource type="Texture2D" uid="uid://bdhus1brhrhhv" path="res://Assets/GUI Elements/Group 1 (5).png" id="5_conif"]
-[ext_resource type="Texture2D" uid="uid://mnhb44dmhthw" path="res://Assets/GUI Elements/IMG_9584.PNG" id="6_3e2ao"]
 [ext_resource type="Texture2D" uid="uid://qrnvjomwhlot" path="res://Assets/GUI Elements/Group 12.png" id="7_teeu0"]
 [ext_resource type="Texture2D" uid="uid://ck81rxp3pop4y" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (23).png" id="8_m8wa1"]
-[ext_resource type="Texture2D" uid="uid://drxqum8qqfdvs" path="res://Assets/GUI Elements/IMG_9582.PNG" id="8_q3f1w"]
 [ext_resource type="Texture2D" uid="uid://cn8wp8ynxpbvu" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (24).png" id="9_3sspj"]
 [ext_resource type="Texture2D" uid="uid://bsb0gabtrwp5k" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (25).png" id="10_bh5u5"]
 [ext_resource type="Texture2D" uid="uid://cud1upxkhuv6o" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (26).png" id="11_x1xck"]
@@ -22,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d3ie7dokpmk2d" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (32).png" id="17_l8yt5"]
 [ext_resource type="Texture2D" uid="uid://bjam5yih5hsmu" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (33).png" id="18_86las"]
 [ext_resource type="Texture2D" uid="uid://cneiveuwil4xc" path="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (34).png" id="19_jqcvp"]
+[ext_resource type="Texture2D" uid="uid://i46u2ch5wqui" path="res://Assets/GUI Elements/Group 83 (1).png" id="20_wpm31"]
+[ext_resource type="Texture2D" uid="uid://chxefdwmyexk1" path="res://Assets/GUI Elements/Group 84.png" id="21_2xvgx"]
 [ext_resource type="Texture2D" uid="uid://c1fqfaaquq6k3" path="res://Assets/GUI Elements/Group 10.png" id="22_v3ege"]
 [ext_resource type="Texture2D" uid="uid://d0ajjua5qf0nb" path="res://Assets/GUI Elements/Group 7.png" id="23_co7rh"]
 [ext_resource type="Texture2D" uid="uid://dq8u4oql704l3" path="res://Assets/GUI Elements/Group 8 (1).png" id="24_20pey"]
@@ -187,7 +187,9 @@ offset_right = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
-theme_override_constants/margin_top = 50
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 20
 
 [node name="Menu" type="Button" parent="MarginContainer"]
 layout_mode = 2
@@ -213,36 +215,37 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_lcg36")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_31bqq")
 icon = ExtResource("1_faiw5")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 937.0
-offset_top = -71.0
-offset_right = 5090.0
-offset_bottom = 1692.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_vba53")
-
 [node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -226.0
-offset_top = 1299.89
-offset_right = 3927.0
-offset_bottom = 3062.89
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -763.0
+offset_top = -861.0
+offset_right = 3390.0
+offset_bottom = 935.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_vba53")
 
-[node name="Cat_Icon" type="Sprite2D" parent="."]
-position = Vector2(68, 1674)
-scale = Vector2(0.380347, 0.380347)
+[node name="Cat_Icon" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 616.0
+offset_right = 844.0
+offset_bottom = 970.0
+scale = Vector2(0.760694, 0.760694)
 texture = ExtResource("5_conif")
 
-[node name="Check" type="Button" parent="."]
+[node name="Check" type="Button" parent="TextureRect2"]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 1376.0
-offset_right = 2404.0
-offset_bottom = 2456.0
+offset_left = 1462.0
+offset_top = 178.0
+offset_right = 5160.0
+offset_bottom = 2258.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/icon_pressed_color = Color(0.843137, 0.784314, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dqnsd")
@@ -251,6 +254,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_inne1")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_dq3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q53rv")
 icon = ExtResource("2_q5r26")
+expand_icon = true
 
 [node name="FinishMenu" type="Control" parent="."]
 layout_mode = 1
@@ -281,21 +285,21 @@ scale = Vector2(1.13056, 1.13056)
 texture = ExtResource("7_teeu0")
 expand_mode = 1
 
-[node name="RelishBar" type="AnimatedSprite2D" parent="FinishMenu"]
-position = Vector2(563, 786)
-scale = Vector2(0.33091, 0.33091)
+[node name="RelishBar" type="AnimatedSprite2D" parent="FinishMenu/BaseFinishPic"]
+position = Vector2(560.784, 664.273)
+scale = Vector2(0.292696, 0.292696)
 sprite_frames = SubResource("SpriteFrames_4et7q")
 frame = 1
 frame_progress = 1.0
 
-[node name="Next" type="Button" parent="FinishMenu"]
+[node name="Next" type="Button" parent="FinishMenu/BaseFinishPic"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 583.0
-offset_top = 811.0
-offset_right = 1003.0
-offset_bottom = 2356.0
+offset_left = 580.243
+offset_top = 704.96
+offset_right = 561.243
+offset_bottom = 1804.96
 grow_horizontal = 2
 scale = Vector2(0.22, 0.22)
 theme_override_colors/icon_pressed_color = Color(0.937255, 0.862745, 0.352941, 1)
@@ -305,28 +309,29 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_r8ai0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_cl5lw")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5lcbe")
 theme_override_styles/focus = SubResource("StyleBoxTexture_aecuh")
-icon = ExtResource("6_3e2ao")
+icon = ExtResource("20_wpm31")
 expand_icon = true
 
-[node name="Restart" type="Button" parent="FinishMenu"]
+[node name="Restart" type="Button" parent="FinishMenu/BaseFinishPic"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 170.0
-offset_top = 778.0
-offset_right = 258.0
-offset_bottom = 1946.0
+offset_left = 286.584
+offset_top = 714.69
+offset_right = 259.584
+offset_bottom = 1769.69
 grow_horizontal = 2
-scale = Vector2(0.357, 0.357)
+scale = Vector2(0.22, 0.22)
 theme_override_colors/icon_pressed_color = Color(0.878431, 0.670588, 0.913725, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qg28f")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_5lcvl")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mu5j7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8ludc")
-icon = ExtResource("8_q3f1w")
+icon = ExtResource("21_2xvgx")
 expand_icon = true
 
 [node name="SettingMenu" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 1
 anchors_preset = 15
@@ -482,10 +487,10 @@ hue_variation_curve = SubResource("Curve_aybb5")
 
 [connection signal="pressed" from="MarginContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
-[connection signal="frame_changed" from="FinishMenu/RelishBar" to="." method="_on_relish_bar_frame_changed"]
-[connection signal="pressed" from="FinishMenu/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="FinishMenu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="TextureRect2/Check" to="." method="_on_check_pressed"]
+[connection signal="frame_changed" from="FinishMenu/BaseFinishPic/RelishBar" to="." method="_on_relish_bar_frame_changed"]
+[connection signal="pressed" from="FinishMenu/BaseFinishPic/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="FinishMenu/BaseFinishPic/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="SettingMenu/VBoxContainer/ToGame" to="." method="_on_to_game_pressed"]
 [connection signal="pressed" from="SettingMenu/VBoxContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="SettingMenu/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

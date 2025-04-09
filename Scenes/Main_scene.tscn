@@ -113,6 +113,9 @@ icon = ExtResource("8_33yan")
 expand_icon = true
 
 [node name="Education" parent="CanvasLayer" instance=ExtResource("9_67snq")]
+offset_left = -5.0
+offset_top = -8.0
+offset_right = -5.0
 
 [connection signal="pressed" from="CanvasLayer/ArrRight" to="CanvasLayer/GUI" method="_on_arr_right_pressed"]
 [connection signal="pressed" from="CanvasLayer/ArrLeft" to="CanvasLayer/GUI" method="_on_arr_right_2_pressed"]

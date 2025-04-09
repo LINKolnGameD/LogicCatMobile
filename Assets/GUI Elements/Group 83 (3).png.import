@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ndpjx0xsg0d7"
-path="res://.godot/imported/IMG_9701.PNG-fcf39d8d87f89a4575eee5ad5f0c2b6d.ctex"
+uid="uid://3fe52cfaqc1"
+path="res://.godot/imported/Group 83 (3).png-f5550e5c0f5a9b36a3b642b05419e04f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI Elements/bar_satisfaction/new bar/IMG_9701.PNG"
-dest_files=["res://.godot/imported/IMG_9701.PNG-fcf39d8d87f89a4575eee5ad5f0c2b6d.ctex"]
+source_file="res://Assets/GUI Elements/Group 83 (3).png"
+dest_files=["res://.godot/imported/Group 83 (3).png-f5550e5c0f5a9b36a3b642b05419e04f.ctex"]
 
 [params]
 

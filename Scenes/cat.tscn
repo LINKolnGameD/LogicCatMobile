@@ -5,11 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://xoyl48h7pc3i" path="res://Assets/Sound/Звук Ш.mp3" id="4_q8k0r"]
 [ext_resource type="AudioStream" uid="uid://dx67hyjwtcdw5" path="res://Assets/Sound/28305__herbertboland__happycatt.mp3" id="5_7d4fp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hxwwr"]
-radius = 173.061
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_5iex0"]
 radius = 140.022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxwwr"]
+radius = 173.061
 
 [node name="Cat" type="CharacterBody2D"]
 process_mode = 1
@@ -17,9 +17,14 @@ scale = Vector2(0.8, 0.8)
 collision_mask = 512
 script = ExtResource("1_h58ub")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_5iex0")
+
 [node name="CatAnSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(31.4286, -81.4286)
 scale = Vector2(1.18776, 1.18776)
+animation = &""
 
 [node name="AreaCat" type="Area2D" parent="CatAnSprite"]
 position = Vector2(-25.8189, 68.7569)
@@ -29,10 +34,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatAnSprite/AreaCat"]
 position = Vector2(0.410903, -60.1873)
 shape = SubResource("CircleShape2D_hxwwr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -25)
-shape = SubResource("CircleShape2D_5iex0")
 
 [node name="HappyMeow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7d4fp")
@@ -45,3 +46,5 @@ volume_db = 5.0
 [node name="CardSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_q8k0r")
 volume_db = 5.0
+
+[connection signal="input_event" from="CatAnSprite/AreaCat" to="." method="_on_area_cat_input_event"]

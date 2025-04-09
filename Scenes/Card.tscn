@@ -1,60 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://0bqo4ol11gha"]
+[gd_scene load_steps=5 format=3 uid="uid://0bqo4ol11gha"]
 
 [ext_resource type="Script" path="res://Scripts/CardExample.gd" id="1_841cm"]
 [ext_resource type="Texture2D" uid="uid://cl8l5ph5us3q6" path="res://Assets/GUI Elements/CardCat.svg" id="1_aeuoj"]
-[ext_resource type="Texture2D" uid="uid://ic7r1jhjxqag" path="res://Assets/GUI Elements/Component 4.svg" id="3_cbyx7"]
-[ext_resource type="Texture2D" uid="uid://ds6ddtdbmtgvl" path="res://Assets/Cats/hvst3.PNG" id="4_etjtx"]
-[ext_resource type="Texture2D" uid="uid://bwflxle2mbeif" path="res://Assets/GUI Elements/Component 5.svg" id="4_x8tja"]
-[ext_resource type="Texture2D" uid="uid://ba4jxdptdwydq" path="res://Assets/GUI Elements/Component 6.svg" id="5_3swi6"]
-[ext_resource type="Texture2D" uid="uid://brqe3u7j6h3vo" path="res://Assets/GUI Elements/Component 7.svg" id="6_8vv6y"]
-[ext_resource type="Texture2D" uid="uid://d17w813tr07p5" path="res://Assets/GUI Elements/Component 8.svg" id="7_d0mlq"]
-[ext_resource type="Texture2D" uid="uid://d1xd5ujbbs2sx" path="res://Assets/GUI Elements/Component 12.svg" id="9_tg0w5"]
+[ext_resource type="SpriteFrames" uid="uid://dvqvji0f68m04" path="res://Scenes/Cats/Card.tres" id="3_6mijx"]
 [ext_resource type="PackedScene" uid="uid://b43wcevchmnlo" path="res://Scenes/cat.tscn" id="10_wahyr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qpr0q"]
-atlas = ExtResource("4_etjtx")
-region = Rect2(3108, 12114, 777, 673)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_b4x6l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_cbyx7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_x8tja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_3swi6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_8vv6y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_d0mlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qpr0q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tg0w5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tg0w5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tg0w5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tg0w5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tg0w5")
-}],
-"loop": true,
-"name": &"preferences",
-"speed": 1.0
-}]
 
 [node name="Card" type="Control"]
 layout_mode = 3
@@ -74,7 +23,7 @@ texture = ExtResource("1_aeuoj")
 [node name="CatPreference" type="AnimatedSprite2D" parent="."]
 position = Vector2(117, -159)
 scale = Vector2(0.464981, 0.464981)
-sprite_frames = SubResource("SpriteFrames_b4x6l")
+sprite_frames = ExtResource("3_6mijx")
 animation = &"preferences"
 frame = 4
 frame_progress = 0.307161
@@ -82,7 +31,7 @@ frame_progress = 0.307161
 [node name="CatPreference2" type="AnimatedSprite2D" parent="."]
 position = Vector2(118, -19)
 scale = Vector2(0.464981, 0.464981)
-sprite_frames = SubResource("SpriteFrames_b4x6l")
+sprite_frames = ExtResource("3_6mijx")
 animation = &"preferences"
 frame = 3
 frame_progress = 0.622941
@@ -90,9 +39,9 @@ frame_progress = 0.622941
 [node name="CatPreference3" type="AnimatedSprite2D" parent="."]
 position = Vector2(120, 129)
 scale = Vector2(0.464981, 0.464981)
-sprite_frames = SubResource("SpriteFrames_b4x6l")
+sprite_frames = ExtResource("3_6mijx")
 animation = &"preferences"
-frame = 4
-frame_progress = 0.00153144
+frame = 3
+frame_progress = 0.85239
 
 [node name="Cat" parent="." instance=ExtResource("10_wahyr")]

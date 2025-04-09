@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://syhjbcsqurug"
-path="res://.godot/imported/2 (4).png-e0ddcd42ecda0031294a81b5031dd48f.ctex"
+uid="uid://b1sld075u75yb"
+path="res://.godot/imported/Group 63.png-5b3ff4331f163005ca417a253116659b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI Elements/2 (4).png"
-dest_files=["res://.godot/imported/2 (4).png-e0ddcd42ecda0031294a81b5031dd48f.ctex"]
+source_file="res://Assets/Interior/Цветное/Group 63.png"
+dest_files=["res://.godot/imported/Group 63.png-5b3ff4331f163005ca417a253116659b.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.3
+compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

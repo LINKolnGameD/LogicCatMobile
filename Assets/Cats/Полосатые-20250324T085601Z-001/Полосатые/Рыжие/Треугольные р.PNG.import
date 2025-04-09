@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu8vhlvdle6qr"
-path="res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.ctex"
+path.s3tc="res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.s3tc.ctex"
+path.etc2="res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Cats/Полосатые-20250324T085601Z-001/Полосатые/Рыжие/Треугольные р.PNG"
-dest_files=["res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.ctex"]
+dest_files=["res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.s3tc.ctex", "res://.godot/imported/Треугольные р.PNG-a1fc516ce4db7803c4f9e9c06f0dc577.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.3
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

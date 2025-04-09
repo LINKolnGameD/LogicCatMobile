@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baxl3x5pd07ys"
-path="res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.ctex"
+path.s3tc="res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.s3tc.ctex"
+path.etc2="res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI Elements/MenuPanel.png"
-dest_files=["res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.ctex"]
+dest_files=["res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.s3tc.ctex", "res://.godot/imported/MenuPanel.png-7a83eb2f207a384a2d089265199c005a.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

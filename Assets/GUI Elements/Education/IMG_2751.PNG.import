@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6c15v1b8ly1j"
-path="res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.ctex"
+path.s3tc="res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.s3tc.ctex"
+path.etc2="res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI Elements/Education/IMG_2751.PNG"
-dest_files=["res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.ctex"]
+dest_files=["res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.s3tc.ctex", "res://.godot/imported/IMG_2751.PNG-eab2398edd741c2d2a582b0aefe6244f.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.3
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

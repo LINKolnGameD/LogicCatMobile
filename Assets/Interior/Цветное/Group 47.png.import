@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dynkn05wdrpme"
-path="res://.godot/imported/IMG_9694.PNG-c6ad03e000d02cd77e70045c9dd30af5.ctex"
+uid="uid://cr5ta4tsj5a8r"
+path="res://.godot/imported/Group 47.png-fad4ac822b3729d5aed3e60e09656a6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI Elements/bar_satisfaction/new bar/IMG_9694.PNG"
-dest_files=["res://.godot/imported/IMG_9694.PNG-c6ad03e000d02cd77e70045c9dd30af5.ctex"]
+source_file="res://Assets/Interior/Цветное/Group 47.png"
+dest_files=["res://.godot/imported/Group 47.png-fad4ac822b3729d5aed3e60e09656a6f.ctex"]
 
 [params]
 

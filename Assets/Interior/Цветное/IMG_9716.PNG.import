@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuiv4fw78jj7w"
-path="res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.ctex"
+path.s3tc="res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.s3tc.ctex"
+path.etc2="res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Interior/Цветное/IMG_9716.PNG"
-dest_files=["res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.ctex"]
+dest_files=["res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.s3tc.ctex", "res://.godot/imported/IMG_9716.PNG-15e60ff41c165beab6cb3501a425ca66.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.3
 compress/hdr_compression=1

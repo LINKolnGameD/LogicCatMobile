@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cud1upxkhuv6o"
-path="res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.ctex"
+path.s3tc="res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.s3tc.ctex"
+path.etc2="res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI Elements/bar_satisfaction/BarCat/Group 4 (26).png"
-dest_files=["res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.ctex"]
+dest_files=["res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.s3tc.ctex", "res://.godot/imported/Group 4 (26).png-8fa525cb2415e1284f9bdad89ccf3050.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.3
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

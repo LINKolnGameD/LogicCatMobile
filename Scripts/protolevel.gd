@@ -1,6 +1,8 @@
 extends Node2D
 
-@onready var floor = $Floor
+@onready var floorw = $White_Floor
+@onready var floorc = $Carpet_Floor
+@onready var flooro = $Oak_Floor
 #position order follow this logic: the rightmost diagonal line from top to bottom, 4 parts ang go on the same to left direction
 @onready var InteriorPositions = [$Cell1A, $Cell2A, $Cell3A, $Cell4A,
 $Cell1B, $Cell2B, $Cell3B, $Cell4B,
@@ -122,14 +124,14 @@ func _process(delta):
 	var floor_number = random.randi_range(0,2)
 	if is_floor_set == false:
 		if floor_number == 0:
-			floor.clear_layer(1)
-			floor.clear_layer(2)
+			floorc.queue_free()
+			flooro.queue_free()
 		elif floor_number == 1:
-			floor.clear_layer(0)
-			floor.clear_layer(2)
+			floorw.queue_free()
+			flooro.queue_free()
 		elif floor_number == 2:
-			floor.clear_layer(1)
-			floor.clear_layer(0)
+			floorw.queue_free()
+			floorc.queue_free()
 		is_floor_set = true
 	
 	pass

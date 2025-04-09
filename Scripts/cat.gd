@@ -41,6 +41,7 @@ var can_be_picked: bool = true
 var _mouse_enter: bool = false
 var plug_set = false
 var cat_numeration: int
+var can_fall: bool = false
 
 var target: Node
 
@@ -76,9 +77,10 @@ func _ready():
 	if get_parent().get_parent().get_parent().get_parent().get_parent().global_sound_mod == false:
 		CardSound.volume_db = -80
 		AngryMeow.volume_db = -80
-		HappyMeow.volume_db = -80
+		HappyMeow.volume_db = -80 
 
 func _process(delta):
+	print(current_state)
 #	print(AnimationC.sprite_frames.get_animation_names(), appearence)
 
 #	if $CatAnSprite.sprite_frames == null:
@@ -193,13 +195,12 @@ func _process(delta):
 		_set_state(STATE.STAND)
 	
 	move_and_slide()
-	
 	if not _mouse_enter: return
-	
-	if Input.is_action_pressed("click"):
+
+	if Input.is_action_pressed("click") and global_position.y - get_viewport().get_mouse_position().y < 200 and global_position.y - get_viewport().get_mouse_position().y > -200 and global_position.x - get_viewport().get_mouse_position().x < 200 and global_position.x - get_viewport().get_mouse_position().x > -200:
 		if can_be_picked:
 			_set_state(STATE.TAKEN)
-	elif Input.is_action_just_released("click"):
+	if Input.is_action_just_released("click") and current_state == 2:
 		_set_state(STATE.MOVE)
 		
 
@@ -577,3 +578,11 @@ func sound_change(mod):
 		HappyMeow.volume_db = -80
 		AngryMeow.volume_db = -80
 		CardSound.volume_db = -80
+
+
+
+func _on_area_cat_input_event(viewport, event, shape_idx):
+	if event == InputEventMouseMotion:
+		can_fall = true
+	else:
+		can_fall = false

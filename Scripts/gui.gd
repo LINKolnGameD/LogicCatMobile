@@ -4,13 +4,15 @@ extends Control
 @onready var SettingMenu = $SettingMenu
 @onready var CleanSound = $CleanSound
 @onready var AllCatCards: Array
-@onready var RelishBar = $FinishMenu/RelishBar
+@onready var RelishBar = $FinishMenu/BaseFinishPic/RelishBar
 @onready var MainScene = $"../.."
-@onready var Next = $FinishMenu/Next
+@onready var Next = $FinishMenu/BaseFinishPic/Next
 @onready var Reset = $MarginContainer/Reset
 @onready var ArrowRight = $"../ArrRight"
 @onready var ArrowLeft = $"../ArrLeft"
 @onready var CatCont = $"../HBoxContainer"
+@onready var DownMenu = $TextureRect2
+
 var ArrRight_in = false
 var ArrLeft_in = false
 var CatState = 1
@@ -39,7 +41,7 @@ func _ready():
 		
 		
 func _process(delta):
-	print(mouse_in, mouse_in2, mouse_in3, mouse_in4)
+
 #
 	if MainScene.card_amount == 4:
 		if CatState == 1:
@@ -55,7 +57,6 @@ func _process(delta):
 			ArrowLeft.queue_free()
 			ArrowRight.queue_free()
 			arrows_set = true
-	print(final_satisfaction)
 	Reset.scale = Vector2(0.9, 0.9)
 	
 	if get_level == false:
@@ -113,7 +114,7 @@ func _on_mouse_area_mouse_shape_entered(shape_idx):
 func _on_check_pressed():
 	EventBus.play_button_sound.emit()
 	if MainScene.CardArray.all(content_no_cat):
-		$Check.disabled = true
+		$TextureRect2/Check.disabled = true
 		for e in bar_count:
 			final_satisfaction += e
 		final_satisfaction = final_satisfaction/len(bar_count)

@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpfso7mn1k61c"
-path="res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.ctex"
+path.s3tc="res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.s3tc.ctex"
+path.etc2="res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI Elements/Subtract (4).png"
-dest_files=["res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.ctex"]
+dest_files=["res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.s3tc.ctex", "res://.godot/imported/Subtract (4).png-9326b57e812e1e36115991d0244e80bb.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.1
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

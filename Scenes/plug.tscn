@@ -104,7 +104,7 @@ animations = [{
 script = ExtResource("1_mde3v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(21, -102)
+position = Vector2(21, -38)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_phyd3")
 animation = &"Lying"

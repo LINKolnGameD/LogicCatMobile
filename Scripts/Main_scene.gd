@@ -2,6 +2,7 @@ extends Node2D
 
 var level: int
 
+@onready var CardContainer = $CanvasLayer/HBoxContainer
 @onready var FirstCard = $CanvasLayer/HBoxContainer/Card
 @onready var SecondCard = $CanvasLayer/HBoxContainer/Card2
 @onready var ThirdCard = $CanvasLayer/HBoxContainer/Card3
@@ -13,6 +14,7 @@ var level: int
 @onready var CardArray = []
 @onready var CatsSatisfaction = []
 @onready var Sound = []
+
 
 
 #flag
@@ -1269,6 +1271,8 @@ func _ready():
 			Level.spawn("Puff", 5, false)
 			Level.spawn("Puff", 8, false)
 			Level.spawn_plug(2)
+			
+			
 func _process(_delta):
 	if cat_numeration_set == false:
 		if card_amount == 1 and FirstCard.Cat != null:
@@ -1297,7 +1301,8 @@ func _process(_delta):
 			
 		furniture_set = true
 			
-#
+	CardContainer.global_position.y = UI.DownMenu.global_position.y + 700
+			
 #	if Input.is_action_pressed("click") and not Input.is_action_just_released("click"):
 #		if UI.in_mouse_area:
 #			print("in mouse area")
@@ -1367,5 +1372,4 @@ func _process(_delta):
 #		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 #			Camera.zoom = Camera.get_zoom() * (Vector2(1.03,1.03))
 	
-		
 		

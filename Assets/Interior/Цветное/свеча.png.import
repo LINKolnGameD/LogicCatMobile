@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbajjcbrgvqfu"
-path="res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.ctex"
+path.s3tc="res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.s3tc.ctex"
+path.etc2="res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Interior/Цветное/свеча.png"
-dest_files=["res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.ctex"]
+dest_files=["res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.s3tc.ctex", "res://.godot/imported/свеча.png-e24a8fed6073e885ab2e813bea0c5548.etc2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.3
 compress/hdr_compression=1
