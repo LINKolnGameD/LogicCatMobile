@@ -53,7 +53,7 @@ var hidden_lonely = [6, 4, 5]
 func _ready():
 	get_tree().paused = false
 	level = get_parent().global_level_info
-
+	$CanvasLayer/MarginContainer2.add_theme_constant_override("margin_top", get_window().size.y/20)
 
 #make intro screen
 #so 0 = lonly, 1 = sociable, 2 = hieghtlover, 3 = lowlover, 4 = warmlover, 5 = nothing
@@ -622,7 +622,7 @@ func _ready():
 			first_cat_preferences_info.append_array(warmer_down)
 			second_cat_preferences_info.append_array(up_lonely)
 			third_cat_preferences_info.append_array(social)
-			fourth_cat_preferences_info.append_array(simple)
+			fourth_cat_preferences_info.append_array(lonely)
 		elif level == 88:
 			first_cat_preferences_info.append_array(warmer_down)
 			second_cat_preferences_info.append_array(warmer_up)
@@ -633,7 +633,7 @@ func _ready():
 			second_cat_preferences_info.append_array(simple)
 		elif level == 90:
 			first_cat_preferences_info.append_array([0, 2, 4])
-			second_cat_preferences_info.append_array([0, 2, 4])
+			second_cat_preferences_info.append_array([0, 3, 4])
 			third_cat_preferences_info.append_array(warmer)
 			fourth_cat_preferences_info.append_array(simple)
 		elif level == 91:
@@ -1207,7 +1207,7 @@ func _ready():
 			Level.spawn("Puff", 10, false)
 			Level.spawn("Puff", 15, false)
 		elif level == 87:
-			Level.spawn("CoffeeTable", 1, false)
+			Level.spawn("TV", 1, true)
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
 			Level.spawn("ArmChair", 5, false)
@@ -1215,6 +1215,7 @@ func _ready():
 			Level.spawn("Table", 8, false)
 			Level.spawn("Lamp", 7, false)
 			Level.spawn("Puff", 10, false)
+			Level.spawn("Puff", 11, false)
 			Level.spawn("CoffeeTable", 16, false)
 			Level.spawn("Candle", 16, false)
 		elif level == 88:
@@ -1226,7 +1227,7 @@ func _ready():
 			Level.spawn("Candle", 9, false)
 			Level.spawn("Lamp", 14, false)
 			Level.spawn("Bed", 10, true)
-			Level.spawn("Puff", 15, false)
+			Level.spawn("ArmChair", 15, false)
 		elif level == 89:
 			Level.spawn("Sofa2", 2, false)
 			Level.spawn("Sofa", 3, false)
@@ -1238,13 +1239,15 @@ func _ready():
 			Level.spawn("Puff", 1, false)
 			Level.spawn("Shelf", 3, false)
 			Level.spawn("Stand", 4, false)
+			Level.spawn("Candle", 5, false)
 			Level.spawn("Sofa2", 10, true)
 			Level.spawn("Sofa", 6, true)
 			Level.spawn("Lamp", 8, false)
 			Level.spawn("Puff", 11, false)
-			Level.spawn("Bed", 13, true)
+			Level.spawn("ChairEars", 13, true)
 			Level.spawn("CoffeeTable", 14, false)
 			Level.spawn("Candle", 14, false)
+			Level.spawn("TV", 16, false)
 		elif level == 91:
 			Level.spawn("Sofa2", 5, true)
 			Level.spawn("Sofa", 1, true)

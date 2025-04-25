@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://hd38q8ovquda"]
+[gd_scene load_steps=24 format=3 uid="uid://hd38q8ovquda"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_h8382"]
 [ext_resource type="Shader" path="res://Scenes/main_menu.gdshader" id="2_xbq0y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cldo3h5nhsokc" path="res://Assets/GUI Elements/sit.png" id="4_bc7co"]
 [ext_resource type="SpriteFrames" uid="uid://c20gpdunbybvb" path="res://Scenes/Cats/main_menu.tres" id="5_3rfm3"]
 [ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard.otf" id="5_c0x7r"]
+[ext_resource type="Texture2D" uid="uid://qj7iab21v8o8" path="res://Assets/GUI Elements/LOGI C ˕ CマAT (1).png" id="6_snwf5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td57l"]
 shader = ExtResource("2_xbq0y")
@@ -62,7 +63,7 @@ color = Color(0.760784, 0.576471, 0.647059, 1)
 modulate = Color(0.862745, 0.666667, 1, 1)
 texture_repeat = 2
 material = SubResource("ShaderMaterial_td57l")
-position = Vector2(1970, 1030)
+position = Vector2(0, 1024)
 scale = Vector2(1.03596, 1.05069)
 texture = ExtResource("3_w8n2q")
 region_enabled = true
@@ -108,6 +109,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -119,24 +121,24 @@ theme_override_constants/margin_top = 140
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
-self_modulate = Color(2, 2, 2, 1)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 140
-text = "LOGI C ˕ CマAT"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+self_modulate = Color(2, 2, 2, 1)
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+texture = ExtResource("6_snwf5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 35
 
 [node name="Play" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ttlw8")
@@ -148,7 +150,7 @@ text = "ИГРАТЬ"
 
 [node name="Settings" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5jerl")
@@ -160,7 +162,7 @@ text = "НАСТРОЙКИ"
 
 [node name="About_Us" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uwq4n")
@@ -172,3 +174,4 @@ text = "О НАС"
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/About_Us" to="." method="_on_about_us_pressed"]

@@ -30,3 +30,7 @@ func _on_settings_pressed():
 	add_child(instance)
 
 
+
+
+func _on_about_us_pressed():
+	OS.shell_open("https://www.youtube.com/channel/UCtW6pDIWvoEI3qdjgeUQBlA")

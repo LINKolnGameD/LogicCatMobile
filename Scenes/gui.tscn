@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://v4hdyv43fviq"]
+[gd_scene load_steps=71 format=3 uid="uid://v4hdyv43fviq"]
 
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="1_7lbbs"]
 [ext_resource type="Texture2D" uid="uid://b6ktc5ocw7nk0" path="res://Assets/GUI Elements/Component 2.svg" id="1_faiw5"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ajjua5qf0nb" path="res://Assets/GUI Elements/Group 7.png" id="23_co7rh"]
 [ext_resource type="Texture2D" uid="uid://dq8u4oql704l3" path="res://Assets/GUI Elements/Group 8 (1).png" id="24_20pey"]
 [ext_resource type="Texture2D" uid="uid://eq7jiv6ydnqp" path="res://Assets/GUI Elements/Group 9 (1).png" id="25_p7enx"]
+[ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard.otf" id="27_mlc0o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4vni"]
 
@@ -182,16 +183,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -129.0
-offset_right = 32.0
+offset_left = -161.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 50
 
-[node name="Menu" type="Button" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="Menu" type="Button" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -203,8 +210,13 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_v6rg0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oilv1")
 icon = ExtResource("2_bhmfr")
 
-[node name="Reset" type="Button" parent="MarginContainer"]
+[node name="Reset" type="Button" parent="."]
 layout_mode = 2
+offset_left = -121.0
+offset_top = 56.0
+offset_right = 213.0
+offset_bottom = 380.0
+scale = Vector2(0.73, 0.73)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/icon_pressed_color = Color(0.933333, 0.721569, 0.572549, 1)
@@ -297,9 +309,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 580.243
-offset_top = 704.96
+offset_top = 709.383
 offset_right = 561.243
-offset_bottom = 1804.96
+offset_bottom = 1809.38
 grow_horizontal = 2
 scale = Vector2(0.22, 0.22)
 theme_override_colors/icon_pressed_color = Color(0.937255, 0.862745, 0.352941, 1)
@@ -485,8 +497,25 @@ color = Color(0, 0.811765, 0.882353, 1)
 hue_variation_max = 0.09
 hue_variation_curve = SubResource("Curve_aybb5")
 
-[connection signal="pressed" from="MarginContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="MarginContainer/Reset" to="." method="_on_reset_pressed"]
+[node name="Level" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.5
+offset_top = 50.0
+offset_right = -23.5
+offset_bottom = 295.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("27_mlc0o")
+theme_override_font_sizes/font_size = 120
+text = "Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="TextureRect2/Check" to="." method="_on_check_pressed"]
 [connection signal="frame_changed" from="FinishMenu/BaseFinishPic/RelishBar" to="." method="_on_relish_bar_frame_changed"]
 [connection signal="pressed" from="FinishMenu/BaseFinishPic/Next" to="." method="_on_next_pressed"]

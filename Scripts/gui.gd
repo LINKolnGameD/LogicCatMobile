@@ -7,11 +7,13 @@ extends Control
 @onready var RelishBar = $FinishMenu/BaseFinishPic/RelishBar
 @onready var MainScene = $"../.."
 @onready var Next = $FinishMenu/BaseFinishPic/Next
-@onready var Reset = $MarginContainer/Reset
+@onready var Reset = $Reset
 @onready var ArrowRight = $"../ArrRight"
 @onready var ArrowLeft = $"../ArrLeft"
 @onready var CatCont = $"../HBoxContainer"
 @onready var DownMenu = $TextureRect2
+@onready var TextLevel = $Level
+@onready var Restart = $FinishMenu/BaseFinishPic/Restart
 
 var ArrRight_in = false
 var ArrLeft_in = false
@@ -38,10 +40,10 @@ func _ready():
 	EventBus.change_sound_second.connect(sound_change)
 	if get_parent().get_parent().get_parent().global_sound_mod == false:
 		CleanSound.volume_db = -80
-		
+	TextLevel.text = str(MainScene.level)
 		
 func _process(delta):
-
+	TextLevel.text = str(MainScene.level)
 #
 	if MainScene.card_amount == 4:
 		if CatState == 1:
@@ -57,7 +59,6 @@ func _process(delta):
 			ArrowLeft.queue_free()
 			ArrowRight.queue_free()
 			arrows_set = true
-	Reset.scale = Vector2(0.9, 0.9)
 	
 	if get_level == false:
 		if MainScene.level != null:
@@ -69,9 +70,19 @@ func _process(delta):
 			
 	if final_satisfaction == 0:
 		Next.disabled = true
+		Next.visible = false
+		Restart.global_position.x = 429
+	elif MainScene.level == 90:
+		if final_satisfaction == 100:
+			pass
+			#тут должна быть финальная штука
+		else:
+			Next.disabled = true
+			Next.visible = false
 	else:
 		Next.disabled = false
-			
+		Next.visible = true
+		Restart.position.x = 286.584
 
 
 func _on_next_pressed():
@@ -125,10 +136,13 @@ func _on_check_pressed():
 			EventBus.add_succes.emit(level)
 			if final_satisfaction == 100:
 				EventBus.add_very_succes.emit(level)
+				$CPUParticles2D.emitting = true
+				$CPUParticles2D2.emitting = true
+				$CPUParticles2D3.emitting = true
+			else:
+				Input.vibrate_handheld()
 			RelishBar.play("default")
-			$CPUParticles2D.emitting = true
-			$CPUParticles2D2.emitting = true
-			$CPUParticles2D3.emitting = true
+			
 func content_no_cat(node):
 	if node.get_children().find(node.Cat) == -1:
 		return true

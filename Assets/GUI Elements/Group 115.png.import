@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck0mercou4c2"
-path="res://.godot/imported/CATICON.png-9999e446ada809d76c48ad0aa4929adf.ctex"
+uid="uid://bu6bi3v6hiic8"
+path="res://.godot/imported/Group 115.png-9d3617ee2a73cc6d7f87792a99f43e88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI Elements/CATICON.png"
-dest_files=["res://.godot/imported/CATICON.png-9999e446ada809d76c48ad0aa4929adf.ctex"]
+source_file="res://Assets/GUI Elements/Group 115.png"
+dest_files=["res://.godot/imported/Group 115.png-9d3617ee2a73cc6d7f87792a99f43e88.ctex"]
 
 [params]
 
 compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.1
+compress/lossy_quality=0.5
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

@@ -258,6 +258,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
 script = ExtResource("1_7bnif")
 
 [node name="Background" parent="." instance=ExtResource("1_6wrl5")]
@@ -344,14 +345,11 @@ libraries = {
 }
 
 [node name="Skip" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 647.0
-offset_top = 1979.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 661.0
+offset_top = 2060.0
+offset_right = 1035.0
+offset_bottom = 2120.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_cr6qq")
 theme_override_font_sizes/font_size = 60

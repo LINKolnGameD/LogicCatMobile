@@ -42,6 +42,7 @@ var _mouse_enter: bool = false
 var plug_set = false
 var cat_numeration: int
 var can_fall: bool = false
+var our_sit_place
 
 var target: Node
 
@@ -96,6 +97,7 @@ func _process(delta):
 		main_scene_way = card.MainScene
 	elif get_parent().name == "FurnitureArea":
 		main_scene_way = get_parent().get_parent().get_parent().MainScene
+		our_sit_place = get_parent().get_parent()
 		
 	if plug_set == false:
 		for i in main_scene_way.Level.get_children():
@@ -360,7 +362,7 @@ func check_preferences(node, preferences: Array) -> bool:
 
 # Функция для проверки комфорта места
 func is_comfortable_place(node, preferences: Array) -> bool:
-	if not node.soft:
+	if node.soft == false:
 		return false  # Место не комфортное
 	return check_preferences(node, preferences)
 	
