@@ -1,17 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://dg68b37hnk67m"]
+[gd_scene load_steps=27 format=3 uid="uid://dg68b37hnk67m"]
 
 [ext_resource type="PackedScene" uid="uid://ixomtpq1rvhj" path="res://Scenes/Background.tscn" id="1_6wrl5"]
 [ext_resource type="Script" path="res://Scripts/education.gd" id="1_7bnif"]
+[ext_resource type="Texture2D" uid="uid://bve4bapg8o13g" path="res://Assets/GUI Elements/Education/IMG_4292.PNG" id="3_1xixr"]
 [ext_resource type="FontFile" uid="uid://s3vupncpult8" path="res://Assets/FontsToTest/Revard.otf" id="3_cr6qq"]
-[ext_resource type="Texture2D" uid="uid://c6c15v1b8ly1j" path="res://Assets/GUI Elements/Education/IMG_2751.PNG" id="4_wegcq"]
-[ext_resource type="Texture2D" uid="uid://dch4kh48i3i5w" path="res://Assets/GUI Elements/Education/IMG_2752.PNG" id="5_4f31n"]
-[ext_resource type="Texture2D" uid="uid://cuecmi2caoq8l" path="res://Assets/GUI Elements/Education/IMG_2754.PNG" id="6_rxfn1"]
-[ext_resource type="Texture2D" uid="uid://baop237cv2s3y" path="res://Assets/GUI Elements/Education/IMG_2755.PNG" id="7_43osu"]
-[ext_resource type="Texture2D" uid="uid://dpauy3prew70m" path="res://Assets/GUI Elements/Education/IMG_2756.PNG" id="8_uut7q"]
-[ext_resource type="Texture2D" uid="uid://dx7ordvyo3q1o" path="res://Assets/GUI Elements/Education/IMG_2753.PNG" id="9_u8xb3"]
-[ext_resource type="Texture2D" uid="uid://dym55eqy6c07v" path="res://Assets/GUI Elements/Education/IMG_2757.PNG" id="10_s3fi4"]
-[ext_resource type="Texture2D" uid="uid://l4nubawhirs1" path="res://Assets/GUI Elements/Education/IMG_2758.PNG" id="11_5akfe"]
-[ext_resource type="Texture2D" uid="uid://dlwu7lv6ggml3" path="res://Assets/GUI Elements/Education/IMG_2759.PNG" id="12_4ethb"]
+[ext_resource type="Texture2D" uid="uid://cmgl3ttm5vycm" path="res://Assets/GUI Elements/Education/IMG_4293.PNG" id="4_isole"]
+[ext_resource type="Texture2D" uid="uid://dxijomfj6xqks" path="res://Assets/GUI Elements/Education/IMG_4294.PNG" id="5_wkqli"]
+[ext_resource type="Texture2D" uid="uid://bmifqsnqj5p0o" path="res://Assets/GUI Elements/Education/IMG_4331.PNG" id="6_mxbtx"]
+[ext_resource type="Texture2D" uid="uid://dhbu1reyp0ldk" path="res://Assets/GUI Elements/Education/IMG_4332.PNG" id="7_6b0ax"]
+[ext_resource type="Texture2D" uid="uid://cxa6xmxne61qb" path="res://Assets/GUI Elements/Education/IMG_4297.PNG" id="8_a6er8"]
+[ext_resource type="Texture2D" uid="uid://be4kled03ghke" path="res://Assets/GUI Elements/IMG_4347.PNG" id="9_t5ggo"]
+[ext_resource type="Texture2D" uid="uid://b1pp3623pl0v5" path="res://Assets/GUI Elements/Education/IMG_4301.PNG" id="10_7i32x"]
+[ext_resource type="Texture2D" uid="uid://cx4ny0sj6qduf" path="res://Assets/GUI Elements/Education/IMG_4302.PNG" id="11_13c2x"]
+[ext_resource type="Texture2D" uid="uid://cpfso7mn1k61c" path="res://Assets/GUI Elements/Subtract (4).png" id="13_yxyd7"]
+[ext_resource type="Texture2D" uid="uid://ccjo25ybi0e52" path="res://Assets/GUI Elements/Education/IMG_4355.PNG" id="14_kepxw"]
+[ext_resource type="Texture2D" uid="uid://cu14bnr6bd6fp" path="res://Assets/GUI Elements/IMG_4356.PNG" id="15_jucy6"]
+[ext_resource type="Texture2D" uid="uid://db5l5b5tnb2vg" path="res://Assets/GUI Elements/IMG_4358.PNG" id="16_s1irn"]
+[ext_resource type="Texture2D" uid="uid://cx745sycmmi8f" path="res://Assets/GUI Elements/IMG_4357.PNG" id="17_vx6dc"]
 
 [sub_resource type="Animation" id="Animation_yv22g"]
 resource_name = "Education_Anim"
@@ -124,6 +129,70 @@ tracks/8/keys = {
 "values": [Vector2(-1117, 1979), Vector2(-1117, 979)]
 }
 
+[sub_resource type="Animation" id="Animation_n1nh7"]
+resource_name = "Education_Second"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect3:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-898, 255), Vector2(-32, 255)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect11:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(677, 255), Vector2(-28, 255)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect12:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-39, 1979), Vector2(-35, 255)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect13:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-39, 1786), Vector2(-23, 255)]
+}
+
 [sub_resource type="Animation" id="Animation_lokly"]
 length = 0.001
 tracks/0/type = "value"
@@ -234,10 +303,71 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(-1117, 979)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TextureRect3:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1134, 1531)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TextureRect3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-898, 255)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TextureRect11:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-28, 255)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("TextureRect12:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 255)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("TextureRect13:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 255)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p47pf"]
 _data = {
 "Education_Anim": SubResource("Animation_yv22g"),
+"Education_Second": SubResource("Animation_n1nh7"),
 "RESET": SubResource("Animation_lokly")
 }
 
@@ -269,7 +399,7 @@ offset_left = -600.0
 offset_top = -45.0
 offset_right = 1603.0
 offset_bottom = 1198.0
-texture = ExtResource("4_wegcq")
+texture = ExtResource("3_1xixr")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -278,7 +408,7 @@ offset_left = 600.0
 offset_top = -42.0
 offset_right = 2810.0
 offset_bottom = 1201.0
-texture = ExtResource("5_4f31n")
+texture = ExtResource("4_isole")
 
 [node name="TextureRect5" type="TextureRect" parent="."]
 layout_mode = 0
@@ -286,7 +416,7 @@ offset_left = -1100.0
 offset_top = -48.0
 offset_right = 1081.0
 offset_bottom = 1179.0
-texture = ExtResource("6_rxfn1")
+texture = ExtResource("5_wkqli")
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 layout_mode = 0
@@ -294,7 +424,7 @@ offset_left = -5.0
 offset_top = 28.0
 offset_right = 1915.0
 offset_bottom = 1108.0
-texture = ExtResource("7_43osu")
+texture = ExtResource("6_mxbtx")
 
 [node name="TextureRect7" type="TextureRect" parent="."]
 layout_mode = 0
@@ -302,7 +432,7 @@ offset_left = 600.0
 offset_top = 28.0
 offset_right = 2520.0
 offset_bottom = 1108.0
-texture = ExtResource("8_uut7q")
+texture = ExtResource("7_6b0ax")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 layout_mode = 0
@@ -310,7 +440,7 @@ offset_left = -39.0
 offset_top = -109.0
 offset_right = 2224.0
 offset_bottom = 1166.0
-texture = ExtResource("9_u8xb3")
+texture = ExtResource("8_a6er8")
 
 [node name="TextureRect8" type="TextureRect" parent="."]
 layout_mode = 0
@@ -318,7 +448,7 @@ offset_left = -1081.0
 offset_top = 1005.0
 offset_right = 1045.0
 offset_bottom = 2201.0
-texture = ExtResource("10_s3fi4")
+texture = ExtResource("9_t5ggo")
 
 [node name="TextureRect9" type="TextureRect" parent="."]
 layout_mode = 0
@@ -326,7 +456,7 @@ offset_left = -1049.0
 offset_top = 1004.0
 offset_right = 1072.0
 offset_bottom = 2197.0
-texture = ExtResource("11_5akfe")
+texture = ExtResource("10_7i32x")
 
 [node name="TextureRect10" type="TextureRect" parent="."]
 layout_mode = 0
@@ -334,7 +464,7 @@ offset_left = -1117.0
 offset_top = 979.0
 offset_right = 1079.0
 offset_bottom = 2214.0
-texture = ExtResource("12_4ethb")
+texture = ExtResource("11_13c2x")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -344,12 +474,59 @@ libraries = {
 "": SubResource("AnimationLibrary_p47pf")
 }
 
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -898.0
+offset_top = 255.0
+offset_right = -844.0
+offset_bottom = -374.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_kepxw")
+
+[node name="TextureRect11" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 255.0
+offset_right = 26.0
+offset_bottom = -374.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_jucy6")
+
+[node name="TextureRect13" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 255.0
+offset_right = 1122.0
+offset_bottom = 1786.0
+texture = ExtResource("16_s1irn")
+
+[node name="TextureRect12" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 255.0
+offset_right = 42.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_vx6dc")
+
 [node name="Skip" type="Button" parent="."]
 layout_mode = 0
-offset_left = 661.0
-offset_top = 2060.0
-offset_right = 1035.0
-offset_bottom = 2120.0
+offset_left = 677.0
+offset_top = 1928.0
+offset_right = 1079.0
+offset_bottom = 2160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_cr6qq")
 theme_override_font_sizes/font_size = 60
@@ -358,7 +535,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_v5ild")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_458ip")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_dniy1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5styr")
-text = "ПРОПУСТИТЬ..."
+icon = ExtResource("13_yxyd7")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

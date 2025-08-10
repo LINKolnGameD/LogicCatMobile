@@ -1,31 +1,49 @@
-[gd_scene load_steps=21 format=3 uid="uid://hyoci7g4y30p"]
+[gd_scene load_steps=31 format=3 uid="uid://hyoci7g4y30p"]
 
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="1_aq3c2"]
 [ext_resource type="Texture2D" uid="uid://bwjsiutc8b0ss" path="res://Assets/GUI Elements/Group 29.png" id="2_f6fu5"]
 [ext_resource type="Texture2D" uid="uid://brisqeogqsjqx" path="res://Assets/GUI Elements/Group 18.png" id="3_g5kal"]
+[ext_resource type="Texture2D" uid="uid://bj1q50eu33wbw" path="res://Scenes/Cats/blank_sound.tres" id="4_adfct"]
 [ext_resource type="Texture2D" uid="uid://be0ys2jlybksh" path="res://Assets/GUI Elements/Group 23.png" id="4_p7nui"]
-[ext_resource type="Texture2D" uid="uid://d0ajjua5qf0nb" path="res://Assets/GUI Elements/Group 7.png" id="5_hyqgj"]
+[ext_resource type="Texture2D" uid="uid://g7085ccb5dk6" path="res://Assets/GUI Elements/Group 159.png" id="6_jgl81"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgfmf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7c8t2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qquq8"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alw5q"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eeeti"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niwfk"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1blx1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08bs0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnq5i"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xows7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq6hl"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yruk8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_788sf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b47xf"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8irv"]
-modulate_color = Color(0.988235, 0.505882, 0.6, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32o02"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xd1oh"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qa41k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2fqw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h7ixp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nuho0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhtyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agnho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2v2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dagtl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50yh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x14bm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pc7d7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj2dq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8evr"]
 
@@ -88,39 +106,62 @@ theme_override_constants/separation = 70
 [node name="SoundButton" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(266, 144)
 layout_mode = 2
-theme_override_colors/icon_pressed_color = Color(0.596078, 0.537255, 0.866667, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xgfmf")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_qquq8")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_eeeti")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_1blx1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qnq5i")
+theme_override_colors/icon_pressed_color = Color(0.760784, 0.713726, 0.960784, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7c8t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_alw5q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_niwfk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_08bs0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xows7")
 icon = ExtResource("3_g5kal")
+expand_icon = true
+
+[node name="BlankSound" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(266, 144)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yruk8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b47xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_32o02")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qa41k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h7ixp")
+icon = ExtResource("4_adfct")
 expand_icon = true
 
 [node name="MusicButton" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(266, 144)
 layout_mode = 2
-theme_override_colors/icon_pressed_color = Color(0.231373, 0.658824, 0.647059, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yq6hl")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_788sf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_r8irv")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_xd1oh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_s2fqw")
+theme_override_colors/icon_pressed_color = Color(0.576471, 0.839216, 0.952941, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nuho0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fhtyv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_agnho")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g2v2r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dagtl")
 icon = ExtResource("4_p7nui")
+expand_icon = true
+
+[node name="BlankMusic" type="Button" parent="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(266, 144)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yruk8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_50yh4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x14bm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pc7d7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lj2dq")
+icon = ExtResource("4_adfct")
 expand_icon = true
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 434.0
-offset_top = 346.0
-offset_right = 670.0
-offset_bottom = 530.0
+offset_left = 842.0
+offset_top = 483.0
+offset_right = 1078.0
+offset_bottom = 667.0
+theme_override_colors/icon_pressed_color = Color(0.94902, 0.796078, 0.843137, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_q8evr")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_frhex")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_g1kvy")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_jve0x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wuupq")
-icon = ExtResource("5_hyqgj")
+icon = ExtResource("6_jgl81")
 expand_icon = true
 
 [connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer" to="." method="_on_center_container_mouse_entered"]
@@ -128,7 +169,9 @@ expand_icon = true
 [connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/BlankSound" to="." method="_on_blank_sound_pressed"]
 [connection signal="mouse_entered" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_mouse_exited"]
 [connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/CenterContainer/MarginContainer/VBoxContainer/BlankMusic" to="." method="_on_blank_music_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

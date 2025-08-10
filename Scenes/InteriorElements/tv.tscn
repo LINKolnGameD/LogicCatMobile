@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn5vvkg0yuqdp"]
+[gd_scene load_steps=6 format=3 uid="uid://cn5vvkg0yuqdp"]
 
 [ext_resource type="PackedScene" uid="uid://j03mldx0hroa" path="res://Scenes/furniture.tscn" id="1_fsqrj"]
-[ext_resource type="Texture2D" uid="uid://c0vtq821cvvx8" path="res://Assets/Interior/Цветное/телик.png" id="2_5eiwm"]
 [ext_resource type="SpriteFrames" uid="uid://bhuidvqm8u7iq" path="res://Scenes/InteriorElements/PicsInterior/tv.tres" id="2_mbtea"]
+[ext_resource type="Texture2D" uid="uid://cx7wributuwxy" path="res://Assets/Interior/Цветное/телик с помехами 1.png" id="3_hrsu1"]
+[ext_resource type="Texture2D" uid="uid://ddoobdyqtqsnn" path="res://Assets/Interior/Цветное/телик с помехами 2.png" id="4_egm4d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4utva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hrsu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_egm4d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="TV" instance=ExtResource("1_fsqrj")]
 Type = 14
@@ -11,10 +26,12 @@ Type = 14
 position = Vector2(2, -83)
 sprite_frames = ExtResource("2_mbtea")
 
-[node name="Тумба2" type="Sprite2D" parent="." index="1"]
+[node name="Тумба2" type="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0.99999, -285)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_5eiwm")
+sprite_frames = SubResource("SpriteFrames_4utva")
+autoplay = "default"
+frame_progress = 0.624264
 
 [node name="FurnitureArea" parent="." index="2"]
 position = Vector2(0, -367)

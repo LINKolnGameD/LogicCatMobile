@@ -47,4 +47,12 @@ volume_db = 5.0
 stream = ExtResource("4_q8k0r")
 volume_db = 5.0
 
+[node name="Emotion" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(280, -281.25)
+rotation = -0.300411
+scale = Vector2(0.302083, 0.302083)
+
 [connection signal="input_event" from="CatAnSprite/AreaCat" to="." method="_on_area_cat_input_event"]
+[connection signal="finished" from="HappyMeow" to="." method="_on_happy_meow_finished"]
+[connection signal="finished" from="AngryMeow" to="." method="_on_angry_meow_finished"]

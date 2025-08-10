@@ -7,12 +7,14 @@
 Type = 12
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2(0, -290)
+position = Vector2(0, -97)
 scale = Vector2(1, 1)
 sprite_frames = ExtResource("2_mgdeg")
+autoplay = "default"
+frame_progress = 0.0934897
 
 [node name="FurnitureArea" parent="." index="1"]
-position = Vector2(0, -195)
+position = Vector2(0, -2)
 
 [node name="CollisionShape2D" parent="FurnitureArea" index="0"]
 shape = null

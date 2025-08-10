@@ -97,6 +97,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Cat" type="AnimatedSprite2D" parent="Control2"]
+texture_filter = 2
 position = Vector2(-473, 139)
 scale = Vector2(2.67954, 2.66526)
 sprite_frames = ExtResource("5_3rfm3")
@@ -119,12 +120,14 @@ theme_override_constants/margin_top = 140
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 90
+theme_override_constants/separation = 70
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
 
 [node name="Label" type="TextureRect" parent="VBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
 self_modulate = Color(2, 2, 2, 1)
@@ -140,37 +143,37 @@ theme_override_constants/separation = 35
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ttlw8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_j3512")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ygrd5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_1rjd2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tvnp6")
-text = "ИГРАТЬ"
+text = "PLAY"
 
 [node name="Settings" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5jerl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1sapn")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_d5d4l")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_tre2y")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_av8nj")
-text = "НАСТРОЙКИ"
+text = "SETTINGS"
 
 [node name="About_Us" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_c0x7r")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uwq4n")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_38hut")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_y2pvt")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_qacfh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0xghu")
-text = "О НАС"
+text = "ABOUT US"
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

@@ -18,6 +18,7 @@ var completed_levels = []  # Список уровней, завершенных
 var scene_load_status = 0
 var scene_to_open
 var loading_object
+var scrolling
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	EventBus.connect("scene_change_requested", _on_scene_change_requested)
@@ -33,16 +34,21 @@ func _ready():
 func change_music():
 	if Music.volume_db == -80:
 		Music.volume_db = -10
+		EventBus.music = true
 	elif Music.volume_db == -10:
 		Music.volume_db = -80
+		EventBus.music = false
 	else:
 		Music.volume_db = -80
+		EventBus.music = false
 	
 func change_mod():
 	if global_sound_mod:
 		global_sound_mod = false
+		EventBus.sound = false
 	else:
 		global_sound_mod = true
+		EventBus.sound = true
 	EventBus.change_sound_second.emit(global_sound_mod)
 	
 func play_button_sound():
@@ -61,6 +67,7 @@ func complete_level(level):
 		save_game()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print("Scroll ", scrolling)
 	if scene_to_open != null:
 		scene_load_status = ResourceLoader.load_threaded_get_status(scene_to_open, progress)
 		if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://degmlksw0sq8j"]
+[gd_scene load_steps=6 format=3 uid="uid://degmlksw0sq8j"]
 
 [ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_rmw8r"]
 [ext_resource type="AudioStream" uid="uid://bdyuuhlmfaxo3" path="res://Assets/Sound/lofi_5.1 (1).mp3" id="2_jpws1"]
 [ext_resource type="PackedScene" uid="uid://hd38q8ovquda" path="res://Scenes/main_menu.tscn" id="3_5wvx6"]
 [ext_resource type="AudioStream" uid="uid://6tlk7biohjmh" path="res://Assets/Sound/001_Hover_01.wav" id="4_uq3wl"]
+[ext_resource type="PackedScene" uid="uid://t8a1v8sv31bh" path="res://Scenes/intro.tscn" id="5_oupis"]
 
 [node name="SceneManager" type="Node2D"]
 process_mode = 3
@@ -21,3 +22,5 @@ stream = ExtResource("4_uq3wl")
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_5wvx6")]
 offset_left = -6.0
+
+[node name="Intro" parent="CanvasLayer" instance=ExtResource("5_oupis")]
